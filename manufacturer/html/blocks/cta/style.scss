@@ -1,0 +1,33 @@
+@import "../../assets/css/scss/mixins";
+
+.cta-section {
+    @media (max-width: 992px) {
+        padding-bottom: 0 !important;
+    }
+    .cta-block {
+        padding: 60px;
+        background: linear-gradient(90deg, #CAE0F0 30.89%, rgba(202, 224, 240, 0) 68.74%);
+        background-size: auto;
+        position: relative;
+        @media (max-width: 992px) {
+            padding: 30px;
+            margin: 0 -15px;
+        }
+        @media (max-width: 767px) {
+            padding: 20px;
+        }
+        .cta-title {
+            max-width: 640px;
+            font-size: clamp(24px, 4vw, 38px);
+            @media (max-width: 992px) {
+                max-width: 450px;
+            }
+        }
+        .action {
+            margin-top: 40px;
+            @media (max-width: 767px) {
+                margin-top: 20px;
+            }
+        }
+    }
+}

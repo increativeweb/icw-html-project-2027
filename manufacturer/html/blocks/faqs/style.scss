@@ -1,0 +1,67 @@
+@import "../../assets/css/scss/mixins";
+
+.faq-section {
+    .collapse-block {
+        .collapse-item {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+            &.is-open {
+                .collapse-title {
+                    h3 {
+                        color: var(--primary);
+                    }
+                    .collapse-btn {
+                        background: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.53403H6.66601V6.53255H5.33398V6.53403H0V5.46606H5.33398V5.46755H6.66601V5.46606H12V6.53403Z" fill="rgb(32 162 227)"/></svg>') no-repeat center center;
+                        filter: unset;
+                    }
+                }
+            }
+            .collapse-title {
+                border: none;
+                background: transparent;
+                text-align: left;
+                padding: 0;
+                @include flexbox;
+                @include align-items(flex-start);
+                gap: 20px;
+                width: 100%;
+                h3 {                    
+                    font-weight: 600;
+                    font-size: 18px;
+                    color: var(--black);
+                    margin-bottom: 0;
+                    @include transition(0.2s, ease-in-out);
+                }
+                .collapse-btn {
+                    width: 12px;
+                    height: 12px;
+                    display: inline-block;
+                    flex: none;
+                    background: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.53399H6.66601V12H5.33398V6.53399H0V5.46601H5.33398V0H6.66601V5.46601H12V6.53399Z" fill="rgb(32 162 227)"/></svg>') no-repeat center center;
+                    background-size: contain;
+                    filter: brightness(0);
+                    margin-left: auto;
+                    margin-top: 5px;
+                    @include transition(0.2s, ease-in-out);
+                }
+                &:hover, &:focus {
+                    h3 {
+                        color: var(--primary);
+                    }
+                    .collapse-btn {
+                        filter: unset;
+                    }
+                }
+            }
+            .collapse-body {
+                .collapse-content {
+                    font-weight: 400;
+                    color: var(--lightblack);
+                    padding-top: 10px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                }
+            }
+        }
+    }
+}

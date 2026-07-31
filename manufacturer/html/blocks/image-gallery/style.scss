@@ -1,0 +1,55 @@
+@import "../../assets/css/scss/mixins";
+
+.image-gallery-slider-section {
+    .image-slider-block {
+        .image-gallery-splide {
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+            @media (max-width: 992px) {
+                margin: 0 -15px;
+            }
+            .splide__track {                
+                padding: 5px 0;
+            }
+            .splide__slide {
+                line-height: 0.7;
+            }
+        }
+    }
+    .media-block {
+        max-height: 140px;
+        display: inline-block;
+        position: relative;
+        line-height: 0.7;
+        img {
+            height: 100%;
+        }
+        &:hover, &:focus {
+            opacity: 0.8;
+            .play-icon {
+                opacity: 1;
+            }
+        }
+        &:focus-visible {            
+            outline: 2px solid var(--primary) !important;
+        }
+        &.is-video {
+            .play-icon {
+                svg {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+        &.ratio-2x3 {   
+            aspect-ratio: 2.3 / 3;
+        }
+        &.ratio-5x3 {      
+            aspect-ratio: 3.6 / 3;
+        }
+        &.ratio-6x3 {
+            aspect-ratio: 4.9 / 3;
+        }
+    }
+}

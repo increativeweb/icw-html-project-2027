@@ -1,0 +1,149 @@
+@import "../../assets/css/scss/mixins";
+
+.image-content-section {
+    &.is-full {
+        .image-content-block {
+            .row {
+                flex-direction: column-reverse;
+            }
+            .media-block, .multiple-img-splide {
+                max-width: 100%;
+            }
+            .section-title {
+                margin-bottom: 50px !important;
+                @media (max-width: 992px) {
+                    margin-bottom: 30px !important;
+                }
+            }
+        }
+    }
+    .image-content-block {
+        .media-block {
+            margin-left: 0;
+            @media (max-width: 1200px) {
+                position: sticky;
+                top: 100px;
+            }
+        }
+        .flex-md-row-reverse {
+            .media-block, .multiple-img-splide {
+                margin-left: auto;
+            }
+        }
+        .multiple-img-splide {
+            max-width: 580px;
+            &:has(.ratio-3x4) {
+                max-width: 535px;
+            }
+            @media (max-width: 1200px) {
+                position: sticky;
+                top: 100px;
+            }
+            @media (max-width: 767px) {
+                max-width: 100% !important;
+            }
+        }
+    }
+    .media-block {
+        max-width: 580px;
+        &:not(.ratio-1x1) {
+            max-width: 535px;
+        }
+        @media (max-width: 767px) {
+            max-width: 100% !important;
+        }
+    }
+    .section-title {
+        margin-bottom: 0;
+        @media (max-width: 767px) {
+            margin-top: 30px;
+        }
+    }
+    .history-list {
+        margin-top: 30px;
+        li {
+            @include flexbox;
+            @include align-items(flex-start);
+            gap: 15px;
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            strong {
+                font-weight: 700;
+                font-size: 18px;
+                color: var(--darkblue);
+                min-width: 45px;
+            }
+        }
+    }
+    // Info List Card
+    .info-list-cards {
+        &:not(.g-15) {
+            margin-top: 20px;
+        }
+        &:not(.g-15) > [class^="col"] {
+            margin-bottom: 10px;
+        }
+        .info-list-card {
+            @include flexbox;
+            height: 100%;
+            gap: 10px;
+            position: relative;
+            @include transition(0.2s, ease-in-out);
+            border: none;
+            @media (max-width: 767px) {
+                gap: 8px;
+            }
+            .card-icon {
+                max-width: 18px;
+                min-width: 18px;
+                line-height: 0.7;
+                margin-top: 2px;
+                @media (max-width: 767px) {
+                    max-width: 16px;
+                    min-width: 16px;
+                }
+            }
+            .card-content {
+                .card-title {
+                    font-weight: 700;
+                    font-size: clamp(14px, 2vw, 18px);
+                    margin-bottom: 5px;
+                    a {
+                        color: var(--darkblue);
+                        text-decoration: none;
+                        @include transition(0.2s, ease-in-out);
+                    }
+                }
+                .card-info {
+                    font-size: clamp(14px, 2vw, 16px);
+                    line-height: 1.5;
+                    color: var(--lightblack);
+                }
+            }
+            &:has(a:hover),
+            &:has(a:focus) {
+                .card-title {
+                    a {
+                        color: var(--primary);
+                        text-decoration: underline;
+                    }
+                }
+            }
+            &.only-card-title {
+                .card-content {
+                    .card-title {
+                        font-size: clamp(14px, 2vw, 16px);
+                        margin-bottom: 0;
+                        font-weight: 500;
+                    }
+                }
+            }
+            &.only-card-info {
+                .card-icon { 
+                    display: none;
+                }
+            }
+        }
+    }
+}

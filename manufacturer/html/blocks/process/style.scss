@@ -1,0 +1,34 @@
+@import "../../assets/css/scss/mixins";
+
+.process-section {
+    .process-splide {
+        padding-bottom: 10px;
+        .splide__track {
+            overflow: visible;
+        }
+    }
+    .process-card {
+        @include flexbox;
+        @include flex-direction (column);
+        padding: 30px;
+        background: #FFFFFF;
+        min-height: 320px;
+        @media (max-width: 1200px) {
+            max-width: 300px;
+        }
+        @media (max-width: 992px) {
+            padding: 20px;
+            min-height: 250px;
+        }
+        .card-title {
+            color: var(--black);
+            font-weight: 600;
+            font-size: clamp(20px, 3vw, 24px);
+            flex: 1 1 auto;
+            span {
+                font-weight: 400;
+                display: block;
+            }
+        }
+    }
+}

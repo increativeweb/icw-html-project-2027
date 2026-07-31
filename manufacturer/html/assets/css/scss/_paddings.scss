@@ -1,0 +1,295 @@
+// Padding-Margin CSS
+
+// Padding utilities
+@media (min-width: 1440px) {
+    .py-xl-xxlarge {
+        padding-top: 200px !important;
+        padding-bottom: 200px !important;
+    }
+}
+
+.p-xlarge {
+    padding-top: 150px !important;
+}
+
+.p-large {
+    padding: 100px !important; // 100px
+}
+
+.p-medium {
+    padding: 50px !important; // 50px
+}
+
+.p-small {
+    padding: 25px!important; // 25px
+}
+
+.p-15 {
+    padding-top: 15px !important;
+}
+
+.p-0 {
+    padding: 0 !important; // 0px
+}
+
+// Padding Top
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.pt-15 {
+    padding-top: 15px !important;
+}
+
+.pt-small {
+    padding-top: 25px!important;
+}
+
+.pt-medium {
+    padding-top: 50px !important;
+}
+
+.pt-large {
+    padding-top: 100px !important;
+}
+
+.pt-xlarge {
+    padding-top: 150px !important;
+}
+
+
+// Padding Bottom
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.pb-15 {
+    padding-bottom: 15px !important;
+}
+
+.pb-small {
+    padding-bottom: 25px!important;
+}
+
+.pb-medium {
+    padding-bottom: 50px !important;
+}
+
+.pb-large {
+    padding-bottom: 100px !important;
+}
+
+.pb-xlarge {
+    padding-bottom: 150px !important;
+}
+
+// Margin utilities
+.m-xlarge {
+    margin: 150px !important;
+}
+
+.m-large {
+    margin: 100px !important; // 100px
+}
+
+.m-medium {
+    margin: 50px !important; // 50px
+}
+
+.m-small {
+    margin: 25px!important; // 25px
+}
+
+.m-0 {
+    margin: 0 !important; // 0px
+}
+
+// Margin Top
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mt-15 {
+    margin-top: 15px !important;
+}
+
+.mt-small {
+    margin-top: 25px!important;
+}
+
+.mt-medium {
+    margin-top: 50px !important;
+}
+
+.mt-large {
+    margin-top: 100px !important;
+}
+
+.mt-xlarge {
+    margin-top: 150px !important;
+}
+
+// Margin Bottom
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mb-15 {
+    margin-bottom: 15px !important;
+}
+
+.mb-medium {
+    margin-bottom: 50px !important;
+}
+
+.mb-large {
+    margin-bottom: 100px !important;
+}
+
+.mb-xlarge {
+    margin-bottom: 150px !important;
+}
+
+// RESPONSIVE (max-width: 767px)
+@media (max-width: 768px) {
+    .m-p-xlarge {
+        padding: 150px !important;
+    }
+
+    .m-p-large {
+        padding: 100px !important; // 100px
+    }
+
+    .m-p-medium {
+        padding: 50px !important; // 50px
+    }
+
+    .m-p-small {
+        padding: 25px!important; // 25px
+    }
+
+    .m-p-15 {
+        padding: 15px !important;
+    }
+
+    .m-p-0 {
+        padding: 0 !important; // 0px
+    }
+
+    // Padding Top
+    .m-pt-0 {
+        padding-top: 0 !important;
+    }
+
+    .m-pt-15 {
+        padding-top: 15px !important;
+    }
+
+    .m-pt-small {
+        padding-top: 25px!important;
+    }
+
+    .m-pt-medium {
+        padding-top: 50px !important;
+    }
+
+    .m-pt-large {
+        padding-top: 100px !important;
+    }
+
+    .m-pt-xlarge {
+        padding-top: 150px !important;
+    }
+
+    // Padding Bottom
+    .m-pb-0 {
+        padding-bottom: 0 !important;
+    }
+
+    .m-pb-15 {
+        padding-bottom: 15px !important;
+    }
+
+    .m-pb-medium {
+        padding-bottom: 50px !important;
+    }
+
+    .m-pb-large {
+        padding-bottom: 100px !important;
+    }
+
+    // Margin utilities
+    .m-m-xlarge {
+        margin: 150px !important;
+    }
+
+    .m-m-large {
+        margin: 100px !important; // 100px
+    }
+
+    .m-m-medium {
+        margin: 50px !important; // 50px
+    }
+
+    .m-m-small {
+        margin: 25px!important; // 25px
+    }
+
+    .m-m-15 {
+        margin: 15px !important; // 0px
+    }
+
+    .m-m-0 {
+        margin: 0 !important; // 0px
+    }
+
+    // Margin Top
+    .m-mt-0 {
+        margin-top: 0 !important;
+    }
+
+    .m-mt-15 {
+        margin-top: 15px !important;
+    }
+
+    .m-mt-30 {
+        margin-top: 30px !important;
+    }
+
+    .m-mt-medium {
+        margin-top: 50px !important;
+    }
+
+    .m-mt-large {
+        margin-top: 100px !important;
+    }
+
+    .m-mt-xlarge {
+        margin-top: 150px !important;
+    }
+
+    // Margin Bottom
+    .m-mb-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .m-mb-15 {
+        margin-bottom: 15px !important;
+    }
+
+    .m-mb-30 {
+        margin-bottom: 30px !important;
+    }
+
+    .m-mb-medium {
+        margin-bottom: 50px !important;
+    }
+
+    .m-mb-large {
+        margin-bottom: 100px !important;
+    }
+
+    .m-mb-xlarge {
+        margin-bottom: 150px !important;
+    }
+}

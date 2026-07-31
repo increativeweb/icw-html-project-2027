@@ -1,0 +1,53 @@
+@import "../../assets/css/scss/mixins";
+
+.team-section {
+    .team-card {
+        @include flexbox;
+        @include flex-direction(column);
+        height: 100%;
+        position: relative;
+        padding: 30px;
+        background: #FFFFFF;
+        min-height: 320px;
+        @media (max-width: 992px) {
+            padding: 20px;
+            min-height: 250px;
+        }
+        @media (max-width: 575px) {
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        .card-body {
+            @include flexbox;
+            @include flex-direction(column);
+            .card-title {
+                font-size: clamp(20px, 1.5vw, 24px);
+                margin-bottom: 5px;
+            }
+            .designation {
+                flex: 1 1 auto;
+            }
+            .card-info {
+                color: var(--lightblack);
+                margin-bottom: 15px;
+                font-size: clamp(14px, 1.5vw, 16px);
+            }
+            .social-list {
+                a {
+                    @include inline-flex;
+                    @include align-items(center);
+                    @include justify-content(center);
+                    color: var(--black);
+                    line-height: 0.7;
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                    }
+                    &:hover, &:focus {
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+.img-content-menu-block {
+    background: linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%);
+    padding: 15px;
+    @media (max-width: 1200px) {
+        margin: 0 10px;
+    }
+    .logo {
+        margin-bottom: 20px;
+        img {
+            height: 24px;
+        }
+    }
+    .content-info {
+        margin-bottom: 15px;
+        .title {
+            font-size: clamp(14px, 2vw, 16px);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .info {
+            font-weight: 400;
+            font-size: 12px;
+            color: #787878;
+        }
+    }
+    .img-block {
+        max-height: 81px;
+    }
+    .menu-link {
+        font-family: var(--font-allerta);
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--primary);
+        text-decoration: none;
+        z-index: 5;
+        position: relative;
+        margin-top: 15px;
+        display: inline-block;
+        &:hover, &:focus {
+            color: var(--darkblue);
+            text-decoration: underline;
+        }
+    }
+}
+
+<div class="img-content-menu-block">
+    <div class="logo"><img src="uploads/logo.svg" alt="Glazore Coating"></div>                                                
+    <div class="content-info">
+        <div class="title">India's Premier Aluminium Extrusion Supplier</div>
+        <div class="info">Glazore Coating Pvt. Ltd. has built a reputation as a prominent player in providing high end surface treatment solutions.</div>
+    </div>
+    <div class="img-block ratio ratio-21x9">
+        <img src="uploads/img-menu-industry-served.jpg" alt="Menu Industry Served">
+    </div>
+    <a class="menu-link" href="#" target="">Download Brochure</a>
+</div>
