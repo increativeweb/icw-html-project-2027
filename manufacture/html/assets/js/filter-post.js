@@ -5,7 +5,7 @@ if (jQuery('.related-post-splide').length) {
         rewind: true,
         arrows: false,
         pagination: true,
-        perPage: 4,
+        perPage: 3,
         perMove: 1,
         gap: 30,
         omitEnd: true,
@@ -27,7 +27,7 @@ if (jQuery('.related-post-splide').length) {
     postSplide.on('mounted resize', function () {
         const slideLength = postSplide.length;
         const isDesktop = window.innerWidth > 1200;
-        if (isDesktop && slideLength <= 4) {
+        if (isDesktop && slideLength <= 3) {
             postSplide.options = {
                 drag: false,
                 arrows: false,

@@ -7,6 +7,20 @@
             --bs-gutter-y: 30px; 
         }
     }
+    &.bg-gradient {
+        .industries-card {
+            .card-body {
+                .card-title {
+                    a {
+                        color: var(--white)
+                    }
+                }
+                .card-info {
+                    color: var(--white);
+                }
+            }
+        }
+    }
     .industries-card {
         @include flexbox;
         @include flex-direction(column);
@@ -14,16 +28,20 @@
         position: relative;
         .card-img {
             margin-bottom: 20px;
-            @media (max-width: 992px) {
-                margin-bottom: 15px;
-            }
+            @include border-radius(12px);
+            overflow: hidden;
+            @include transition(0.2s, ease-in-out);
         }
         .card-body {
             @include flexbox;
             @include flex-direction(column);
             .card-title {
-                font-size: clamp(16px, 2vw, 18px);
-                margin-bottom: 10px;
+                font-size: clamp(18px, 2vw, 20px);
+                margin-bottom: 15px;
+                @include transition(0.2s, ease-in-out);
+                @media (max-width: 1200px) {
+                    margin-bottom: 10px;
+                }
                 a {
                     color: var(--black);
                     text-decoration: none;
@@ -31,21 +49,36 @@
                 }
             }
             .card-info {
-                color: var(--lightblack);
+                color: var(--dark-slate-grey);
                 font-size: clamp(14px, 1.5vw, 16px);
                 flex: 1 1 auto;
             }
             .card-action {
                 margin-top: 15px;
+                .btn {
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    padding-bottom: 5px;
+                    .icon-arrow {
+                        width: 16px;
+                        height: 12px;
+                    }
+                }
             }
         }
+        &:hover,
+        &:focus,
         &:has(a):hover,
         &:has(a):focus {
             .card-img {
                 opacity: .8;
             }
-            .card-title {
-                color: var(--primary);
+            .card-body {
+                .card-title {
+                    color: rgba(#ffffff, 0.8);
+                    a {
+                        color: rgba(#ffffff, 0.8);
+                    }
+                }
             }
         }
     }

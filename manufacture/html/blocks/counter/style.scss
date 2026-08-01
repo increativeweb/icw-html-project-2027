@@ -7,21 +7,37 @@
         }
     }
     .counter-block {
-        margin-top: 50px;
-        @media (max-width: 992px) {
-            margin-top: 30px;
+        border-top: 1px solid #e1e4eb;
+        @media (max-width: 767px) {
+            border-top: none;
+        }
+        .row > *:not(:last-child) {
+            border-right: 1px solid #e1e4eb;
+            @media (max-width: 767px) {
+                border-right: none;
+            }
         }
     }
     .counter-card {
+        padding: 48px 20px 0;
+        text-align: center;
+        height: 100%;
+        @media (max-width: 992px) {
+            padding: 30px 20px 0;
+        }
+        @media (max-width: 767px) {
+            padding: 10px;
+        }
         .card-title {
-            font-weight: 600;
-            font-size: clamp(22px, 3vw, 32px);
-            color: var(--darkblue);
-            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: clamp(40px, 3vw, 60px);
+            color: var(--darkblack);
+            margin-bottom: 16px;
+            letter-spacing: -1.2px;
         }
         .card-info {
-            font-size: clamp(14px, 1.5vw, 16px);
-            color: var(--lightblack);
+            font-size: clamp(16px, 1.5vw, 18px);
+            color: var(--dark-slate-grey);
         }
     }
     .row.flex-md-row-reverse {

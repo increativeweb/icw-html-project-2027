@@ -31,26 +31,10 @@
             }
         }
         .multiple-img-splide {
-            max-width: 580px;
-            &:has(.ratio-3x4) {
-                max-width: 535px;
-            }
             @media (max-width: 1200px) {
                 position: sticky;
                 top: 100px;
             }
-            @media (max-width: 767px) {
-                max-width: 100% !important;
-            }
-        }
-    }
-    .media-block {
-        max-width: 580px;
-        &:not(.ratio-1x1) {
-            max-width: 535px;
-        }
-        @media (max-width: 767px) {
-            max-width: 100% !important;
         }
     }
     .section-title {

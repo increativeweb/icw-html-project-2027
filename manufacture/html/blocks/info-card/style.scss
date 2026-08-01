@@ -1,23 +1,46 @@
 @import "../../assets/css/scss/mixins";
 
 .info-card-section {
+    .info-card-block {
+        .row {
+            --bs-gutter-y: 40px;
+            --bs-gutter-x: 60px;
+            @media (max-width: 1200px) {                
+                --bs-gutter-y: 30px;
+                --bs-gutter-x: 30px;
+            }
+        }
+    }
     .info-card {
         @include flexbox;
         @include flex-direction(column);
         height: 100%;
-        padding: 30px;
-        border: 1px solid #E6E6E6;
         background: var(--white);
-        @media (max-width: 1200px) {
-            padding: 20px;
+        .card-icon {
+            // background: rgba(#ed0400, 0.1);
+            // width: 45px;
+            // height: 45px;
+            // @include flexbox;
+            // @include align-items(center);
+            // @include justify-content(center);
+            margin-bottom: 12px;
+            img {
+                width: 32px;
+                height: 32px;
+            }
         }
-        .card-title {
-            font-size: clamp(18px, 1.5vw, 20px);
-            margin-bottom: 10px;
-        }
-        .card-info {
-            color: var(--lightblack);
-            font-size: clamp(14px, 1.5vw, 16px);
+        .card-body {
+            .card-title {
+                font-size: clamp(16px, 1.5vw, 18px);
+                margin-bottom: 3px;
+                color: var(--dark-slate-grey);
+                line-height: 1.5;
+            }
+            .card-info {
+                color: var(--darkblack);
+                font-size: clamp(16px, 1.5vw, 18px);
+                max-width: 320px;
+            }
         }
         &.no-border {
             padding: 0;

@@ -22,7 +22,9 @@
         max-width: 300px;
     }
     .card-img {
-        margin-bottom: 20px;
+        margin-bottom: 24px;
+        @include border-radius(12px);
+        overflow: hidden;
         @include transition(0.2s, ease-in-out);
     }
     .card-body {
@@ -30,38 +32,42 @@
         @include flex-direction(column);
         .post-cat-meta {
             z-index: 5;
-            margin-bottom: 10px;  
+            margin-bottom: 12px;  
             @include flexbox;
+            @include align-items(center);
             @include flex-wrap(wrap);          
             .post-category {
-                font-weight: 400;
-                font-size: 12px;
-                letter-spacing: 0.02em;
+                font-weight: 700;
+                font-size: clamp(14px, 1.5vw, 16px);
+                letter-spacing: 2px;
                 text-transform: uppercase;
                 color: var(--primary);
-                font-family: var(--font-allerta);
-                text-underline-offset: 4px;
                 line-height: 1;
                 &:hover, &:focus {
-                    color: var(--black);
+                    color: var(--darkblack);
                 }
             }
             .post-date {
                 font-weight: 400;
-                font-size: 11px;
+                font-size: 14px;
                 color: rgba(48, 48, 48, 0.6);
                 display: inline-block;
                 margin-left: auto;
             }
         }
         .card-title {
-            font-size: clamp(16px, 2vw, 18px);
-            flex: 1 1 auto;
+            font-size: clamp(18px, 2vw, 20px);
+            line-height: 1.4;
+            // flex: 1 1 auto;
             a {
-                color: var(--black);
+                color: var(--darkblack);
                 text-decoration: none;
                 display: block;
             }
+        }
+        .card-info {
+            margin-top: 15px;
+            font-size: clamp(14px, 2vw, 16px);
         }
         .post-meta {
             margin-top: 20px;
