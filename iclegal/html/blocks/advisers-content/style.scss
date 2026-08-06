@@ -1,0 +1,131 @@
+.advisers-content-section {
+    padding: 50px 0 100px;
+    @media (max-width: 1350px) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+    }
+    .advisers-content-block {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    .advisers-info-block {
+        .tagline {
+            padding: 5px 12px;
+            background: rgba(60, 172, 228, 0.15);
+            border: 1px solid rgba(60, 172, 228, 0.6);
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 12px;
+            color: #3CACE4;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        h1 {
+            font-size: clamp(32px, 4vw, 60px);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .designation {
+            font-weight: 500;
+            font-size: clamp(14px, 1.5vw, 16px);
+            color: #3CACE4;
+        }
+        .quote {
+            font-weight: 600;
+            font-size: clamp(16px, 1.5vw, 18px);
+            color: #000000;
+            margin: 20px 0 30px;
+            @media (max-width: 1200px) {
+                margin: 20px 0;
+            }
+        }
+        .sort-info {
+            border-top: 1px solid #E5E5E5;
+            padding-top: 30px;
+            font-weight: 400;
+            font-size: 16px;
+            color: #4C4C4C;
+            max-width: 630px;
+            @media (max-width: 1200px) {
+                padding-top: 20px;
+            }
+        }
+        .personal-info {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            @media (max-width: 1200px) {
+                margin-top: 30px;
+                gap: 20px;
+            }
+            .info {
+                font-weight: 500;
+                font-size: 14px;
+                color: #000000;
+                span {
+                    font-weight: 500;
+                    font-size: 11px;
+                    color: #4C4C4C;
+                    line-height: 1;
+                    margin-bottom: 10px;
+                    display: block;
+                }
+            }
+        }
+    }
+    .advisers-img-block {
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        border-radius: 10px;
+        max-width: 415px;
+        margin-left: auto;
+        padding: 30px;
+        @media (max-width: 1200px) {
+            padding: 20px;
+        }
+        @media (max-width: 767px) {
+            margin-bottom: 40px;
+            max-width: 100%;
+        }
+        .advisers-img {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            img {
+                width: 100%;
+            }
+        }
+        .personal-info {
+            .info {
+                font-weight: 500;
+                font-size: 14px;
+                color: #000000;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                text-align: right;
+                padding-bottom: 15px;
+                margin-top: 15px;
+                &:not(:last-child) {
+                    border-bottom: 1px solid #E5E5E5;
+                }
+                span {
+                    font-weight: 500;
+                    font-size: 11px;
+                    color: #4C4C4C;
+                    line-height: 1;
+                    display: block;
+                    text-align: left;
+                }
+            }
+        }  
+        .action {
+            margin-top: 20px;
+            .btn {
+                width: 100%;
+            }
+        } 
+    }
+}
