@@ -1,8 +1,22 @@
 .cta-section {
+    &.with-bg {
+        .cta-block {
+            background: #FFFFFF var(--bg-cta-img) no-repeat center center;
+            background-size: cover;
+            border: none;
+            .cta-info { 
+                h2 { 
+                    color: #FFFFFF;
+                }
+                .sort-info, .cta-content-bottom {                    
+                    color: rgba(#FFFFFF, 0.8);
+                }
+            }
+        }
+    }
     .cta-block {
-        background: #FFFFFF var(--bg-cta-img) no-repeat center center;
-        background-size: cover;
-        // border: 2px solid #3CACE4;
+        background: #FFFFFF;
+        border: 2px solid #3CACE4;
         border-radius: 14px;
         padding: 50px;
         .cta-info {
@@ -13,12 +27,11 @@
                 font-size: clamp(20px, 1.5vw, 24px);
                 margin-bottom: 10px;
                 font-weight: 700;
-                color: #FFFFFF;
             }
             .sort-info {
                 font-weight: 400;
                 font-size: 14px;
-                color: rgba(#FFFFFF, 0.8);
+                color: #4c4c4c;
             }
             .action-block {                
                 margin-top: 30px;
@@ -26,7 +39,7 @@
             .cta-content-bottom {
                 font-weight: 400;
                 font-size: 12px;
-                color: rgba(#FFFFFF, 0.8);    
+                color: #4c4c4c;    
                 margin-top: 20px;
             }
         }

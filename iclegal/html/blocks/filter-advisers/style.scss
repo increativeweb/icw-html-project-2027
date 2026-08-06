@@ -7,6 +7,8 @@
     }
 }
 .filter-advisers-block {
+    max-width: 1140px;
+    margin: 0 auto;
     .filter-lists {
         display: flex;
         align-items: center;
@@ -134,11 +136,10 @@
         .card-body {
             display: flex;
             align-self: flex-start;
-            justify-content: space-between;
             gap: 70px;
             flex: 1;
             @media (max-width: 1200px) {
-                gap: 30px;
+                gap: 50px;
             }
             @media (max-width: 767px) {
                 flex-wrap: wrap;
@@ -146,8 +147,10 @@
                 gap: 10px 50px;
             }
             .advisers-info {
+                max-width: 350px;
                 @media (max-width: 767px) {
                     flex-basis: 100%;
+                    max-width: 100%;
                 }
                 .name {
                     font-weight: 700;
