@@ -58,6 +58,11 @@
         <meta name="msvalidate.01" content="B2743B56DBB899FEFFBB7480B2E19BC9" />    
         <meta name="norton-safeweb-site-verification" content="m97w73rh4dk9e6wsy3bib41u1yex9l9i28dgvp11tg1ujbrr39rhcixq5y1h57p94pgtd4a6w36s7zq0mxegr-cpi2eq3lgwsliu54yiohf6elpr6ixso62nblqu4vq6" />
         <link rel='stylesheet' id='trustindex-feed-widget-css-instagram-css' href='https://iclegal.co.nz/wp-content/uploads/trustindex-feed-instagram-widget.css' media='all' />
+        <style>
+            body {                
+                font-family: 'Inter', sans-serif !important;
+            }
+        </style>
     </head>
     <body class="">
         <header class="main-header">
@@ -215,7 +220,7 @@
         <div class="bg-overly"></div>
         <main id="main-content" class="main-content-wrapper">
             <link rel='stylesheet' href='blocks/consultation-hero/style.css' media='all' />
-            <section class="main-section consultation-hero-section">
+            <section class="main-section consultation-hero-section bg-light">
                 <div class="container">
                     <div class="row align-items-end">
                         <div class="col-md-7">
@@ -249,8 +254,22 @@
                 </div>
             </section>
             <script src="blocks/consultation-hero/script.js"></script>  
+            <link rel='stylesheet' href='blocks/logo/style.css' media='all' />
+            <section class="main-section logo-section with-border">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <h2>Recognised & Accredited By</h2>
+                    </div>
+                    <div class="logo-block">
+                        <div class="logo-item"><img src="uploads/logo-immigration-advisers-authority.jpg" alt="Immigration Advisers Authority"></div>
+                        <div class="logo-item"><img src="uploads/logo-nz-law-society.jpg" alt="New Zealand Law Society"></div>
+                        <div class="logo-item"><img src="uploads/logo-mara.jpg" alt="Migration Agents Registration Authority"></div>
+                        <div class="logo-item"><img src="uploads/logo-rcic-irb.jpg" alt="RCIC-IRB"></div>
+                    </div>
+                </div>
+            </section>
             <link rel='stylesheet' href='blocks/filter-advisers/style.css' media='all' />
-            <section class="main-section filter-advisers-section">
+            <section class="main-section filter-advisers-section bg-light">
                 <div class="container">
                     <div class="section-title">
                         <div class="tagline">IAA Licensed | NZ Immigration Experts</div>
@@ -270,7 +289,6 @@
                                 <a href="#" class="filter-item">Spanish</a>
                                 <a href="#" class="filter-item">French</a>
                             </div>
-                            <a href="#" class="reset-filter">Clear filters</a>
                         </div>
                         <div class="filter-lists">
                             <span class="filter-label">Speciality:</span>
@@ -283,7 +301,7 @@
                                 <a href="#" class="filter-item">Appeals & Complex</a>
                                 <a href="#" class="filter-item">Canadian Immigration</a>
                             </div>
-                            <a href="#" class="reset-filter">Clear filters</a>
+                            <a href="#" class="reset-filter" style="display: none;">Clear Filters</a>
                             <div class="filter-count">06 / 06 showing</div>
                         </div>
                         <div class="filter-card-block">
@@ -445,12 +463,153 @@
                                     <a href="#" class="btn btn-primary btn-with-arrow" target="_self"><span class="icons"><img src="uploads/icon-calender.svg"></span>View Profile & Book <span class="icon-arrow"></span></a>
                                 </div>
                             </div>
+                            <div class="alert-no-data" style="display: none;">No advisers match those filters — try clearing one.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script src="blocks/filter-advisers/script.js"></script> 
+            <section class="main-section bg-white with-border">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title text-center">
+                                <h2 class="title">Why Our Team Stands Out?</h2>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 g-xl-5">
+                                <div class="col">
+                                    <div class="info-card xs-icon-left-card">
+                                        <div class="card-icon w-32">
+                                            <img src="uploads/icon-legally-trained-experts.svg" alt="Legally Trained Experts">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3><a href="#">Legally Trained Experts</a></h3>
+                                            <div class="card-info">Our team comprises highly qualified Immigration Lawyers and Advisers specialising exclusively in New Zealand immigration law.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="info-card xs-icon-left-card">
+                                        <div class="card-icon w-32">
+                                            <img src="uploads/icon-culturally-inclusive.svg" alt="Culturally Inclusive">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3><a href="#">Culturally Inclusive</a></h3>
+                                            <div class="card-info">We speak your language. Our diverse team ensures nothing is lost in translation during complex processes.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="info-card xs-icon-left-card">
+                                        <div class="card-icon w-32">
+                                            <img src="uploads/icon-proven-track-record.svg" alt="Proven Track Record">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3><a href="#">Proven Track Record</a></h3>
+                                            <div class="card-info">Over [X] successful visa cases since [year], including complex appeals and difficult visa situations.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section  class="main-section bg-light feedback-section" >          
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="section-title">
+                                <h2 class="title ">Feedback From Our Clients</h2>
+                                <div class="sort-info">
+                                    <p><strong>It’s not just good reviews either. Most of our clients come to us as referrals<br /> from our current or past clients. </strong></p>
+                                    <p>Get in touch to see why we are one of the most talked about<br />
+                                    immigration practices in NZ.</p>
+                                    <div class="review-users-block">
+                                        <div class="users-img">
+                                            <img src="uploads/img-review-user1.jpg" alt="Review User" title="Consultation (David Fisher) 5">
+                                            <img src="uploads/img-review-user2.jpg" alt="Review User" title="Consultation (David Fisher) 6">
+                                            <img src="uploads/img-review-user3.jpg" alt="Review User" title="Consultation (David Fisher) 7">
+                                        </div>
+                                        <p><strong>200+</strong> Customer Reviews</p>
+                                    </div>
+                                </div>            
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <script type='text/javascript' src='https://reputationhub.site/reputation/assets/review-widget.js'>
+                                <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span>
+                            </script>
+                            <div class="highlight-border-left"><iframe class="lc_reviews_widget" style="min-width: 100%; width: 100%;" src="https://reputationhub.site/reputation/widgets/review_widget/htjHkftF4oCfwNSZXMdv" frameborder="0" scrolling="no"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main-section bg-light pt-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title text-center">
+                                <div class="tagline">Why Us</div>
+                                <h2 class="title">Why Choose Immigration Chambers?</h2>
+                                <div class="sort-info">Here's why people choose Immigration Chambers as their trusted Immigration Lawyer and Immigration Adviser in New Zealand:</div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 g-xl-5">
+                                <div class="col">
+                                    <div class="info-card xs-icon-left-card with-bg">
+                                        <div class="card-icon w-32">
+                                            <img src="uploads/icon-legally-trained-experts.svg" alt="Legally Trained Experts">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3><a href="#">Legally Trained Experts</a></h3>
+                                            <div class="card-info">Our team comprises highly qualified Immigration Lawyers and Advisers specialising exclusively in New Zealand immigration law.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="info-card xs-icon-left-card with-bg">
+                                        <div class="card-icon w-32">
+                                            <img src="uploads/icon-culturally-inclusive.svg" alt="Culturally Inclusive">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3><a href="#">Culturally Inclusive</a></h3>
+                                            <div class="card-info">We speak your language. Our diverse team ensures nothing is lost in translation during complex processes.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="info-card xs-icon-left-card">
+                                        <div class="card-icon w-32">
+                                            <img src="uploads/icon-proven-track-record.svg" alt="Proven Track Record">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3><a href="#">Proven Track Record</a></h3>
+                                            <div class="card-info">Over [X] successful visa cases since [year], including complex appeals and difficult visa situations.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="info-card xs-icon-left-card">
+                                        <div class="card-icon w-32">
+                                            <img src="uploads/icon-proven-track-record.svg" alt="Proven Track Record">
+                                        </div>
+                                        <div class="card-content">
+                                            <h3><a href="#">Proven Track Record</a></h3>
+                                            <div class="card-info">Over [X] successful visa cases since [year], including complex appeals and difficult visa situations.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             <link rel='stylesheet' href='blocks/cta/style.css' media='all' />
-            <section class="main-section cta-section">
+            <section class="main-section cta-section bg-light pt-0">
                 <div class="container">
                     <div class="cta-block">
                         <div class="cta-info">
