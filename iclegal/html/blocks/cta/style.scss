@@ -32,6 +32,9 @@
             .cta-info { 
                 margin: 0;
                 text-align: left;
+                .action-block {                    
+                    justify-content: flex-start;
+                }
             }
         }
         .cta-info {
@@ -51,6 +54,7 @@
                 margin-top: 40px;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 gap: 20px;
                 .icon-content-item {
                     margin-bottom: 0;
