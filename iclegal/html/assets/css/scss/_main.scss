@@ -1652,7 +1652,7 @@ h4, .h4 {
 						}
 					}
 					& > ul.sub-menu {
-						grid-template-columns: 300px auto 250px;
+						grid-template-columns: 300px auto;
 						&::before {
 							background: $white;
 						}
@@ -1742,6 +1742,7 @@ h4, .h4 {
 								display: grid;
 								grid-gap: 0;
 								grid-template-columns: repeat(3, 1fr);
+								grid-template-rows: repeat(2, auto);
 
 								@media (min-width: 1201px) {
 									grid-gap: 10px;
@@ -1767,26 +1768,28 @@ h4, .h4 {
 								@include flex-direction(column);
 								height: 100%;
 								position: relative;
-								padding: 15px;
+								padding: 12px;
 								@include border-radius(6px);
 								@include transition(0.3s, ease-in-out);
 								background: #F9F9FF;
+        						border: 1px solid #E5E5E5;
 								@media (max-width: 1200px) {
 									background: #F9F9FF;
 								}
 								.card-img {
-									margin-bottom: 15px;
-									@media (max-width: 1200px) {
-										@include flexbox;
-										@include align-items(center);
-										margin-bottom: 10px;
+									@include flexbox;
+									@include align-items(center);
+									gap: 15px;
+									flex: 1 1 auto;
+									@media(max-width: 1400px) and (min-width: 1199px){
+										@include flex-direction(column);
+										@include align-items(flex-start);
 									}
 									img {			
-										width: 90px;
-										height: 90px;
+										width: 70px;
+										height: 70px;
 										flex: none;
-										@include border-radius(50%);
-										margin-bottom: 15px;
+										@include border-radius(6px);
 										@media (max-width: 1200px) {
 											width: 50px;
 											height: 50px;
@@ -1797,23 +1800,25 @@ h4, .h4 {
 									.user-info {
 										font-size: 13px;
 										font-weight: 500;
-										color: $black;
+										color: #4C4C4C;
 										line-height: 1.3;
 										@media (max-width: 1200px) {
 											font-size: 12px;
 										}
 										.name {
-											font-size: 18px;
-											font-weight: 500;
-											margin-bottom: 7px;
+											font-size: 16px;
+											font-weight: 600;
+											margin-bottom: 5px;
+											color: #1F4497;
 											@media (max-width: 1200px) {
 												font-size: 14px;
 												margin-bottom: 5px;
 											}
 											a {												
-												font-size: 18px;
+												font-size: 16px;
 												font-weight: 500;
 												position: unset;
+												color: #1F4497;
 												&::before {
 													content: none;
 												}
@@ -1856,13 +1861,13 @@ h4, .h4 {
 								.card-action {										
 									.btn-link {
 										color: $primary;
-										margin-top: 20px;
-										font-size: 16px;
+										margin-top: 15px;
+										font-size: 14px;
 										font-weight: 600;									
 										line-height: 1;
 										@media (min-width: 1200px) {
 											background: url(../images/icons/next.svg) no-repeat center right;
-											background-size: 6px;
+											background-size: 5px;
 											padding-right: 12px;
 											&:hover, &:focus {
 												padding-right: 15px;
@@ -1885,7 +1890,7 @@ h4, .h4 {
 										.user-info {
 											.name {
 												a {
-													color: $primary;
+													color: $black;
 												}
 											}
 										}

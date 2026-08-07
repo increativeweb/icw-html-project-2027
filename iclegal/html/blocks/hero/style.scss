@@ -44,7 +44,8 @@
             color: rgba(#ffffff, 0.9);
             max-width: 520px;
         }
-        .action-block {            
+        .action-block {     
+            align-self: flex-end;       
             .badge {
                 font-weight: 600;
                 font-size: 12px;

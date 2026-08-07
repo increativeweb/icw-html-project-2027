@@ -4,6 +4,10 @@
             background: #FFFFFF var(--bg-cta-img) no-repeat center center;
             background-size: cover;
             border: none;
+            padding-top: 200px;
+            @media (max-width: 992px) {
+                padding-top: 150px;
+            }
             .cta-info { 
                 h2 { 
                     color: #FFFFFF;
@@ -19,6 +23,9 @@
         border: 2px solid #3CACE4;
         border-radius: 14px;
         padding: 50px;
+        @media (max-width: 992px) {
+            padding: 30px;
+        }
         .cta-info {
             max-width: 600px;
             margin: 0 auto;
