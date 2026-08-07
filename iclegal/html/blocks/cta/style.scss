@@ -4,10 +4,6 @@
             background: #FFFFFF var(--bg-cta-img) no-repeat center center;
             background-size: cover;
             border: none;
-            padding-top: 200px;
-            @media (max-width: 992px) {
-                padding-top: 150px;
-            }
             .cta-info { 
                 h2 { 
                     color: #FFFFFF;
@@ -26,6 +22,18 @@
         @media (max-width: 992px) {
             padding: 30px;
         }
+        &.paid-consult-cta {
+            padding-top: 200px;
+            @media (max-width: 992px) {
+                padding-top: 150px;
+            }
+        }
+        &.text-left {
+            .cta-info { 
+                margin: 0;
+                text-align: left;
+            }
+        }
         .cta-info {
             max-width: 600px;
             margin: 0 auto;
@@ -33,7 +41,6 @@
             h2 {
                 font-size: clamp(20px, 1.5vw, 24px);
                 margin-bottom: 10px;
-                font-weight: 700;
             }
             .sort-info {
                 font-weight: 400;
@@ -41,7 +48,28 @@
                 color: #4c4c4c;
             }
             .action-block {                
-                margin-top: 30px;
+                margin-top: 40px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .icon-content-item {
+                    margin-bottom: 0;
+                    .card-details {
+                        .card-title {
+                            font-weight: 500;
+                            font-size: 11px;
+                            color: rgba(255, 255, 255, 0.9);
+                        }
+                        .info-dec {
+                            font-weight: 600;
+                            font-size: 14px;
+                            color: #FFFFFF;
+                            &:before {                            
+                                background: #ffffff;
+                            }
+                        }
+                    }
+                }
             } 
             .cta-content-bottom {
                 font-weight: 400;
