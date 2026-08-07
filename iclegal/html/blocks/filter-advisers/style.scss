@@ -33,6 +33,19 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
+            &::-webkit-scrollbar {
+                background-color: transparent;
+                width: 5px;
+                height: 5px;
+                border-radius: 16px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(#000000, 0.1);
+                border-radius: 16px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: #eeeeee;
+            }
             @media(max-width: 1200px) {
                 margin-bottom: 5px;
                 flex-wrap: nowrap;
