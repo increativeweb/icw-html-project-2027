@@ -90,10 +90,18 @@
         }
         .advisers-img {
             border-radius: 10px;
-            overflow: hidden;
             margin-bottom: 30px;
+            position: relative;
             img {
                 width: 100%;
+                border-radius: 10px;
+            }
+            .site-logo {
+                position: absolute;
+                width: 98px;
+                height: 98px;
+                right: -15px;
+                bottom: -10px;
             }
         }
         .personal-info {
@@ -118,6 +126,22 @@
                     line-height: 1;
                     display: block;
                     text-align: left;
+                }
+                &.live-consultation {
+                    justify-content: center;
+                    & > div {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-weight: 400;
+                    }
+                    .dot {
+                        width: 8px;
+                        height: 8px;
+                        background: #32B84B;
+                        display: inline-block;
+                        border-radius: 50%;
+                    }
                 }
             }
         }  

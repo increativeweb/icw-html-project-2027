@@ -376,9 +376,14 @@ img{
 	@include inline-flex;
 	@include align-items(center);
 	@include justify-content(center);
+	line-height: 1;
 	&.mw-200 {
 		max-width: 200px;
 		width: 100%;
+	}
+	&.btn-sm {
+		min-height: 40px;
+		padding: 5px 20px;
 	}
 	@media (max-width:767px) {
 		font-size: 14px;
