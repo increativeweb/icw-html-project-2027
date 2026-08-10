@@ -100,6 +100,12 @@ img {
 		padding-right: 20px; padding-left: 20px;
 	}
 }
+.row-gap { 
+	@media (min-width: 1200px) {
+		--bs-gutter-x: 60px; 
+	}
+}
+.g-20 { --bs-gutter-x: 20px; --bs-gutter-y: 20px; }
 
 .grecaptcha-badge {
 	right: -300px !important;
@@ -121,7 +127,7 @@ img {
 
 // Button & Button Link
 .btn {
-	min-height: 48px;
+	min-height: 44px;
 	padding: 5px 25px;
 	font-weight: 500;
 	font-size: 14px;
@@ -134,6 +140,9 @@ img {
 	&.mw-200 {
 		max-width: 200px;
 		width: 100%;
+	}
+	&.btn-lg {
+		min-height: 48px;
 	}
 	&.btn-sm {
 		min-height: 40px;
@@ -233,7 +242,8 @@ img {
 }
 .btn-link {
 	color: $primary;
-	font-weight: 500;
+	font-weight: 600;
+	font-size: 14px;
 	position: relative;
 	z-index: 3;
 	text-decoration: none;
@@ -276,9 +286,10 @@ img {
 			content: "";
 			display: block;
 			margin-left: 8px;
+			margin-top: 2px;
 			width: 16px;
 			height: 16px;
-			background: url(../images/icons/next.svg) no-repeat center;
+			background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.33203 8H12.6654" stroke="rgb(30, 67, 151)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="rgb(30, 67, 151)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
 			background-size: contain;
 			@include transition(0.3s, ease-in-out);
 		}
