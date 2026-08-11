@@ -259,6 +259,14 @@
 	.content-info {
 		margin-bottom: 30px;
 	}
+
+	&.section-title-center {
+		.section-title {
+			text-align: center;
+		}
+
+		}
+	}
 }
 
 .page-header {
