@@ -55,7 +55,12 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                @media (max-width: 575px) {          
+                    margin-top: 30px;
+                    flex-wrap: wrap;
+                }
                 gap: 20px;
+                
                 .icon-content-item {
                     margin-bottom: 0;
                     .card-details {
@@ -63,11 +68,14 @@
                             font-weight: 500;
                             font-size: 11px;
                             color: rgba(255, 255, 255, 0.9);
+                            line-height: 1;
+                            margin-bottom: 7px;
                         }
                         .info-dec {
                             font-weight: 600;
                             font-size: 14px;
                             color: #FFFFFF;
+                            line-height: 1;
                             &:before {                            
                                 background: #ffffff;
                             }

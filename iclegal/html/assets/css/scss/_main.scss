@@ -1498,7 +1498,7 @@ body.is-header-transparent {
 	position: relative;
 	height: 100%;
 	overflow: hidden;
-	@include flexbox();
+	@include flexbox;
 	@include flex-direction(column);
 
 	&:hover, &:focus {
@@ -1556,6 +1556,9 @@ body.is-header-transparent {
 			z-index: 5;
 			line-height: 1.1;
 			max-width: 160px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 			&:hover, &:focus {
 				background: rgba(60, 172, 228, 0.35);
 			}
@@ -1571,6 +1574,10 @@ body.is-header-transparent {
 		font-weight: 600;
 		font-size: 16px;
 		color: #000000;
+		flex: 1 1 auto;
+		@media(max-width: 992px) {
+			margin-bottom: 20px;
+		}
 		a {
 			@include transition(0.3s, ease-in-out);
 			color: #000000;
@@ -1590,7 +1597,6 @@ body.is-header-transparent {
 		}
 	}
 	.post-meta-block {
-		margin-top: auto;
 		@include flexbox();
 		@include align-items(center);
 		@include justify-content(space-between);
