@@ -997,6 +997,7 @@ body.is-header-transparent {
 	
 	&.icon-left-card {
 		@include flexbox();
+		@include flex-direction(row);
 
 		.card-icon {
 			margin-right: 20px;
