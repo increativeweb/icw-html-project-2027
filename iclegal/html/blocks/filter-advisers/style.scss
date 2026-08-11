@@ -1,0 +1,262 @@
+.filter-advisers-section {
+    .section-title {
+        margin: 0 auto 50px;
+        h2 {
+            font-size: clamp(24px, 4vw, 36px);
+        }
+    }
+}
+.filter-advisers-block {
+    max-width: 1140px;
+    margin: 0 auto;
+    .filter-lists {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 5px 3px;
+        // flex-wrap: wrap;
+        @media(max-width: 1200px) {
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        @media(max-width: 767px) {
+            gap: 10px;
+        }
+        .filter-label {
+            font-weight: 500;
+            font-size: 12px;
+            color: #4C4C4C;
+            margin-top: 6px;
+        }
+        .filter-list {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            &::-webkit-scrollbar {
+                background-color: transparent;
+                width: 5px;
+                height: 5px;
+                border-radius: 16px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(#000000, 0.1);
+                border-radius: 16px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: #eeeeee;
+            }
+            @media(max-width: 1200px) {
+                margin-bottom: 5px;
+                flex-wrap: nowrap;
+                overflow: hidden;
+                overflow-x: auto;
+                position: relative;
+                mask-image: linear-gradient(to right, transparent 0%, rgb(0, 0, 0) 5%, rgb(0, 0, 0) 95%, transparent 100%);
+            }
+            @media(max-width: 992px) {
+                gap: 5px;
+                width: calc(100% + 34px);
+                padding: 5px 20px;
+                margin: 0 -20px;
+            }
+            a {
+                padding: 5px 14px;
+                height: 30px;
+                background: #FFFFFF;
+                border: 1px solid #E5E5E5;
+                border-radius: 50px;
+                font-weight: 500;
+                font-size: 12px;
+                color: #000000;
+                display: inline-block;
+                transition: all 0.3s ease-in-out;
+                white-space: nowrap;
+                &:hover, &:focus {
+                    border-color: #000000;
+                }
+                &.active {
+                    background: #000000;
+                    border-color: #000000;
+                    color: #FFFFFF;
+                }
+            }
+        }        
+    }
+    .filter-reset-block {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .reset-filter {
+            padding: 5px 14px;
+            height: 30px;
+            background: #FFFFFF;
+            border: 1px dashed #e60000;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 12px;
+            color: #e60000;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
+            @media(max-width: 1200px) {
+                max-width: max-content;
+            }
+            &:hover, &:focus {
+                color: #ffffff;
+                background: #e60000;
+            }
+        }
+        .filter-count {
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: 11px;
+            color: #4C4C4C;
+            @media(max-width: 1200px) {
+                text-align: right;
+            }
+        }
+    }
+    .filter-card-block {
+        margin-top: 50px;
+        @media(max-width: 1200px) {
+            margin-top: 30px;
+        }
+    }
+    .advisers-card {
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        border-radius: 10px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+        @media (max-width: 1200px) {
+            padding: 20px; 
+            gap: 20px;  
+        }
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+        .advisers-info-block {
+            display: flex;
+            align-self: flex-start;
+            gap: 25px;
+            @media (max-width: 1200px) {
+                align-items: center;
+            }
+            .advisers-info {
+                max-width: 350px;
+                margin-right: 20px;
+                .info {
+                    margin-top: 15px;
+                    @media (max-width: 992px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .card-img {
+            border-radius: 6px;
+            overflow: hidden;
+            min-width: 80px;
+            max-width: 80px;
+            align-self: flex-start;
+            img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+            }
+        }
+        .advisers-info {
+            .name {
+                font-weight: 700;
+                font-size: clamp(20px, 1.5vw, 24px);
+                color: #1F4497;
+                margin-bottom: 5px;
+                line-height: 1;
+            }
+            .designation {
+                font-weight: 500;
+                font-size: 14px;
+                color: #3CACE4;
+            }
+            .info {
+                font-weight: 400;
+                font-size: 14px;
+                color: #4C4C4C;
+                max-width: 350px;
+                @media (max-width: 1200px) {
+                    max-width: 100%;
+                }
+                @media (max-width: 767px) {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+        .card-body {
+            display: flex;
+            align-self: flex-start;
+            gap: 25px;
+            flex: 1;
+            @media (max-width: 1200px) and (min-width: 992px) {
+                flex-wrap: wrap;
+            }
+            @media (max-width: 767px) {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 20px 25px;
+            }  
+            .advisers-info {
+                @media (min-width: 992px) {
+                    display: none;
+                }
+            }          
+            .personal-info {
+                .title {
+                    font-weight: 400;
+                    font-size: 12px;
+                    color: #4C4C4C;
+                    margin-bottom: 5px;
+                }
+                span {
+                    display: block;
+                    font-weight: 500;
+                    font-size: 12px;
+                    color: #000000;
+                    margin-bottom: 2px;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .card-action {
+            align-self: center;
+            @media (max-width: 992px) {
+                flex-basis: 100%;
+                margin-left: 0;
+                align-self: flex-start;
+            }
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+            .btn {
+                font-size: 14px;
+                white-space: nowrap;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .alert-no-data {
+        padding: 25px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 500;
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        border-radius: 10px;
+    }
+}
