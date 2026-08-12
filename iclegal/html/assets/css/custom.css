@@ -72,8 +72,8 @@
 }
 .pr-faq-section .collapse-item .collapse-title h3{
 	position:relative;
-	padding-left:30px;
-	color:#1E4397;
+	padding-left:20px;
+	color:#000000;
 }
 .pr-faq-section .collapse-item .collapse-title h3 span{
 	display:block;
@@ -81,7 +81,7 @@
 	left:0px;
 	top:0px;
 	font-weight: 500;
-    font-size: 24px;
+    font-size: 16px;
 	color:#1E4397;
 }
 .pr-faq-section .collapse-item .card-content{

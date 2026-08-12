@@ -1630,10 +1630,12 @@ body.is-header-transparent {
 	padding: 24px;
 	border: 1px solid #E5E5E5;
 	border-radius: 10px;
+	height: 100%;
 	@media (min-width:576px) {
 		display: -webkit-box !important;
 		display: -ms-flexbox !important;
 		display: flex !important;
+		gap: 20px;
 	}
 
 	@media (min-width:1440px) {
@@ -1669,8 +1671,6 @@ body.is-header-transparent {
 	.content-block {
 		width: 50%;
 		height: 100%;
-		padding: 20px 30px;
-
 		@media (max-width:575px) {
 			width: 100%;
 			padding: 20px;
@@ -1688,11 +1688,11 @@ body.is-header-transparent {
 	}
 
 	.sort-info {
-		margin-bottom: 40px;
+		// margin-bottom: 40px;
 
-		@media (max-width:1199px) {
-			margin-bottom: 20px;
-		}
+		// @media (max-width:1199px) {
+		// 	margin-bottom: 20px;
+		// }
 	}
 }
 
