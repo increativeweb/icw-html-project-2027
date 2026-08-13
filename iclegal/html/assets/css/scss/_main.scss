@@ -1528,6 +1528,9 @@ body.is-header-transparent {
     }
 	&.bg-blue {
 		.section-title {
+			@media (max-width: 992px) {
+				margin-bottom: 30px;
+			}
 			.title {
 				color: #fff;
 				font-size: clamp(24px, 3vw, 36px);
@@ -1541,6 +1544,9 @@ body.is-header-transparent {
 			@include align-items(center);
 			@include justify-content(flex-end);
 			@include flex-wrap(wrap);
+			@media (max-width: 992px) {
+				@include justify-content(flex-start);
+			}
 			gap: 20px;
 			.icon-content-item {
 				.card-details {
@@ -2005,33 +2011,44 @@ body.is-header-transparent {
 	}
 }
 
-.partners-section {
-	padding: 50px 0;
-	border-top: 1px solid #E5E5E5;
-	border-bottom: 1px solid #E5E5E5;
+.partners-section{
+	.col-md-6 {
+		.section-title {
+			@media (min-width: 992px) {
+				margin-bottom: 0;
+			}
+			.title {
+				font-size: clamp(24px, 3vw, 42px);
+			}
+		}
+	}
+	.col-12 {		
+		.logo-block {
+			@include justify-content(center);
+			@include align-items(center);
+		}
+	}
 	.section-title {
 		.title {
             font-size: 16px;
 		}
 	}
-	.logo-block {
-		@include flexbox;
+	.logo-block{
+		@include flexbox();
 		@include flex-wrap(wrap);
-		@include align-items(center);
-		@include justify-content(center);
-		gap: 50px;		
+		gap: 50px;
 		text-align: center;
+
 		&.logo-col-4 {
-			gap: 0px;
 			border-top: 1px solid #d8eaf7;
-    		border-left: 1px solid #d8eaf7;
-			.logo-item {
+			border-left: 1px solid #d8eaf7;
+			gap: 0;
+			.logo-item { 
 				width: 25%;
+				border-bottom: 1px solid #d8eaf7;
+				border-right: 1px solid #d8eaf7;
 				min-height: 150px;
 				padding: 20px 15px;
-				background-color: $white;
-				border-bottom: 1px solid #d8eaf7;
-    			border-right: 1px solid #d8eaf7;
 				@media (max-width:1440px) {
 					min-height: auto;
 				}
@@ -2040,18 +2057,78 @@ body.is-header-transparent {
 				}
 			}
 		}
-
 		.logo-item {
-			@include flexbox;
+			background-color: $white;
+			@include flexbox();
 			@include align-items(center);
-			@include justify-content(center);	
+			@include justify-content(center);
 			@media (max-width:575px) {
-				width: calc(50% - 25px);
+				width: 50%;
+			}
+			@media (max-width:460px) {
+				width: 50%;
 			}
 		}
 
 	}
 }
+
+// .partners-section {
+// 	padding: 50px 0;
+// 	border-top: 1px solid #E5E5E5;
+// 	border-bottom: 1px solid #E5E5E5;
+// 	.col-md-6 {
+// 		.section-title {
+// 			@media (min-width: 992px) {
+// 				margin-bottom: 0;
+// 			}
+// 			.title {
+// 				font-size: clamp(24px, 3vw, 42px);
+// 			}
+// 		}
+// 	}
+// 	.section-title {
+// 		.title {
+//             font-size: 16px;
+// 		}
+// 	}
+// 	.logo-block {
+// 		@include flexbox;
+// 		@include flex-wrap(wrap);
+// 		gap: 50px;		
+// 		text-align: center;
+// 		&.logo-col-4 {
+// 			gap: 0px;
+// 			border-top: 1px solid #d8eaf7;
+//     		border-left: 1px solid #d8eaf7;
+// 			.logo-item {
+// 				width: 25%;
+// 				min-height: 150px;
+// 				padding: 20px 15px;
+// 				background-color: $white;
+// 				border-bottom: 1px solid #d8eaf7;
+//     			border-right: 1px solid #d8eaf7;
+// 				height: 100%;
+// 				@media (max-width:1440px) {
+// 					min-height: auto;
+// 				}
+// 				@media (max-width:575px) {
+// 					width: 50%;
+// 				}
+// 			}
+// 		}
+
+// 		.logo-item {
+// 			@include flexbox;
+// 			@include align-items(center);
+// 			@include justify-content(center);	
+// 			@media (max-width:575px) {
+// 				width: calc(50% - 25px);
+// 			}
+// 		}
+
+// 	}
+// }
 
 .collapse-block {
 	counter-reset: list;
@@ -2717,7 +2794,22 @@ body.is-header-transparent {
 	}
 	.post-meta {
 		@include flexbox();
-		@include align-items(center);		
+		@include align-items(center);
+		.post-avatar {
+			flex: none;
+		}
+		img {
+			width: 40px;
+			height: 40px;
+			object-fit: cover;
+			margin: 0px;
+			-webkit-box-flex: 0;
+			-ms-flex: none;
+			flex: none;
+			@include border-radius(100%);
+			background: #fff;
+			margin-right: 10px;
+		}
 	}
 	.post-data {
 		.post-user-name {
@@ -2725,6 +2817,16 @@ body.is-header-transparent {
 			font-size: 11px;
 			color: rgba(0, 0, 0, 0.6);
 			margin-bottom: 0;
+			@media (max-width:767px) {
+				font-size: 12px;
+			}
+		}
+		.post-date {
+			font-weight: 400;
+			font-size: 11px;
+			color: #69757A;
+			display: block;
+			margin: 0px;
 		}
 	}
 }
