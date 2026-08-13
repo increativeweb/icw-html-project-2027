@@ -233,6 +233,27 @@ img {
 			}
 		}
 	}
+	&.btn-outline-primary {
+		color: $primary !important;
+		border: 1px solid $primary;
+		background-color: $white;
+
+		.icons {
+			filter: unset;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #193471;
+			color: $white !important;
+			border: 1px solid #193471;
+
+			.icons {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
 
 	&.btn-secondary {
 		color: $black !important;

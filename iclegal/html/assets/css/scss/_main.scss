@@ -1518,7 +1518,23 @@ body.is-header-transparent {
                 .sort-info, .cta-content-bottom {                    
                     color: rgba(#FFFFFF, 0.8);
                 }
+				.icon-content-item {					
+					.card-details {					
+						.card-title {
+							color: rgba(255, 255, 255, 0.9);
+						}
+						.info-dec {
+							color: #FFFFFF;
+							&:before {                            
+								background: #ffffff;
+							}
+						}
+					}
+				}
             }
+			.content-code {
+				margin-top: 50px;
+			}
         }
     }
 	&.bg-blue {
@@ -1607,11 +1623,11 @@ body.is-header-transparent {
 			display: flex;
 			align-items: center;
 			justify-content: flex-start;
+			gap: 20px;
 			@media (max-width: 575px) {          
 				margin-top: 30px;
 				flex-wrap: wrap;
 			}
-			gap: 20px;
 			
 			.icon-content-item {
 				margin-bottom: 0;
@@ -1619,18 +1635,31 @@ body.is-header-transparent {
 					.card-title {
 						font-weight: 500;
 						font-size: 11px;
-						color: rgba(255, 255, 255, 0.9);
+						color: #000;
 						line-height: 1;
 						margin-bottom: 7px;
 					}
 					.info-dec {
 						font-weight: 600;
 						font-size: 14px;
-						color: #FFFFFF;
+						color: #000;
 						line-height: 1;
 						&:before {                            
-							background: #ffffff;
+							background: #000;
 						}
+					}
+				}
+				&:hover,
+				&:focus {
+					.info-dec {
+						color: $primary;
+						&:before {
+							background: $primary;
+						}
+					}
+
+					.icon-with-bg {
+						background-color: $primary;
 					}
 				}
 			}
@@ -1641,6 +1670,9 @@ body.is-header-transparent {
 			color: #4c4c4c;    
 			margin-top: 20px;
 		}
+	}
+	.content-code {
+		margin-top: 20px;
 	}
 }
 
@@ -2148,6 +2180,13 @@ body.is-header-transparent {
 			}
 		}
 	}
+	&:hover, &:focus {
+		.collapse-title {
+			h3 {
+				color: $primary;
+			}
+		}
+	}
 	.collapse-title {
 		@include flexbox();
 		text-align: left;
@@ -2176,6 +2215,7 @@ body.is-header-transparent {
 			font-weight: 500;
 			margin-bottom: 0;
 			line-height: 1.4;
+			transition: all 0.3s, ease-in-out;
 		}
 	}
 
