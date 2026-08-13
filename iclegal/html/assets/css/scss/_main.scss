@@ -500,15 +500,28 @@ body.is-header-transparent {
 					.card-title {
 						font-weight: 500;
 						font-size: 11px;
-						color: rgba(255, 255, 255, 0.9);
+						color: #000;
 					}
 					.info-dec {
 						font-weight: 600;
 						font-size: 14px;
-						color: #FFFFFF;
+						color: #000;
 						&:before {                            
-							background: #ffffff;
+							background: #000;
 						}
+					}
+				}
+				&:hover,
+				&:focus {
+					.info-dec {
+						color: $primary;
+						&:before {
+							background: $primary;
+						}
+					}
+
+					.icon-with-bg {
+						background-color: $primary;
 					}
 				}
 			}
@@ -568,26 +581,24 @@ body.is-header-transparent {
 				.sort-info, p {					
 					color: rgba(#ffffff, 0.9);
 				}
-			}
-		}
-
-		.icon-content-item {
-
-			&:hover,
-			&:focus {
-				.info-dec {
-					color: $white;
-				}
-
-				.icon-with-bg {
-					background-color: $primary;
-
-				}
-			}
-
-			.info-dec {
-				&:before {
-					background: $primary;
+				.icon-content-item {
+					.card-details {
+						.card-title {
+							color: rgba(255, 255, 255, 0.9);
+						}
+						.info-dec {
+							color: $white;
+						}
+					}
+					&:hover,
+					&:focus {
+						.info-dec {
+							color: $white;
+							&:before {
+								background: $white;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1515,6 +1526,37 @@ body.is-header-transparent {
             }
         }
     }
+	&.bg-blue {
+		.section-title {
+			.title {
+				color: #fff;
+				font-size: clamp(24px, 3vw, 36px);
+			}
+			.sort-info {
+				color: rgba(#FFFFFF, 0.8);
+			}
+		}
+		.call-btn-block {
+			@include flexbox;
+			@include align-items(center);
+			@include justify-content(flex-end);
+			@include flex-wrap(wrap);
+			gap: 20px;
+			.icon-content-item {
+				.card-details {
+					.card-title {
+						color: rgba(#ffffff, 0.9);
+					}
+					.info-dec {
+						color: $white;
+						&::before {
+							background: $white;
+						}
+					}
+				}
+			}
+		}
+	}
 	.cta-block {
 		background: #FFFFFF;
         border: 2px solid #3CACE4;
