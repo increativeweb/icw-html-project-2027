@@ -1,11 +1,6 @@
 .main-content-wrapper {
 	flex: 1 1 auto;
-	padding-top: 100px;
-
-	@media (max-width:1366px) {
-		padding-top: 80px;
-	}
-
+	padding-top: 80px;
 	@media (max-width:1199px) {
 		padding-top: 68px;
 	}
