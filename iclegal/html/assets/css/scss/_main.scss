@@ -1706,6 +1706,9 @@ body.is-header-transparent {
 	border: 1px solid #E5E5E5 !important;
 	border-radius: 10px;
 	height: 100%;
+	@include flex-direction(row);
+	display: flex !important;
+	gap: 15px;
 	@media (min-width:576px) {
 		display: -webkit-box !important;
 		display: -ms-flexbox !important;
@@ -1715,7 +1718,7 @@ body.is-header-transparent {
 	}
 
 	@media (min-width:1440px) {
-		@include align-items(center);
+		// @include align-items(center);
 	}
 
 	&:hover,
@@ -1730,13 +1733,16 @@ body.is-header-transparent {
 
 	.helper-img {
 		overflow: hidden;
+		min-width: 32px;
 		@media (max-width:575px) {
-			width: 100%;
+			// width: 100%;
 		}
 
 		img {
 			height: 32px;
-			width: auto;
+			width: 32px;
+			min-width: 32px;
+			flex: none;
 			object-fit: cover;
 			@include transition(0.3s, ease-in-out);
 		}
