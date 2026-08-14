@@ -58,14 +58,14 @@
 }
 
 .pr-custom-section .helper-item-block .helper-item .helper-img {
-    width: 10%;
+    /* width: 10%; */
 }
 .pr-custom-section .helper-item-block .helper-item .content-block{
-	width:90%;
+	/* width:90%; */
 }
 .pr-custom-section .helper-item-block .helper-item .helper-img img{
-	height: auto;
-    object-fit: unset;
+	/* height: auto;
+    object-fit: unset; */
 }
 .pr-faq-section .collapse-item .collapse-title::before{
 	display:none;
@@ -92,7 +92,7 @@
 }
 .pr-cardinfogrid-section .helper-item-block .helper-item .content-block{
 	width:100%;
-	padding:30px 30px 20px;
+	/* padding:30px 30px 20px; */
 }
 .row.display-flex {
   display: flex;
@@ -115,6 +115,10 @@
    background-color: #ffffff;
     height: 100%;
 	position:relative;
+	border-radius: 0 0 10px 10px;
+}
+.box .helper-item {
+	border-radius: 0 0 10px 10px;
 }
 .box:before{
 	z-index:1;
