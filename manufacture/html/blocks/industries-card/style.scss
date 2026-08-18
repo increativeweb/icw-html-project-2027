@@ -11,12 +11,26 @@
         .industries-card {
             .card-body {
                 .card-title {
+                    color: var(--white)
                     a {
                         color: var(--white)
                     }
                 }
                 .card-info {
                     color: var(--white);
+                }
+            }
+            &:hover,
+            &:focus,
+            &:has(a):hover,
+            &:has(a):focus {
+                .card-body {
+                    .card-title {
+                        color: rgba(#ffffff, 0.8);
+                        a {
+                            color: rgba(#ffffff, 0.8);
+                        }
+                    }
                 }
             }
         }
@@ -37,11 +51,8 @@
             @include flex-direction(column);
             .card-title {
                 font-size: clamp(18px, 2vw, 20px);
-                margin-bottom: 15px;
-                @include transition(0.2s, ease-in-out);
-                @media (max-width: 1200px) {
-                    margin-bottom: 10px;
-                }
+                line-height: 1.4;
+                margin-bottom: 5px;
                 a {
                     color: var(--black);
                     text-decoration: none;
@@ -49,18 +60,23 @@
                 }
             }
             .card-info {
-                color: var(--dark-slate-grey);
+                color: var(--dark-slate-gray);
                 font-size: clamp(14px, 1.5vw, 16px);
                 flex: 1 1 auto;
+                display: -webkit-box;
+                overflow : hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical; 
             }
             .card-action {
                 margin-top: 15px;
                 .btn {
                     font-size: clamp(14px, 1.5vw, 16px);
                     padding-bottom: 5px;
-                    .icon-arrow {
-                        width: 16px;
-                        height: 12px;
+                    &.btn-link-arrow .icon-arrow {
+                        width: 11px;
+                        height: 9px;
                     }
                 }
             }
@@ -74,9 +90,9 @@
             }
             .card-body {
                 .card-title {
-                    color: rgba(#ffffff, 0.8);
+                    color: var(--primary);
                     a {
-                        color: rgba(#ffffff, 0.8);
+                        color: var(--primary);
                     }
                 }
             }

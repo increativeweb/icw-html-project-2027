@@ -16,6 +16,9 @@
         @include flex-direction(column);
         height: 100%;
         background: var(--white);
+        @include box-shadow(17px 17px 200px rgba(64, 69, 79, 0.05));
+        @include border-radius(12px);
+        padding: 32px;
         .card-icon {
             // background: rgba(#ed0400, 0.1);
             // width: 45px;
@@ -31,20 +34,27 @@
         }
         .card-body {
             .card-title {
-                font-size: clamp(16px, 1.5vw, 18px);
-                margin-bottom: 3px;
-                color: var(--dark-slate-grey);
+                font-size: clamp(18px, 1.5vw, 24px);
+                margin-bottom: 10px;
+                color: var(--darkblack);
                 line-height: 1.5;
             }
             .card-info {
-                color: var(--darkblack);
+                color: var(--dark-slate-gray);
                 font-size: clamp(16px, 1.5vw, 18px);
-                max-width: 320px;
             }
         }
-        &.no-border {
+        &.no-bg {
             padding: 0;
             border: none;
+            background: none;
+            @include box-shadow(none);
+            .card-body {
+                .card-title {
+                    font-size: clamp(16px, 1.5vw, 18px);
+                    margin-bottom: 3px;
+                }
+            }
         }
         &.is-image {
             padding: 0;

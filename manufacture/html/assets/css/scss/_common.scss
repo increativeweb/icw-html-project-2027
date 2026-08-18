@@ -38,7 +38,7 @@ section {
 body {
     margin: 0;
     background-color: var(--white);
-    color: var(--dark-slate-grey);
+    color: var(--dark-slate-gray);
     font-family: 'Manrope', sans-serif;
     font-size: clamp(16px, 1.5vw, 18px);
     font-weight: 400;
@@ -254,6 +254,9 @@ h5,
 .bg-gray {
     background-color: #f1f3f6 !important;
 }
+.bg-light-gradient {
+    background-image: linear-gradient(347deg, #ffebeb, #fbf5fd);
+}
 .bg-gradient {
     background-image: radial-gradient(circle at 70%, #3d1369, #281938 26%, #000 89%) !important;
     & > * {
@@ -356,8 +359,8 @@ h5,
             @include justify-content(center);
             @include transition(0.3s, ease-in-out);
             svg {
-                width: 52px;
-                height: 52px;
+                width: 60px;
+                height: 60px;
                 flex: none;
                 @include border-radius(50%);
                 @include transition(0.2s, ease-in-out);
@@ -366,14 +369,14 @@ h5,
             }
             &::after {
                 content: '';
-                top: 0;
-                left: 0;
-                @include border-radius(0px);
+                top: 15px;
+                left: 15px;
+                @include border-radius(10px);
                 opacity: 0.2;
                 background: var(--black);
                 position: absolute;
-                width: 100%;
-                height: 100%;
+                width: calc(100% - 30px);
+                height: calc(100% - 30px);
             }
             &.d-none {
                 &::after {

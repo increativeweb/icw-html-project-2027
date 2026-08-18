@@ -11,7 +11,7 @@
     }
     &[class^="bg-"],
     &[class*=" bg-"] {
-        padding: 140px 0;
+        padding: 120px 0;
         @media (max-width: 992px) {
             padding: 80px 0;
         }
@@ -201,37 +201,26 @@
 
 // Page Header
 .page-header {
-    padding: 50px 0;
-    @media (max-width: 767px) {
-        padding: 15px 0 50px;
+    padding: 100px 0;
+    background-image: linear-gradient(90deg, #fbf5fd, #fdf4f4);
+    text-align: center;
+    @media (max-width: 992px) {
+        padding: 50px 0;
     }
     .section-title {
-        @include flexbox;
-        @include align-items(flex-end);
-        @include justify-content(space-between);
-        gap: 90px;
-        @media (max-width: 1400px) {
-            gap: 50px;
-        }
-        @media (max-width: 992px) {
-            gap: 30px;
-        }
-        @media (max-width: 767px) {
-            gap: 10px;
-            @include flex-direction(column);
-            @include align-items(flex-start);
-            margin-top: 30px;
-            margin-bottom: 0;
-        }
+        max-width: 650px;
+        margin: 0 auto;
         .title {
-            font-size: clamp(30px, 5vw, 54px);
+            font-size: clamp(32px, 5vw, 60px);
         }
         .sort-info {
-            font-size: clamp(16px, 2vw, 18px);
+            font-size: clamp(18px, 2vw, 22px);
+            color: rgb(64, 69, 79);
         }
         .action {
             margin-top: 30px;
             gap: 30px;
+            @include justify-content(center);
             @media (max-width: 992px) {
                 margin-top: 20px;
                 gap: 15px;

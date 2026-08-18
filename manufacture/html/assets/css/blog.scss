@@ -68,6 +68,11 @@
         .card-info {
             margin-top: 15px;
             font-size: clamp(14px, 2vw, 16px);
+            display: -webkit-box;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
         }
         .post-meta {
             margin-top: 20px;
