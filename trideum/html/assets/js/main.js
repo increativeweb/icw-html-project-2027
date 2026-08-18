@@ -14,20 +14,40 @@ jQuery(document).ready(function ($) {
         });   
     }
     if ($('li.menu-item-has-children').length) {
-        if ($(window).width() <= 992) {
-            $('li.menu-item-has-children > a').after('<i class="arrow"></i>');
-        }
-        $('li.menu-item-has-children').on('click', function () { 
+        $('li.menu-item-has-children').on('click', function (e) { 
             if ($(window).width() <= 992) return;
-            $(this).toggleClass('is-visible');
-            $('.bg-overlay').toggleClass('is-visible');
+            e.stopPropagation();
+            const $this = $(this);
+            const isOpen = $this.hasClass('is-visible');
+            $('li.menu-item-has-children').not($this).removeClass('is-visible');
+            $this.toggleClass('is-visible', !isOpen);
+            $('.bg-overlay').toggleClass('is-visible', $('li.menu-item-has-children.is-visible').length > 0);
         });
     }
+    function updateMenuArrows() {
+        if ($(window).width() <= 992) {
+            $('li.menu-item-has-children > a').each(function () {
+                if (!$(this).next('.arrow').length) {
+                    $(this).after('<i class="arrow"></i>');
+                }
+            });
+        } else {
+            $('li.menu-item-has-children > a').next('.arrow').remove();
+        }
+    }
+    updateMenuArrows();
+    $(window).on('resize', function () {
+        updateMenuArrows();
+        if ($(window).width() >= 992) {
+            $('.main-header, .navbar-toggler, .bg-overlay').removeClass('is-visible');
+            $('body').removeClass('overflow-hidden');
+        }
+    });
     $('.menu-item-has-children .arrow').on('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         const $li = $(this).closest('.menu-item-has-children');
-        const $submenu = $li.children('.sub-menu, .mega-sub-menu').first();
+        const $submenu = $li.children('.sub-menu');
         $($li).toggleClass('is-active');
         $(this).toggleClass('is-active');
         $submenu.stop(true, true).slideToggle(300);
