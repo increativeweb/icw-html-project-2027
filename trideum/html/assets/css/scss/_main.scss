@@ -1,4 +1,10 @@
 .bg-home {
-    background: url(../../uploads/mega-menu-004.jpg) no-repeat top center;
+    background: url(../../uploads/mega-menu-004.jpg) no-repeat bottom center;
     background-size: 100%;
+}
+.main-content-wrapper {
+    min-height: 100vh;
+}
+.theme-section {
+    padding: 100px 0;
 }
