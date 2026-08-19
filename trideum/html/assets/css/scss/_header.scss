@@ -4,6 +4,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 10;
     @media (max-width: 992px) {
         &.is-visible  {
             .navbar {
@@ -158,21 +159,40 @@
                         }
                         li {
                             &:not(:last-child) {
-                                margin-bottom: 0.125;
+                                margin-bottom: 0.25rem;
                             }
                             a {
-                                padding: 0.625rem;
-                                display: block;
+                                padding: 0.75rem;
+                                @include flexbox;
+                                @include align-items(flex-start);
                                 color: var(--white);
                                 text-decoration: none;
                                 @include transition(0.1s, ease-in-out);
                                 font-size: clamp(1rem, 2vw, 1.125rem);
-                                line-height: 1.2;
+                                line-height: 1;
                                 &:hover, &:focus {
                                     background: rgba(43, 59, 75, 0.7);
                                 }
                                 @media (max-width: 992px) {
-                                    padding: 1.25rem;  
+                                    padding: 0.875rem 1.25rem;  
+                                    &::before {
+                                        content: '';    
+                                        width: 0;
+                                        height: clamp(0.875rem, 1.4vw, 1.25rem);
+                                        display: inline-block;
+                                        margin-top: 0.063rem;
+                                        margin-right: 0;
+                                        background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 10L0 0V5.26316L9.47368 10L0 14.7368V20L20 10Z" fill="rgb(237, 94, 33)"/></svg>') no-repeat center center;
+                                        background-size: contain;
+                                        @include transition(0.1s, ease-in-out);                                        
+                                    }
+                                    &:hover, &:focus {
+                                        color: var(--orange);
+                                        &::before {
+                                            width: clamp(0.875rem, 1.4vw, 1.25rem);
+                                            margin-right: 0.5rem;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -321,13 +341,13 @@
                                     }
                                     .sub-menu {
                                         @media (max-width: 992px) {
-                                            padding: 0.313rem 1.125rem;                                            
+                                            padding: 0 1.125rem;                                            
                                             display: none;
                                         }
                                         & > li {
                                             margin: 0.625rem -1.25rem 0.625rem;
                                             @media (max-width: 992px) {
-                                                margin: 0.313rem  -1.25rem;
+                                                margin: 0  -1.25rem;
                                             } 
                                             &:last-child {
                                                 margin-bottom: 0;
@@ -337,6 +357,9 @@
                                                 padding: 0.938rem 1.25rem;
                                                 display: block;
                                                 @include transition(0.1s, ease-in-out);
+                                                @media (max-width: 992px) {
+                                                    padding: 0.75rem 1.25rem;
+                                                }
                                                 .menu-title {
                                                     font-size: clamp(1.125rem, 1.4vw, 1.625rem); 
                                                     font-weight: 700;
@@ -346,6 +369,11 @@
                                                     @include transition(0.1s, ease-in-out);
                                                     @media (max-width: 992px) {
                                                         color: var(--white);
+                                                        margin-bottom: 0;
+                                                        font-weight: 400;
+                                                        font-size: clamp(1rem, 2vw, 1.125rem);
+                                                        @include flexbox;
+                                                        @include align-items(flex-start);
                                                     }
                                                     &::before {
                                                         content: '';
@@ -355,8 +383,11 @@
                                                         margin-right: 0.625rem;
                                                         background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 10L0 0V5.26316L9.47368 10L0 14.7368V20L20 10Z" fill="rgb(237, 94, 33)"/></svg>') no-repeat center center;
                                                         background-size: contain;
+                                                        @include transition(0.1s, ease-in-out);
                                                         @media (max-width: 992px) {
-                                                            margin-right: 0.5rem;
+                                                            margin-top: 0.188rem;
+                                                            margin-right: 0;
+                                                            width: 0;
                                                         }
                                                     }
                                                 }
@@ -367,6 +398,7 @@
                                                     @media (max-width: 992px) {
                                                         color: var(--white);
                                                         font-size: clamp(0.875rem, 1.4vw, 1.375rem);
+                                                        display: none;
                                                     }
                                                     ul {
                                                         margin-left: clamp(1.5rem, 2vw, 1.875rem);
@@ -399,6 +431,10 @@
                                                     }
                                                     .menu-title {
                                                         color: var(--orange);
+                                                        &::before {
+                                                            width: clamp(0.875rem, 1.4vw, 1.25rem);
+                                                            margin-right: 0.5rem;
+                                                        }
                                                     }
                                                 }
                                             }
