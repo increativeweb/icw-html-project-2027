@@ -61,4 +61,14 @@ jQuery(document).ready(function ($) {
             $('li.menu-item-has-children').removeClass('is-visible');
         }
     });
+    const $logoBlock = $('.site-logo-block');
+    if ($logoBlock.length) {
+        $(window).on('scroll', function () {
+            const logoBlockTop = $logoBlock.offset().top;
+            const windowBottom = $(window).scrollTop() + $(window).height();
+
+            // Toggle class based on footer visibility
+            $logoBlock.toggleClass('is-animate', windowBottom >= logoBlockTop);
+        });
+    }
 });
