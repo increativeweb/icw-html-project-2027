@@ -22,6 +22,7 @@ jQuery(document).ready(function ($) {
             $('li.menu-item-has-children').not($this).removeClass('is-visible');
             $this.toggleClass('is-visible', !isOpen);
             $('.bg-overlay').toggleClass('is-visible', $('li.menu-item-has-children.is-visible').length > 0);
+            $('body').toggleClass('overflow-hidden', $('li.menu-item-has-children.is-visible').length > 0);
         });
     }
     function updateMenuArrows() {
