@@ -39,6 +39,7 @@
 
     @media (max-width: 767px) {
         align-items: end;
+        min-height: 80vh;
         background: linear-gradient(0deg, white 40%, transparent);
         .media-bg-block {
             img {
