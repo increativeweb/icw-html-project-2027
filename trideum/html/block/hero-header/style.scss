@@ -1,0 +1,149 @@
+﻿.hero-section {
+    display: flex;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding-top: clamp(3.125rem, 7.5vw, 6.25rem);
+    padding-bottom: clamp(3.125rem, 7.5vw, 6.25rem);
+
+    .media-bg-block {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        top: 0; // 120px
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        img,
+        video {
+            // display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .media-bg-block {
+            img {
+                object-position: center;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        align-items: end;
+        background: linear-gradient(0deg, white 40%, transparent);
+        .media-bg-block {
+            img {
+                object-position: center;
+            }
+        }
+    }
+
+    .tagline {
+        // width: 100%;
+        // max-width: 34rem;
+
+
+
+        @media (max-width: 991px) {
+            max-width: 28rem; //448px
+        }
+
+        @media (max-width: 767px) {
+            max-width: 22rem; //352px
+        }
+
+        @media (max-width: 575px) {
+            max-width: 18rem; //288px
+        }
+    }
+
+    .hero-content {
+        .page-title {
+            h1 {
+                padding-top: clamp(1.5rem, 3.5vw, 2.813rem); // 24px → 45px
+                padding-bottom: clamp(1.5rem, 3.5vw, 2.813rem); // 24px → 45px
+            }
+        }
+    }
+}
+
+// page-header scss
+.page-header {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: var(--px-100);
+    padding-bottom: var(--px-100);
+
+    @media (max-width: 992px) {
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 3.125rem;
+        padding-bottom: 3.125rem;
+    }
+
+    &.with-bg-vector {
+        background-image: url("../../assets/images/triangle-vector.png");
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: 80% 25rem;
+
+        @media (max-width: 1200px) {
+            background-size: 60% 20rem;
+        }
+
+        @media (max-width: 768px) {
+            background-size: 80% 12rem;
+        }
+
+        @media (max-width: 600px) {
+            background-size: 80% 10rem;
+        }
+    }
+
+    .section-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .is-image-content {
+        padding: clamp(2.5rem, 5vw, 4.375rem);
+
+        @media (max-width: 1687px) {
+            padding: 1.125rem;
+        }
+
+        @media (max-width: 1440px) {
+            padding: 0.125rem;
+        }
+
+        @media (max-width: 991px) {
+            padding: 1rem;
+        }
+    }
+
+    // .media-block {
+    //     width: 100%;
+
+    //     img {
+    //         width: 100%;
+    //         height: auto;
+    //         object-fit: cover;
+    //         display: block;
+    //     }
+    // }
+    
+}

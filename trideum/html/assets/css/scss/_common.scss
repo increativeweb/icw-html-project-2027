@@ -144,8 +144,7 @@ ul.square-list {
         font-weight: 500;
         padding-left: 1.875rem;
         position: relative;
-        &:not(:last-child) {            
-            margin-bottom: 0.5rem;
+        &:not(:last-child) {       
         }
         &::before {
             content: '';
@@ -156,6 +155,59 @@ ul.square-list {
             position: absolute;
             top: 0.438rem;
             left: 0;
+        }
+    }
+}
+// common list css
+.check-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        padding-bottom: clamp(1.5rem, 3.5vw, 2.75rem); // 24px → 44px
+        cursor: default;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        color: inherit;
+
+        &:hover {
+            color: var(--orange);
+
+            .check-item {
+                transform: translateX(0.25rem); // 4px
+
+                &::before {
+                    transform: translateX(0.25rem); // 4px
+                }
+            }
+        }
+    }
+
+    .check-item {
+        display: flex;
+        align-items: center;
+        font-size: clamp(1.125rem, 3vw, 1.375rem); // 18px → 22px
+        font-weight: 700;
+        transition: transform 0.3s ease, color 0.3s ease;
+
+        &::before {
+            content: "";
+            flex: 0 0 1.25rem;
+            width: 1.25rem;
+            height: clamp(0.875rem, 1.4vw, 1.25rem);
+            margin-right: 0.5rem;
+            background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10L0 0V5.26316L9.47368 10L0 14.7368V20L20 10Z' fill='%23ED5E21'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+            transition: transform 0.3s ease;
         }
     }
 }
