@@ -256,3 +256,13 @@ h6,
     font-weight: 500;
     margin-bottom: 1rem;
 }
+
+// bg-color
+.bg-gray {
+    background-color: var(--light-gray);
+}
+
+.dark-blue-bg {
+    background-color: var(--gray);
+    color: var(--white);
+}
