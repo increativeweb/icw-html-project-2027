@@ -103,12 +103,12 @@
                 height: auto;
             }
 
-            &>li {
+            & >  li {
                 @media (min-width: 992px) {
                     height: 100%;
                 }
 
-                &>a {
+                & > a {
                     font-weight: 500;
                     color: var(--white);
                     text-decoration: none;
@@ -196,7 +196,7 @@
                             @include box-shadow(-0.625rem 0.625rem 1.25rem 0 rgba(0, 0, 0, 0.2));
                             opacity: 0;
                             visibility: hidden;
-                            background: var(--black);
+                            background: var(--gray);
                             @include transform(translateY(0.313rem));
                             @include transition(0.1s, ease-in-out);
                             padding: 0.625rem;
@@ -224,7 +224,7 @@
                                 &:hover,
                                 &:focus,
                                 &:focus-within {
-                                    background: rgba(43, 59, 75, 0.7);
+                                    background: rgba(#ffffff, 0.05);
                                 }
 
                                 @media (max-width: 992px) {

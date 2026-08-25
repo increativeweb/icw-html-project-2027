@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" media="all" />
         <!-- <link rel="stylesheet" href="assets/css/splide.css" media="all" />
         <link rel="stylesheet" href="assets/css/glightbox.css" media="all" /> -->
+        <link rel="stylesheet" href="assets/css/blog.css" media="all" />
         <link rel="stylesheet" href="assets/css/main.css" media="all" />
         <!-- <link rel="stylesheet" href="assets/css/blog.css" media="all" /> -->
         <script src="assets/js/jquery.min.js"></script>
@@ -154,7 +155,7 @@
         </header>
         <div class="bg-overlay"></div>
         <main class="main-content-wrapper">
-            <section class="page-header is-dark is-bg-vector">
+            <section class="page-header is-dark with-vector">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 order-md-2">
@@ -170,79 +171,78 @@
                 </div>
             </section>
             <section class="theme-section blog-section pt-4 pb-medium pt-md-0">
-        <div class="container">
+                <div class="container">
                     <div class="posts-archive">
-            <div id="container-async" class="container-async" data-paged="4" data-post_not_in="">
-                <div class="posts-archive-categories">
-                    <ul class="nav-filter"><li class="active"><a href="javascript:void(0);" data-filter="category" data-term="all-terms" class="category" id="all-terms">All Topics</a></li><li><a href="#product" id="product" data-filter="category" data-term="product" class="category">Product</a></li><li><a href="#industry-served" id="industry-served" data-filter="category" data-term="industry-served" class="category">Industry Served</a></li></ul>                    <div class="ajax-post-search">
-                        <form class="post-search" role="search" action="#" autocomplete="off">
-                            <input id="q" aria-label="Search input" type="search" placeholder="Search" autocomplete="off" tabindex="-1">
-                            <button type="button" class="q-search q-search-btn">
-                                <span class="q-icon-search"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4129 11.4259L15.75 15.75M13.25 7C13.25 10.4517 10.4517 13.25 7 13.25C3.54822 13.25 0.75 10.4517 0.75 7C0.75 3.54822 3.54822 0.75 7 0.75C10.4517 0.75 13.25 3.54822 13.25 7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-                                <span class="q-icon-close" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Reset"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.1876 1C13.4203 1 13.6139 1.07722 13.7683 1.23167C13.9227 1.38611 14 1.57969 14 1.8124C14 2.04095 13.9217 2.23349 13.7652 2.39001L8.64859 7.5L13.7652 12.6099C13.9217 12.7665 14 12.959 14 13.1876C14 13.4203 13.9227 13.6139 13.7683 13.7683C13.6139 13.9227 13.4203 14 13.1876 14C12.959 14 12.7665 13.9217 12.6099 13.7652L7.5 8.64859L2.39001 13.7652C2.23349 13.9217 2.04095 14 1.8124 14C1.57969 14 1.38611 13.9227 1.23167 13.7683C1.07722 13.6139 1 13.4203 1 13.1876C1 12.959 1.07826 12.7665 1.23479 12.6099L6.35141 7.5L1.23479 2.39001C1.07826 2.23349 1 2.04095 1 1.8124C1 1.57969 1.07722 1.38611 1.23167 1.23167C1.38611 1.07722 1.57969 1 1.8124 1C2.04095 1 2.23349 1.07826 2.39001 1.23479L7.5 6.35141L12.6099 1.23479C12.7665 1.07826 12.959 1 13.1876 1Z" fill="currentColor"></path></svg></span>
-                            </button>
-                            <span class="q-loader"><span class="icw-loading"></span></span>
-                        </form>
+                        <div id="container-async" class="container-async">
+                            <div class="posts-archive-categories">                
+                                <div class="ajax-post-search">
+                                    <form class="post-search" role="search" action="#" autocomplete="off">
+                                        <input id="q" aria-label="Search input" type="search" placeholder="Search" autocomplete="off" tabindex="-1">
+                                        <button type="button" class="q-search q-search-btn">
+                                            <span class="q-icon-search"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4129 11.4259L15.75 15.75M13.25 7C13.25 10.4517 10.4517 13.25 7 13.25C3.54822 13.25 0.75 10.4517 0.75 7C0.75 3.54822 3.54822 0.75 7 0.75C10.4517 0.75 13.25 3.54822 13.25 7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                                            <span class="q-icon-close" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Reset"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.1876 1C13.4203 1 13.6139 1.07722 13.7683 1.23167C13.9227 1.38611 14 1.57969 14 1.8124C14 2.04095 13.9217 2.23349 13.7652 2.39001L8.64859 7.5L13.7652 12.6099C13.9217 12.7665 14 12.959 14 13.1876C14 13.4203 13.9227 13.6139 13.7683 13.7683C13.6139 13.9227 13.4203 14 13.1876 14C12.959 14 12.7665 13.9217 12.6099 13.7652L7.5 8.64859L2.39001 13.7652C2.23349 13.9217 2.04095 14 1.8124 14C1.57969 14 1.38611 13.9227 1.23167 13.7683C1.07722 13.6139 1 13.4203 1 13.1876C1 12.959 1.07826 12.7665 1.23479 12.6099L6.35141 7.5L1.23479 2.39001C1.07826 2.23349 1 2.04095 1 1.8124C1 1.57969 1.07722 1.38611 1.23167 1.23167C1.38611 1.07722 1.57969 1 1.8124 1C2.04095 1 2.23349 1.07826 2.39001 1.23479L7.5 6.35141L12.6099 1.23479C12.7665 1.07826 12.959 1 13.1876 1Z" fill="currentColor"></path></svg></span>
+                                        </button>
+                                        <span class="q-loader"><span class="icw-loading"></span></span>
+                                    </form>
+                                </div>
+                                <ul class="nav-filter">
+                                    <li class="active"><a href="javascript:void(0);" data-filter="category" data-term="all-terms" class="category" id="all-terms">All Topics</a></li>
+                                    <li><a href="#product" id="product" data-filter="category" data-term="product" class="category">Product</a></li>
+                                    <li><a href="#industry-served" id="industry-served" data-filter="category" data-term="industry-served" class="category">Industry Served</a></li>
+                                </ul>    
+                            </div>
+                            <div class="seperator container">
+                                <div class="status d-none"></div>
+                            </div>
+                            <div class="posts-archive-list">
+                                <div class="content row row-cols-1 row-cols-md-2 row-cols-xl-3 gy-5 g-xl-5 flex-wrap">
+                                    <div class="col">
+                                        <article class="post-card icw-anim animated">
+                                            <div class="card-img ratio ratio-16x9">
+                                                <img src="uploads/img-award-ready-devx.png" alt="Trideum Corporation Designated Award-Ready Through the Army Applications Laboratory DevX Autonomy Marketplace"> 
+                                            </div>
+                                            <div class="card-body">
+                                                <h3 class="card-title"><a href="#" class="stretched-link">Trideum Corporation Designated Award-Ready Through the Army Applications Laboratory DevX Autonomy Marketplace</a></h3>
+                                                <div class="card-info">Trideum Corporation today announced that two of its solutions, Loki, which provides RF Waveform Obfuscation and Classification Evasion and Jericho, an Adversarial Patch Attack and Defense for Autonomous Systems solution. Both solutions supporting…</div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col">
+                                        <article class="post-card icw-anim animated">
+                                            <div class="card-img ratio ratio-16x9">
+                                                <img src="uploads/img-itsec-2025.jpg" alt="I/ITSEC 2025"> 
+                                            </div>
+                                            <div class="card-body">     
+                                                <h3 class="card-title"><a href="#" class="stretched-link">I/ITSEC 2025</a></h3>
+                                                <div class="card-info">Trideum is looking forward to I/ITSEC 2025 with plans to present papers and tutorials as well as serve on multiple committees and session panels. We will also demonstrate several new technology solutions in booth #2213 to support training and other operations.</div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col">
+                                        <article class="post-card icw-anim animated">
+                                            <div class="card-img ratio ratio-16x9">
+                                                <img src="uploads/img-cmmc-level-2.png" alt="Trideum Corporation Achieves CMMC Level 2 Certification"> 
+                                            </div>
+                                            <div class="card-body">     
+                                                <h3 class="card-title"><a href="#" class="stretched-link">Trideum Corporation Achieves CMMC Level 2 Certification</a></h3>
+                                                <div class="card-info">Huntsville, AL | October 24, 2025 Trideum Corporation proudly announces that it has attained the Cybersecurity Maturity Model Certification (CMMC) Level 2 for its enterprise environment. This milestone underscores Trideum’s unwavering commitment to cybersecurity and its dedication to protecting Controlled</div>
+                                            </div>
+                                        </article>
+                                    </div>     
+                                </div>
+                            </div>
+                            <div id="qapl-pagination-wrapper">
+                                <nav class="pagination icw-pagenavi">
+                                    <span aria-current="page" class="current">01</span>
+                                    <a class="page" data-page="2" href="#">02</a>
+                                    <a class="next page" title="Next" data-page="2" href="#">Next<span class="icon"><svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 3.99997H13.4853M10.3033 7.18195L13.4853 3.99997L10.3033 0.817993" stroke="#303030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+                                </nav>
+                            </div>                            
+                        </div>
                     </div>
-                </div>
-                <div class="seperator container">
-                    <div class="status d-none"></div>
-                </div>
-                <div class="posts-archive-list">
-                    <div class="content row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-15 flex-wrap">
-                        <div class="col"><article class="post-card icw-anim animated">
-    <div class="card-img ratio ratio-6x4">
-        <div class="img-animation show" style="--delay: 0s;"> 
-            <img class="icw-lazy" src="https://glazorecoating.com/wp-content/uploads/2026/07/img-what-aluminium-powder-coating.webp" data-src="https://glazorecoating.com/wp-content/uploads/2026/07/img-what-aluminium-powder-coating.webp" alt="What Is Aluminium Powder Coating? A Complete Guide" decoding="async" loading="lazy" data-loaded="true"> 
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="post-cat-meta"><div class="post-category"><a href="https://glazorecoating.com/blog/#industry-served" class="post-category" data-slug="industry-served">Industry Served</a></div><span class="post-date">August 10, 2026</span></div>     
-        <h3 class="card-title"><a href="https://glazorecoating.com/blog/what-is-aluminium-powder-coating-a-complete-guide/" class="stretched-link">What Is Aluminium Powder Coating? A Complete Guide</a></h3>
-            </div>
-</article>
-</div><div class="col"><article class="post-card icw-anim animated">
-    <div class="card-img ratio ratio-6x4">
-        <div class="img-animation show" style="--delay: 0.1s;"> 
-            <img class="icw-lazy" src="https://glazorecoating.com/wp-content/uploads/2026/08/post-common-applications-of-aluminium-powder-coating-300x200.webp" data-src="https://glazorecoating.com/wp-content/uploads/2026/08/post-common-applications-of-aluminium-powder-coating-300x200.webp" alt="Common Applications of Aluminium Powder Coating Across Automotive" decoding="async" loading="lazy" data-loaded="true"> 
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="post-cat-meta"><div class="post-category"><a href="https://glazorecoating.com/blog/#product" class="post-category" data-slug="product">Product</a></div><span class="post-date">August 01, 2026</span></div>     
-        <h3 class="card-title"><a href="https://glazorecoating.com/blog/common-applications-of-aluminium-powder-coating-across-automotive/" class="stretched-link">Common Applications of Aluminium Powder Coating Across Automotive</a></h3>
-            </div>
-</article>
-</div><div class="col"><article class="post-card icw-anim animated">
-    <div class="card-img ratio ratio-6x4">
-        <div class="img-animation show" style="--delay: 0.2s;"> 
-            <img class="icw-lazy" src="https://glazorecoating.com/wp-content/uploads/2026/08/post-how-aluminium-powder-coating-works-step-by-step-300x200.webp" data-src="https://glazorecoating.com/wp-content/uploads/2026/08/post-how-aluminium-powder-coating-works-step-by-step-300x200.webp" alt="How Aluminium Powder Coating Works: Step-by-Step Process" decoding="async" loading="lazy" data-loaded="true"> 
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="post-cat-meta"><div class="post-category"><a href="https://glazorecoating.com/blog/#product" class="post-category" data-slug="product">Product</a></div><span class="post-date">July 27, 2026</span></div>     
-        <h3 class="card-title"><a href="https://glazorecoating.com/blog/how-aluminium-powder-coating-works-step-by-step-process/" class="stretched-link">How Aluminium Powder Coating Works: Step-by-Step Process</a></h3>
-            </div>
-</article>
-</div><div class="col"><article class="post-card icw-anim animated">
-    <div class="card-img ratio ratio-6x4">
-        <div class="img-animation show" style="--delay: 0.30000000000000004s;"> 
-            <img class="icw-lazy" src="https://glazorecoating.com/wp-content/uploads/2026/08/post-top-benefits-of-aluminium-powder-coating-300x200.webp" data-src="https://glazorecoating.com/wp-content/uploads/2026/08/post-top-benefits-of-aluminium-powder-coating-300x200.webp" alt="Top Benefits of Aluminium Powder Coating for Industrial Applications" decoding="async" loading="lazy" data-loaded="true"> 
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="post-cat-meta"><div class="post-category"><a href="https://glazorecoating.com/blog/#industry-served" class="post-category" data-slug="industry-served">Industry Served</a></div><span class="post-date">July 27, 2026</span></div>     
-        <h3 class="card-title"><a href="https://glazorecoating.com/blog/top-benefits-of-aluminium-powder-coating-for-industrial-applications/" class="stretched-link">Top Benefits of Aluminium Powder Coating for Industrial Applications</a></h3>
-            </div>
-</article>
-</div>                    </div>
-                </div>
-                                                                    <div id="qapl-pagination-wrapper"><nav class="pagination icw-pagenavi"><span aria-current="page" class="current">01</span><a class="page" data-page="2" href="#">02</a><a class="next page" title="Next" data-page="2" href="#">
-            Next<span class="icon"><span class="icon"><svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 3.99997H13.4853M10.3033 7.18195L13.4853 3.99997L10.3033 0.817993" stroke="#303030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-        </span></a></nav></div>                            </div>
-        </div>
 
-            </div>
-    </section>
+                </div>
+            </section>
         </main>
         <footer class="main-footer">
             <div class="container">

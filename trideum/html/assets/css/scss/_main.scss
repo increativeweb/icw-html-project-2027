@@ -41,10 +41,14 @@
         min-height: auto;
     }
     &.is-dark {
-        background: var(--gray) url('../images/img-bg-vector.png') no-repeat top right;     
+        background: var(--gray);
         color: var(--white);
         .title {
             color: var(--white);
+        }
+        &.with-vector {            
+            background: var(--gray) url('../images/img-bg-vector-dark.png') no-repeat top right;    
+            background-size: 75%;     
         }
     }
     &.is-bg-vector {
