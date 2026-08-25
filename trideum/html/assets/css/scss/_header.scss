@@ -317,7 +317,7 @@
                                 height: calc(100dvh - 7.5rem);
                                 overflow: hidden;
                                 overflow-y: auto;
-                                scrollbar-gutter: stable both-edges;
+                                scrollbar-gutter: stable;
 
                                 &::-webkit-scrollbar {
                                     width: 0.313rem;

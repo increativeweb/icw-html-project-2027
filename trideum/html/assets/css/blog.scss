@@ -10,7 +10,7 @@
         column-gap: 2.5rem;  
         background: transparent;
         padding: 0;      
-        cursor: pointer;
+        cursor: pointer;   
         @media (max-width:767px) {
             margin-bottom: 1.875rem;
         }
@@ -38,7 +38,7 @@
                 align-self: flex-end;
                 margin-bottom: 0;
                 @media (max-width: 1680px) {
-                    margin-top: 2rem;                    
+                    margin-top: 1.5rem;                    
                     max-width: 600px;
                 }
             }
@@ -84,9 +84,6 @@
     position: relative;
     background: #f6f6f6;
     padding: 25px;
-    @media (max-width: 1200px) {
-        max-width: 300px;
-    }
     @media (max-width: 992px) {
         padding: 20px;
     }
@@ -105,7 +102,7 @@
         @include flex-direction(column);
 
         .card-title {
-            font-size: clamp(1.125rem, 1.5vw, 1.625rem);
+            font-size: clamp(1.125rem, 2vw, 1.625rem);
             font-weight: 700; 
             text-wrap: balance;
             margin-bottom: 20px;
