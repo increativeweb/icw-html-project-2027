@@ -181,14 +181,9 @@
 
 // Blog Filter
 .posts-archive-categories {
-    margin: 0px auto 30px;
-    padding: 10px 0;
     position: relative;
-
+    margin-bottom: 50px;
     @media (max-width: 767px) {
-        @include flexbox;
-        @include flex-direction(column-reverse);
-        gap: 20px;
         margin: 0px auto 30px;
     }
 
@@ -236,13 +231,8 @@
 
     .ajax-post-search {
         position: relative;
-
-        @media (min-width: 767px) {
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-
+        background: #c7e0f5;
+        padding: 20px;
         .post-search {
             position: relative;
             width: 100%;
