@@ -267,34 +267,53 @@ h6,
     @include flexbox;
     @include justify-content(center);
     @include align-items(center);
-    gap: 15px;
+    gap: 12px;
     min-height: 60px;
     max-width: max-content;
-    padding: 0 25px;
+    padding: 0 18px 0 25px;
     @include transition(0.2s, ease-in-out);
     @include border-radius(30px);
     line-height: 1;
     text-decoration: none !important;
-    border: none;
-    font-size: clamp(1.125rem, 3vw, 1.25rem);
+    border: 2px solid transparent;
+    font-size: 1.25rem;
     font-weight: 600;
+    @media (max-width: 767px) {
+        font-size: 1.125rem;
+        min-height: 55px;
+        padding: 0 15px 0 20px;
+    }
     .icon-arrow {
-        width: 26px;
-        height: 26px;
+        width: 28px;
+        height: 28px;
         @include inline-flex;
         @include align-items(center);
         @include justify-content(center);
         z-index: 1;
         position: relative;
+        overflow: hidden;
+        @media (max-width: 767px) {
+            width: 24px;
+            height: 24px;
+        }
         &::before {
             content: '';
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z" fill="white"/></svg>') no-repeat center center;
-            background-size: 12px;  
+            background-size: 18px;  
             display: inline-block;
-            width: 12px;
-            height: 12px;
+            width: 28px;
+            height: 28px;
             position: absolute;
             left: 0;
+            z-index: 2;
+            @include transition(0.2s, ease-in-out);
+            @include transform(translateX(-20px));
+            opacity: 0;
+            @media (max-width: 767px) {
+                width: 24px;
+                height: 24px;
+                background-size: 16px; 
+            }
         }
         &::after {
             content: '';
@@ -305,19 +324,60 @@ h6,
             display: inline-block;
             @include transition(0.2s, ease-in-out);
             z-index: 1;
+            @media (max-width: 767px) {
+                width: 12px;
+                height: 12px;
+            }
         }
+    }
+    &:focus {        
+        @include border-radius(30px);
+        outline: 2px solid var(--black) !important;
     }
     &:hover, &:focus {
         .icon-arrow {
-            &::after {
-                width: 26px;
-                height: 26px;
+            &::before {
+                @include transform(translateX(0px));
+                opacity: 1;
             }
+            &::after {
+                width: 28px;
+                height: 28px;
+                @media (max-width: 767px) {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+    &.is-left-icon {
+        padding: 0 25px 0 18px;
+        @media (max-width: 767px) {            
+            padding: 0 20px 0 15px;
         }
     }
     &.btn-primary {
         background: #111111 !important;
+        border-color: transparent !important;
         color: var(--white) !important;
+    }
+    &.btn-white {
+        background: var(--white) !important;
+        border-color: transparent !important;
+        color: var(--black) !important;
+    }
+    &.btn-link {
+        min-height: auto;
+        @include inline-flex;
+        padding: 0;
+        color: var(--gray) !important;
+        gap: 8px;
+        border: none;
+        .icon-arrow {
+            &::after {
+                background: var(--gray);
+            }
+        }
     }
 }
 
