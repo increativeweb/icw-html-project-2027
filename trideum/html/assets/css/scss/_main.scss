@@ -16,15 +16,41 @@
     }
 }
 .section-title {
+    margin-bottom: 50px;
+    & > *:last-child {
+        margin-bottom: 0;
+    }
     .tagline {
         font-size: clamp(1.125rem, 1.5vw, 1.625rem);
         font-weight: 600;
         color: var(--orange);
         line-height: 1;
         margin-bottom: 1.25rem;
+        &:empty {
+            margin-bottom: 0;
+        }
     }
     .title {
-        margin-bottom: 0.625rem;
+        margin-bottom: 0.625rem;        
+        &.h3 {
+            color: var(--orange);
+        }
+    }
+    .sort-info {
+        font-weight: 500;
+        .square-list {
+            margin-bottom: 1rem;
+            li {
+                font-size: clamp(1rem, 1.4vw, 1.375rem);
+            }
+        }
+    }
+    .info-item-lists-block {
+        margin-top: 1.5rem;
+        & > .title {
+            color: var(--orange);
+            margin-bottom: 1.5rem;
+        }
     }
     .action {
         margin-top: 40px;
@@ -142,7 +168,7 @@
         @include flexbox;
         @include flex-direction(column);
         @include justify-content(center);
-        @media (max-width: 992px) {        
+        @media (max-width: 1200px) {        
             padding: 3.125rem 0;
         }
         h1 {
