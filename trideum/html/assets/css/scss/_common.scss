@@ -387,12 +387,12 @@ h6,
         min-height: 3rem;
         padding: 0 0.625rem 0 1rem;
         .icon-arrow {      
-            width: 1rem;
-            height: 1rem;
+            width: 1.25rem;
+            height: 1.25rem;
             &::before {
-                width: 1rem;
-                height: 1rem;
-                background-size: 0.75rem; 
+                width: 1.25rem;
+                height: 1.25rem;
+                background-size: 0.875rem; 
             }
             &::after {
                 width: 0.625rem;
@@ -402,8 +402,8 @@ h6,
         &:hover, &:focus {
             .icon-arrow {
                 &::after {
-                    width: 1rem;
-                    height: 1rem;
+                    width: 1.25rem;
+                    height: 1.25rem;
                 }
             }
         }
