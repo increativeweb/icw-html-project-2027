@@ -32,11 +32,13 @@ jQuery(document).ready(function ($) {
             const $submenu = $li.children('.sub-menu');
 
             $(this).toggleClass('is-active');
+            $(this).parent('.menu-item-has-children').toggleClass('is-active');
             $submenu.stop(true, true).slideToggle(300);
         });
         $(window).on('resize', function () {
             if ($(window).width() >= 1200) {
                 $('.main-header, .navbar-toggler, .bg-overlay').removeClass('is-visible');
+                $('.menu-item-has-children').removeClass('is-active');
                 $('body').removeClass('overflow-hidden');
             }
         });
