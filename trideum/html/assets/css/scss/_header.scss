@@ -329,7 +329,7 @@
                                 @include transform(translateY(0.313rem));
                                 @include transition(0.1s, ease-in-out);
                                 & > ul.sub-menu {
-                                    height: calc(100dvh - 20vh);
+                                    height: calc(100dvh - 6.5rem);
                                     overflow: hidden;
                                     overflow-y: auto;
                                     scrollbar-gutter: stable;
