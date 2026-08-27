@@ -14,6 +14,15 @@
     @media (max-width: 992px) {        
         padding: 3.125rem 0;
     }
+    &.py-50 {
+        padding: 3.125rem 0;
+    }
+    &.with-border-section-title {
+        .section-title {
+            border-bottom: 1px solid #cbced1;
+            padding-bottom: 1.125rem;
+        }
+    }
 }
 .section-title {
     margin-bottom: 50px;
@@ -143,6 +152,7 @@
         .section-title {
             padding: 3.125rem 0;
             padding-left: 75px;
+            margin-bottom: 0;
             @media(max-width: 1600px) {
                 padding-left: 3.125rem;
             }
