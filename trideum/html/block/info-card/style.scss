@@ -1,7 +1,8 @@
+@import '../../assets/css/scss/mixins';
 .info-card-section {
     .info-card {
-        display: flex;
-        flex-direction: column;
+        @include flexbox;
+        @include flex-direction(column);
         height: 100%;
         flex: 1 1 auto;
         position: relative;
@@ -9,16 +10,16 @@
             .card-title {
                 color: var(--black);
                 margin-bottom: 1rem;
+                @include transition(0.3s, ease-in-out);
                 a {
                     color: var(--black);
                     text-decoration: none;
-                    transition: all 0.3s ease-in-out;
+                    @include transition(0.3s, ease-in-out);
                 }
             }
         }
         .card-action {
             margin-top: 1.5rem;
-            z-index: 10;
         }
         &:hover, &:focus {
             .card-body {
