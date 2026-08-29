@@ -1,27 +1,16 @@
 @import '../../assets/css/scss/mixins';
-.team-section {
+.about-section {
     position: relative;
-    &::before {
-        content: '';
-        width: 1.5rem;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: var(--orange);
-        display: block;
-        @media (max-width: 992px) {
-            width: 0.25rem;
-        }
-    }
-    .team-content-block {
+    .about-content-block {
         font-weight: 500;
         hr {
             max-width: 12rem;
             opacity: 1;
-            border-width: 2px;
-            margin-bottom: 2rem;
+            border-width: 0.125rem;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
             @media (max-width: 767px) {
+                margin-top: 1rem;
                 margin-bottom: 1rem;
             }
         }
@@ -53,6 +42,39 @@
                 @media (max-width: 1200px) {
                     max-width: 70%;
                 }
+            }
+        }
+    }
+}
+.leadership-content-block {
+    & > .row {
+        & > * {
+            margin-bottom: 5rem;
+            @media (max-width: 992px) {
+                margin-bottom: 1.875rem;
+            }
+        }
+    }
+    .leadership-card {
+        @include flexbox;
+        @include flex-direction(column);
+        text-align: center;
+        .card-img {
+            margin-bottom: 1rem;
+            img {
+                width: 100%;
+                aspect-ratio: 3 / 4;
+                max-height: 23.75rem;
+            }
+        }
+        .card-body {
+            .card-title {
+                font-size: clamp(1rem, 1.4vw, 1.375rem);
+                font-weight: 700;
+            }
+            .designation {
+                font-size: clamp(1rem, 1.4vw, 1.25rem);
+                margin: 0.5rem 0 0.75rem;
             }
         }
     }
