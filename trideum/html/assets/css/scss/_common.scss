@@ -277,9 +277,11 @@ h5,
     text-decoration: none !important;
     border: 0.125rem solid transparent;
     font-size: 1.25rem;
-    font-weight: 600;
-    @media (max-width: 767px) {
+    font-weight: 600;    
+    @media (max-width: 992px) {
         font-size: 1.125rem;
+    }
+    @media (max-width: 767px) {
         min-height: 3.438rem;
         padding: 0 0.938rem 0 1.25rem;
     }
