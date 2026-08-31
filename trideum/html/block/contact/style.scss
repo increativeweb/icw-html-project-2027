@@ -31,14 +31,14 @@
     .contact-form-block {
         background: #f7f8f9;
         @media (max-width: 767px) {
-            margin: 0 -20px 40px;
-            padding: 20px;
+            margin: 0 -1.25rem 2.5rem;
+            padding: 1.25rem;
         }
     }
     .contact-info-block {
-        padding-left: 70px;
+        padding-left: 4.375rem;
         @media (max-width: 1200px) {
-            padding-left: 30px;
+            padding-left: 1.875rem;
         }
         @media (max-width: 767px) {
             padding-left: 0;
@@ -96,7 +96,7 @@
                 a { 
                     font-weight: 600;
                     color: var(--darkblue);
-                    text-underline-offset: 5px;
+                    text-underline-offset: 0.313rem;
                 }
             }
         }
