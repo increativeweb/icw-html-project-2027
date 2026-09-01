@@ -7,14 +7,17 @@
             padding: 0.75rem 0;
             &::before {
                 content: '';
-                width: calc(50vw - 5rem);
+                width: calc(50vw + 5rem);
                 height: 100%;
                 display: inline-block;
                 position: absolute;
                 top: 0;
-                left: -6.25rem;
+                right: -2.5rem;
                 background: #ebedf0;
                 z-index: -1;
+                @media (max-width: 1200px) {
+                    right: -0.938rem;
+                }
                 @media (max-width: 767px) {
                     width: 100vw;
                     left: -1.25rem;
@@ -58,6 +61,10 @@
     }
 }
 .contracts-details-block {
+    padding-left: 2.5rem;
+    @media (max-width: 1600px) {
+        padding-left: 1.5rem;
+    }
     & > hr {
         border-width: 1.5rem;
         color: var(--orange);
