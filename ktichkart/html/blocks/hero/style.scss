@@ -28,13 +28,15 @@
                     aspect-ratio: 1 / 1;
                     padding: 15px;
                     background: var(--white);
+                    @media (max-width: 1200px) {
+                        width: 180px;
+                        height: 180px;
+                        padding: 10px;
+                    }
                     @media (max-width: 992px) {
                         top: auto;
                         bottom: 0px;
                         right: 50px;
-                        width: 180px;
-                        height: 180px;
-                        padding: 10px;
                     }
                     @media (max-width: 767px) {
                         right: 20px;
@@ -58,6 +60,9 @@
             }
             .img-slide { 
                 padding-right: 60px;
+                @media (max-width: 1200px) { 
+                    padding-right: 30px;
+                }
                 @media (max-width: 992px) {
                     padding-right: 0;
                     padding-bottom: 50px;
@@ -70,13 +75,24 @@
     }
     .section-title {
         padding: 100px 0;
-        padding-left: 20px;
+        padding-left: 30px;
+        @media (max-width: 1200px) { 
+            padding: 70px 0;
+            padding-left: 40px;
+        }
+        @media (max-width: 992px) { 
+            padding: 20px 0 50px;
+            padding-left: 0px;
+        }
         .sort-info {
             max-width: 680px;
             margin: 0 auto;
         }
         .category-card-block {
-            margin-top: 50px;
+            margin-top: 50px;            
+            @media (max-width: 767px) {
+                margin-top: 30px;
+            }
         }
     }
 }
