@@ -10,13 +10,12 @@
         top: 32px;
     } 
     @media (max-width: 992px) {
-        overflow: hidden;
-        &.is-visible {
-            overflow: visible;
+        &.is-visible {  
             .navbar {
                 .navbar-collapse {
                     opacity: 1;
-                    transform: translateX(0%);
+                    visibility: visible;
+                    @include transform(none);
                 }
             }
         }
@@ -30,6 +29,9 @@
             text-decoration: none;
             line-height: 1;
             padding-bottom: 0; 
+            @media (max-width: 767px) {
+                font-size: 28px;
+            }
         }
         .navbar-collapse {
             @include justify-content(center);
@@ -100,7 +102,7 @@
             .social-list {
                 @include flexbox;
                 @include align-items(center);
-                gap: 10px;
+                gap: 5px;
                 li {
                     a {
                         width: 36px;
@@ -232,9 +234,10 @@
                 top: 72px;
                 overflow: hidden;
                 overflow-y: auto;
-                background: #f5ece6;
+                background: var(--peachcream);
                 color: #fff;
                 opacity: 0;
+                visibility: hidden;
                 box-shadow: 0 0 32px 0 rgba(0, 0, 0, .1);
                 @include flexbox;
                 @include align-items(flex-start);
@@ -365,8 +368,8 @@
 .bg-overlay {
     display: block;
     position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     left: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.3);

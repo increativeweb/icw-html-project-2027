@@ -16,6 +16,11 @@
 html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    
+    @media(max-width: 992px) {        
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 }
 
 article,
@@ -45,6 +50,10 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    @media(max-width: 992px) {        
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 }
 
 :focus {
@@ -116,8 +125,16 @@ img {
 .container {
     @media (max-width: 992px) {
         max-width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+.container-fluid {
+    padding-right: 20px;
+    padding-left: 20px;
+    @media (min-width: 992px) {
+        padding-left: 60px;
+        padding-right: 60px;
     }
 }
 
@@ -194,17 +211,18 @@ h4,
 h5,
 .h5 {
     font-weight: 700;
+    font-family: var(--font-prata);
 }
 
 h1,
 .h1 {
-    font-size: clamp(40px, 5vw, 65px);
+    font-size: clamp(30px, 5vw, 55px);
     font-weight: 700;
 }
 
 h2,
 .h2 {
-    font-size: clamp(32px, 3vw, 48px);
+    font-size: clamp(26px, 3vw, 34px);
     font-weight: 700;
     &.font-sm {
         font-size: clamp(22px, 3vw, 36px);
@@ -213,7 +231,7 @@ h2,
 
 h3,
 .h3 {
-    font-size: clamp(20px, 3vw, 24px);
+    font-size: clamp(20px, 3vw, 22px);
     line-height: 1.3;
 }
 
@@ -237,9 +255,6 @@ h5,
 .text-primary {
     color: var(--primary) !important;
 }
-.text-darkblue {
-    color: var(--darkblue) !important;
-}
 
 // Background Color CSS
 .bg-white {
@@ -251,49 +266,20 @@ h5,
         color: var(--white) !important;
     }
 }
-.bg-gray {
-    background-color: #f1f3f6 !important;
-}
-.bg-light-gradient {
-    background-image: linear-gradient(347deg, #ffebeb, #fbf5fd);
-}
-.bg-gradient {
-    background-image: radial-gradient(circle at 70%, #3d1369, #281938 26%, #000 89%) !important;
-    & > * {
-        color: var(--white) !important;
-    }
+.bg-light {
+    background-color: var(--peachcream) !important;
     .section-title {
-        .tagline {
+        .highlight-words {
             color: var(--white);
         }
-        h1, h2, h3 {
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(90deg, #f5826f, #fb928c 0%, #e3b9f2);
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-    }
-    .btn-link-arrow {
-        color: white;
-        .icon-arrow {
-            filter: brightness(0) invert(1);
-        }
     }
 }
-.bg-gradient-with-vector {
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-image:  url('../../assets/images/img-bg-vector-r.png'), linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%);
-    &-r {
-        @extend .bg-gradient-with-vector;
-        background-position: top right;
-    }
-    &-l {
-        @extend .bg-gradient-with-vector;
-        background-image:  url('../../assets/images/img-bg-vector-l.png'), linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%);
-        background-position: top left;
-    }
+
+.bg-line-vector {
+    background-image: linear-gradient( 90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
+    background-size: 250px;
 }
+
 .bg-transprent {
     background-color: transparent !important;
     background-image: none !important;
@@ -332,7 +318,7 @@ h5,
 .media-block {
     max-width: 100%;
     height: 100%;
-    @include border-radius(12px);
+    @include border-radius(0);
     position: relative;
     overflow: hidden;
     line-height: 0.7;
@@ -442,7 +428,7 @@ h5,
         font-size: 28px;
         color: var(--text-white);
         left: 0;
-        top: -5px;
+        top: -7px;
         height: 40px;
         width: 40px;
         cursor: pointer;
@@ -450,6 +436,7 @@ h5,
         z-index: 1;
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear;
+        background-size: 12px;
     }
 
     // &:hover::after {opacity: 0;}
@@ -477,36 +464,35 @@ h5,
 
 // Button
 .btn {
-	min-height: 52px;
-	padding: 0 25px;
-	font-weight: 700;
-	font-size: clamp(16px, 1.5vw, 18px);
+	height: 60px;
+	padding: 23px 40px 18px;
+	font-weight: 500;
+	font-size: 16px;
 	@include transition(0.2s, ease-in-out);
 	@include inline-flex;
 	@include align-items(center);
 	@include justify-content(center);	
-	@include border-radius(12px);
+	@include border-radius(0);
+    font-family: var(--font-prata);
     text-decoration: none !important;
     border: 2px solid transparent;
     line-height: 1;
+    letter-spacing: 1px;
     gap: 10px;
     min-width: 180px;
-    @media (max-width: 992px) {
-        min-height: 48px;
-    }  
-    &.btn-lg {
-        min-height: 60px; 
-        @media (max-width: 992px) {
-            min-height: 52px;
-        }       
+    &.btn-md {
+        height: 50px; 
     }
-    &.btn-black {
-        background: var(--darkblack);
-        border-color: var(--darkblack);
+    &:hover, &:focus, &:active {
+        @include box-shadow(0px 15px 25px -7px rgba(0,0,0,0.1));
+    }
+    &.btn-primary {
+        background: var(--primary);
+        border-color: var(--primary);
         color: var(--white);
         &:hover, &:focus, &:active {
-            background: var(--primary);
-            border-color: var(--primary);
+            background: var(--darkgreen);
+            border-color: var(--darkgreen);
         }
     }
     &.btn-ouline-black {
@@ -645,13 +631,13 @@ h5,
             height: 10px;
             @include transform (unset);
             opacity: 1;
-            background: rgba(#0d0e10, 0.2);
+            background: rgba(#557662, 0.4);
             border: 1px solid transparent;
             @include border-radius(8px);
             margin: 0 3px;
             @include transition(0.2s, ease-in-out);
             &.is-active {
-                background: var(--darkblack);
+                background: var(--darkgreen);
                 width: 20px;
             }
         }
