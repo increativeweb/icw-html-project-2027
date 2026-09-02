@@ -54,49 +54,64 @@
                 margin-bottom: 1rem;
             }
         }
-        h3 {
-            margin-top: 2.5rem;
-            font-weight: 700;
-            @media (max-width: 767px) {
-                margin-top: 1.5rem;
-            }
-        }
-        .map-img {
-            position: relative;
-            margin-top: 1rem;
-            margin-bottom: 5rem;
-            @media (max-width: 767px) {
-                margin-bottom: 3rem;
-            }
-            .map-link {
-                position: absolute;
-                top: calc(50% - 3rem);
-                left: calc(50% - 3rem);
-                width: 4rem;
-                height: 4rem;
-                @include border-radius(50%);
-                background: var(--black);
-                @include flexbox;
-                @include align-items(center);
-                @include justify-content(center);
-                animation: anim-pulse 2s ease-out infinite;
-                svg {
-                    width: 2.5rem;
-                    height: 2.5rem;
+        .contact-info-card {
+            .card-title {
+                margin-bottom: 1.5rem;
+                font-weight: 700;
+                @media (max-width: 767px) {
+                    margin-top: 1.5rem;
                 }
             }
-        }
-        .contect-info-list {
-            margin-top: 1rem;
-            li {
-                font-weight: 700;
-                &:not(:last-child) {
-                    margin-bottom: 0.75rem;
+            .card-info {
+                font-weight: 500;
+                .map-link {
+                    position: relative;
+                    .icon-location {
+                        position: absolute;
+                        top: calc(50% - 3rem);
+                        left: calc(50% - 3rem);
+                        width: 4rem;
+                        height: 4rem;
+                        @include border-radius(50%);
+                        background: var(--black);
+                        @include flexbox;
+                        @include align-items(center);
+                        @include justify-content(center);
+                        animation: anim-pulse 2s ease-out infinite;
+                        svg {
+                            width: 2.5rem;
+                            height: 2.5rem;
+                        }
+                    }
                 }
                 a { 
                     font-weight: 600;
                     color: var(--darkblue);
                     text-underline-offset: 0.313rem;
+                }
+            }            
+            .social-list {
+                @include flexbox;
+                @include align-items(center);
+                gap: 1rem;
+                li {
+                    a {
+                        color: var(--darkblack);
+                        background-color: transparent;
+                        width: 3rem;
+                        height: 3rem;
+                        @include flexbox;
+                        @include align-items(center);
+                        @include justify-content(center);
+                        @include transition(0.2s, ease-in-out);
+                        svg {
+                            width: 1.625rem;
+                            height: 100%;
+                        }
+                        &:hover, &:focus {
+                            color: var(--white);
+                        }
+                    }
                 }
             }
         }
