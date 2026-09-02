@@ -81,13 +81,6 @@
                         @include justify-content(center);
                         animation: anim-pulse 2s ease-out infinite;
                     }
-                    .icon-location {
-                        
-                        svg {
-                            width: 2.5rem;
-                            height: 2.5rem;
-                        }
-                    }
                 }
                 a { 
                     font-weight: 600;
