@@ -96,7 +96,8 @@
                 gap: 1rem;
                 li {
                     a {
-                        color: var(--darkblack);
+                        color: var(--black);
+                        border: 1px solid var(--black);
                         background-color: transparent;
                         width: 3rem;
                         height: 3rem;
@@ -110,6 +111,8 @@
                         }
                         &:hover, &:focus {
                             color: var(--white);
+                            background-color: var(--orange);
+                            border-color: var(--orange);
                         }
                     }
                 }
