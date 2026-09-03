@@ -269,6 +269,56 @@
                     color: var(--white);
                     margin-bottom: 1.125rem;
                 }
+                .fluentform {
+                    .frm-fluent-form {
+                        .ff-column-container {
+                            @include flexbox;
+                            @include align-items(center);
+                            .ff-t-cell {
+                                flex-basis: auto !important;
+                                &:first-child {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .ff-el-form-control {
+                            border: 0.063rem solid #9ca3ac;
+                            background: transparent;
+                            width: 100%;
+                            height: 3.75rem;
+                            padding: 0 0.938rem;
+                            color: var(--white);
+                            font-size: clamp(1rem, 1vw, 1.25rem);
+                            &::placeholder {
+                                color: var(--white);
+                            }
+                            @media (max-width: 767px) {
+                                height: 3.125rem;
+                            }
+                        }
+                        .ff-btn-submit {
+                            height: 3.75rem;
+                            background: transparent;
+                            color: var(--white);
+                            padding: 0 1.563rem;
+                            border: 0.063rem solid #9ca3ac;
+                            border-left: 0;
+                            font-size: clamp(1rem, 1vw, 1.25rem);
+                            @include transition(0.1s, ease-in-out);
+
+                            @media (max-width: 767px) {
+                                height: 3.125rem;
+                                padding: 0 0.938rem;
+                            }
+
+                            &:hover,
+                            &:focus {
+                                background-color: var(--orange);
+                                border-color: var(--orange);
+                            }
+                        }
+                    }
+                }
 
                 .mc4wp-form {
                     ._subscribe-input {
@@ -284,7 +334,6 @@
                     .form-input {
                         border: 0.063rem solid #9ca3ac;
                         background: transparent;
-                        color: var(--white);
                         width: 100%;
                         height: 3.75rem;
                         padding: 0 0.938rem;

@@ -71,16 +71,19 @@
         }
     }
 
-    .with-vector {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-
-        .mission-network {
+   .with-vector {
+        width: 58.33333333vw;
+        margin-top: -15%;
+        position: relative;
+        z-index: 1;
+        img {
             display: block;
             width: 100%;
-            max-width: 100%;
             height: auto;
+            max-height: 25rem;
+            object-fit: fill;
+            position: relative;
+            z-index: -1;
         }
     }
 }
