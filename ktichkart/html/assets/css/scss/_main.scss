@@ -3,23 +3,12 @@
 }
 // Main Section CSS
 .theme-section {
-    padding: 80px 0;
+    padding: 100px 0;
     clear: both;
     content-visibility: auto;
     @media (max-width: 992px) {
         padding: 50px 0;
     }
-    &[class^="bg-"],
-    &[class*=" bg-"] {
-        padding: 120px 0;
-        @media (max-width: 992px) {
-            padding: 80px 0;
-        }
-        @media (max-width: 767px) {
-            padding: 50px 0;
-        }
-    }
-
     &.bg-none:not(.bg-custom) {
         background-image: none !important;
     }
@@ -38,6 +27,15 @@
                 color: var(--gs-text, #fff);
             }
         }
+    }
+    &:has(~ .with-top-margin-section) {
+        padding-bottom: 0;
+        margin-bottom: -100px;
+        z-index: 2;
+        position: relative;
+    }
+    &.with-top-margin-section {
+        padding-top: 200px;
     }
 
     &.section-title-flex {
@@ -64,9 +62,9 @@
         }
     }
 
-    &.section-title-mw-530 {
+    &.section-title-mw-550 {
         .section-title {
-            max-width: 530px;
+            max-width: 550px;
             @media (max-width: 992px) {
                 max-width: 100%;
             }
@@ -113,13 +111,13 @@
 .section-title {
     margin-bottom: 50px;
     @media (max-width: 992px) {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     &.text-center {
         margin: 0 auto 50px;
         text-align: center;
         @media (max-width: 992px) {
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
         }
         .highlight-words {            
             text-align: center;
@@ -257,30 +255,3 @@
     }
 }
 
-.category-card-block {
-    .category-card {
-        position: relative;
-        @include flexbox;
-        @include align-items(center);
-        gap: 20px;
-        padding: 20px;
-        background: var(--white);
-        height: 100%;
-        .card-img {
-            max-width: 100px;
-        }
-        .card-body {
-            text-align: left;
-            h3 {
-                margin-bottom: 12px;
-            }
-        }
-        &:hover, &:focus, &:active {
-            .card-body {
-                h3 {
-                    color: var(--darkgreen);
-                }
-            }
-        }
-    }
-}

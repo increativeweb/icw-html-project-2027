@@ -23,6 +23,7 @@
         }
         .navbar-brand {
             padding: 1.4rem 0;
+            @include transition(0.1s, ease-in-out);
             img {
                 height: 3.875rem; // 62px
                 margin-bottom: -2.5%;
@@ -373,6 +374,7 @@
                 .navbar-collapse {
                     @include transform(translateX(0));
                     transition: transform 0.3s ease-in-out;
+                    width: 18.75rem; // 300px
                 }
             }
         }
@@ -380,14 +382,14 @@
             .navbar-brand {
                 padding: 1rem 0;
                 img {
-                    height: 2.125rem; // 34px
+                    height: 2.125rem; // 34px   
                 }
             }
             .navbar-collapse {
                 position: fixed;
                 top: 4rem;
                 left: 0;
-                width: 18.75rem; // 300px
+                width: 0;
                 height: calc(100dvh - 4rem);
                 padding: 0.625rem 0;
                 background: var(--black);

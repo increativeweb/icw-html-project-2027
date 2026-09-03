@@ -1,3 +1,4 @@
+@import '../../assets/css/scss/mixins';
 .hero-section {
     .outside-left {
         height: 100%;
@@ -88,10 +89,36 @@
             max-width: 680px;
             margin: 0 auto;
         }
-        .category-card-block {
-            margin-top: 50px;            
-            @media (max-width: 767px) {
-                margin-top: 30px;
+    }
+    .home-category-cards {
+        margin-top: 50px;            
+        @media (max-width: 767px) {
+            margin-top: 30px;
+        }
+        .category-card {
+            position: relative;
+            @include flexbox;
+            @include align-items(center);
+            gap: 20px;
+            padding: 20px;
+            background: var(--white);
+            height: 100%;
+            .card-img {
+                max-width: 100px;
+            }
+            .card-body {
+                text-align: left;
+                h3 {
+                    font-size: clamp(18px, 3vw, 22px);
+                    margin-bottom: 12px;
+                }
+            }
+            &:hover, &:focus, &:active {
+                .card-body {
+                    h3 {
+                        color: var(--darkgreen);
+                    }
+                }
             }
         }
     }
