@@ -6,7 +6,9 @@
     min-height: 100vh;
     padding-top: clamp(3.125rem, 7.5vw, 6.25rem);
     padding-bottom: clamp(3.125rem, 7.5vw, 6.25rem);
-
+    @media (min-width: 2200px) {
+        min-height: 50vh;
+    }
     .media-bg-block {
         position: absolute;
         inset: 0;
