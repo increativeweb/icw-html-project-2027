@@ -1,0 +1,28 @@
+@import '../../assets/css/scss/mixins';
+
+.content-with-image-section {
+    .is-bottom-img {
+        @include flexbox;
+        @include flex-direction(column);
+        gap: 60px;
+        @media (max-width: 992px) {
+            gap: 40px;           
+        }
+        .media-block {
+            height: 100%;
+        }
+    }
+    .is-top-img {
+        @include flexbox;
+        @include flex-direction(column-reverse);
+        @include justify-content(flex-end);
+        gap: 60px;
+        @media (max-width: 992px) {
+            @include flex-direction(column); 
+            gap: 40px;           
+        }
+    }
+    .section-title {
+        margin-bottom: 0;
+    }
+}

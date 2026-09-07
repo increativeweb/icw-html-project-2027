@@ -166,6 +166,7 @@ img {
 
 .g-30 {
     --bs-gutter-x: 60px;
+    --bs-gutter-y: 30px;
 
     @media (max-width: 992px) {
         --bs-gutter-x: 30px;
@@ -173,6 +174,7 @@ img {
 }
 
 .g-40 {
+    --bs-gutter-y: 30px;
     @media (min-width: 992px) {
         --bs-gutter-x: 50px;
     }
@@ -186,6 +188,7 @@ img {
     }
 }
 .g-50 {
+    --bs-gutter-y: 30px;
     @media (min-width: 992px) {
         --bs-gutter-x: 50px;
     }
@@ -266,6 +269,9 @@ h5,
         color: var(--white) !important;
     }
 }
+.bg-gray {
+    background-color: rgba(82,82,82,0.05) !important;
+}
 .bg-light {
     background-color: var(--peachcream) !important;
     .section-title {
@@ -274,12 +280,10 @@ h5,
         }
     }
 }
-
 .bg-line-vector {
     background-image: linear-gradient( 90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
     background-size: 250px;
 }
-
 .bg-transprent {
     background-color: transparent !important;
     background-image: none !important;
@@ -289,6 +293,20 @@ h5,
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    &::before {
+        content: '';
+        top: 0;
+        left: 0;
+        @include border-radius(0);
+        opacity: 0.65;
+        background: var(--darkblack);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        mix-blend-mode: normal;
+        filter: opacity(100%);
+    }
 }
 
 // Video & Image Background CSS
@@ -317,7 +335,7 @@ h5,
 // Video Player CSS
 .media-block {
     max-width: 100%;
-    height: 100%;
+    // height: 100%;
     @include border-radius(0);
     position: relative;
     overflow: hidden;
@@ -592,11 +610,8 @@ h5,
     &.ratio-3x4 {
         --bs-aspect-ratio: 80%;
     }
-    &.ratio-hero-img {
-        --bs-aspect-ratio: 32%;
-        @media (max-width: 767px) {
-            --bs-aspect-ratio: 50%;
-        }
+    &.ratio-6x9 {
+        --bs-aspect-ratio: 95%;
     }
     &.ratio-6x4 {
         --bs-aspect-ratio: 66.6667%;
@@ -680,57 +695,6 @@ h5,
         @media (max-width: 575px) {
             position: sticky;
             top: calc(100px + (sibling-index() - 1) * 20px);
-        }
-    }
-}
-
-// Offcanvas
-.offcanvas.enquire-popup-model {
-    margin: 20px;
-    width: calc(100% - 10px);
-    max-width: 700px;
-    @include border-radius(0px);
-    overflow: hidden;
-    .btn-close {
-        position: absolute;
-        padding: 0;
-        right: 30px;
-        top: 30px;
-        opacity: 1;
-        @media (max-width: 767px) { 
-            right: 15px;
-            top: 15;
-        }
-        &:hover, &:focus {
-            opacity: 0.5;
-        }
-    }
-    .offcanvas-header {
-        padding: 30px;
-        @media (max-width: 767px) { 
-            padding: 15px;
-        }
-        h3 {
-            margin-bottom: 0;
-        }
-    }
-    .offcanvas-body {
-        padding: 0 30px 30px; 
-        @media (max-width: 767px) { 
-            padding: 0 15px 15px;
-        }   
-        &::-webkit-scrollbar {
-            background-color: transparent;
-            width: 5px;
-            height: 5px;
-            border-radius: 10px;
-        }
-        &::-webkit-scrollbar-thumb {
-            background-color: rgba(#233F61, 0.1);
-            border-radius: 10px;
-        }
-        &::-webkit-scrollbar-track {
-            background-color: #eeeeee;
         }
     }
 }

@@ -28,14 +28,32 @@
             }
         }
     }
+    &.is-dark {
+        *:not(a) {
+            color: var(--gs-text, #fff);
+        }
+
+        .section-title {
+            *:not(a) {
+                color: var(--gs-text, #fff);
+            }
+            .highlight-words {
+                color: rgba(#ffffff, 0.3);
+            }
+        }
+    }
     &:has(~ .with-top-margin-section) {
         padding-bottom: 0;
-        margin-bottom: -100px;
         z-index: 2;
         position: relative;
     }
     &.with-top-margin-section {
         padding-top: 200px;
+        margin-top: -100px;
+        @media (max-width: 992px) {
+            padding-top: 100px;
+            margin-top: -50px;
+        }
     }
 
     &.section-title-flex {
@@ -65,7 +83,7 @@
     &.section-title-mw-550 {
         .section-title {
             max-width: 550px;
-            @media (max-width: 992px) {
+            @media (max-width: 767px) {
                 max-width: 100%;
             }
         }
@@ -74,7 +92,7 @@
     &.section-title-mw-600 {
         .section-title {
             max-width: 600px;
-            @media (max-width: 992px) {
+            @media (max-width: 767px) {
                 max-width: 100%;
             }
         }
@@ -250,6 +268,50 @@
             }
             & > *:last-child {                
                 margin-bottom: 4px !important;
+            }
+        }
+    }
+}
+
+// Info Card List
+
+.info-list-cards {
+    .info-list-card {
+        position: relative;
+        @include flexbox;
+        @include align-items(center);
+        gap: 20px;
+        padding: 20px;
+        background-color: var(--white);
+        height: 100%;
+        .card-img {
+            max-width: 100px;
+            &:empty {
+                width: 0;
+                max-width: 0;
+                display: none;
+            }
+        }
+        .card-body {
+            text-align: left;
+            h3 {
+                font-size: clamp(16px, 3vw, 18px);
+                margin-bottom: 8px;
+            }
+            .card-info {
+                font-size: 16px;
+            }
+            .card-action {
+                .btn {
+                    font-size: 14px;
+                }
+            }
+        }
+        &:has(a):hover, &:has(a):focus, &:has(a):active {
+            .card-body {
+                h3 {
+                    color: var(--darkgreen);
+                }
             }
         }
     }
