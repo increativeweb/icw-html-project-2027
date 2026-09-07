@@ -8,6 +8,9 @@
         height: 100%;
         background: var(--white);
         overflow: hidden;
+        @media (max-width: 992px) {
+            max-width: 300px;
+        }
         .product-img {
             
         }
@@ -80,6 +83,18 @@
         }
     }
     .products-card-block {
+        & > .row {
+            @media (max-width: 992px) {
+                overflow: hidden;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                scroll-snap-align: start;
+                padding-bottom: 5px;
+                & > .col {
+                    width: auto;
+                }
+            }
+        }
         & > .action {
             margin-top: 50px;
             text-align: center;
