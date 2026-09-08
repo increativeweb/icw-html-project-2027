@@ -13,9 +13,15 @@
         &.is-visible {  
             .navbar {
                 .navbar-collapse {
+                    display: block;
                     opacity: 1;
                     visibility: visible;
-                    @include transform(none);
+                    transform: translateX(0%);
+                    transition: transform .25s ease-out, opacity .25s ease-out;
+                    .mainMenu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
                 }
             }
         }
@@ -238,21 +244,7 @@
             }
         }
         .sub-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            display: block;
-            min-width: 220px;
-            @include box-shadow(15px 15px 45px 0px rgba(0, 0, 0, 0.08));
-            background: var(--white);
-            @include transform(translateY(5px));
-            @include transition(0.1s, ease-in-out);
-            opacity: 0;
-            visibility: hidden;
             li {
-                &:not(:last-child) {
-                    border-bottom: 1px solid #eeeeee;
-                }
                 a:not(.btn) {
                     font-size: 15px;
                     padding: 15px;
@@ -273,8 +265,28 @@
                 }
             }
         }
-        .navbar-toggler {
-            display: none;
+        @media (min-width: 992px) {
+            .navbar-toggler {
+                display: none;
+            }
+            .sub-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                display: block;
+                min-width: 220px;
+                @include box-shadow(15px 15px 45px 0px rgba(0, 0, 0, 0.08));
+                background: var(--white);
+                @include transform(translateY(5px));
+                @include transition(0.1s, ease-in-out);
+                opacity: 0;
+                visibility: hidden;
+                li {
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #eeeeee;
+                    }
+                }
+            }
         }
         @media (max-width: 1200px) {
             .mainMenu {
@@ -295,7 +307,7 @@
             .navbar-collapse {
                 width: 100%;
                 transform: translateX(100%);
-                max-width: 90%;
+                max-width: 80%;
                 height: calc(100dvh - 72px);
                 position: fixed;
                 right: 0;
@@ -308,13 +320,15 @@
                 opacity: 0;
                 visibility: hidden;
                 box-shadow: 0 0 32px 0 rgba(0, 0, 0, .1);
-                @include flexbox;
+                display: none;
                 @include align-items(flex-start);
                 transition: transform .3s cubic-bezier(0.77, 0.2, 0.05, 1), opacity .25s cubic-bezier(0.77, 0.2, 0.05, 1);                
                 --scrollbar-offset: 0px;
                 .mainMenu {
-                    padding: 40px 20px 20px;
+                    padding: 30px 20px 20px;
                     width: inherit;
+                    opacity: 0;
+                    visibility: hidden;
                     & > li {
                         width: 100%;
                         border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -322,7 +336,7 @@
                             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
                         }
                         & > a {
-                            font-size: 20px;
+                            font-size: 18px;
                             font-family: var(--font-prata);
                             padding: 25px 12px 22px;
                             line-height: 1;
@@ -360,13 +374,8 @@
             }
             .sub-menu {
                 display: none;
-                position: relative;
-                width: 100%;
-                background: transparent;
-                @include box-shadow(none);
                 padding-left: 20px;
                 border-top: 1px solid rgba(0, 0, 0, 0.1);
-                transition: none;
                 li { 
                     border-top: 1px solid rgba(0, 0, 0, 0.1);
                     &:first-child {

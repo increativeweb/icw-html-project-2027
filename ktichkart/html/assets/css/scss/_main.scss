@@ -150,13 +150,13 @@
     }
     .highlight-words {
         margin-bottom: -80px;
-        font-size: clamp(70px, 5vw, 100px);
+        font-size: clamp(50px, 5vw, 100px);
         font-weight: 700;
         line-height: 1;
         font-family: var(--font-prata);
         color: var(--peachcream);
         @media (max-width: 992px) {
-            margin-bottom: -50px;
+            margin-bottom: -35px;
         }
     }
     .tagline {
@@ -274,7 +274,6 @@
 }
 
 // Info Card List
-
 .info-list-cards {
     .info-list-card {
         position: relative;
@@ -284,8 +283,15 @@
         padding: 20px;
         background-color: var(--white);
         height: 100%;
+        @media (max-width: 992px) {
+            padding: 15px;
+            gap: 15px;
+        }
         .card-img {
             max-width: 100px;
+            @media (max-width: 1440px) {
+                max-width: 80px;
+            }
             &:empty {
                 width: 0;
                 max-width: 0;
@@ -317,3 +323,10 @@
     }
 }
 
+.follow-us-img {
+    margin: 0 -100px;
+    max-width: unset;
+    @media (max-width: 992px) {
+        margin: 0 -20px;
+    }
+}

@@ -1,6 +1,9 @@
 .main-footer {
     background: var(--peachcream);
     padding: 70px 0 30px;
+    @media (max-width: 992px) {
+        padding: 50px 0 20px;
+    }
     .footer-info-block {
         .footer-logo {
             font-family: var(--font-prata);
@@ -71,6 +74,9 @@
             letter-spacing: 1px;
             white-space: nowrap;
             @include transition(0.1s, ease-in-out);
+            @media (max-width: 767px) {
+                font-size: 14px;
+            }
             &:hover, &:focus, &:active {
                 text-decoration: underline;
                 color: var(--darkgreen);
@@ -99,7 +105,10 @@
                     font-family: var(--font-prata);
                     font-weight: 600;
                     margin-bottom: 15px;
-                    letter-spacing: 1px;
+                    letter-spacing: 1px;                    
+                    @media (max-width: 767px) {
+                        font-size: 16px;
+                    }
                 }
                 .sub-menu {
                     li {
@@ -152,6 +161,10 @@
         margin-top: 30px;
         padding-top: 30px;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
+        @media (max-width: 992px) {
+            margin-top: 20px;
+            padding-top: 20px;
+        }
         .copyright-text {
             font-weight: 400;
             font-size: clamp(14px, 1.5vw, 16px);

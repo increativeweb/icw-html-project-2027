@@ -9,7 +9,7 @@
         background: var(--white);
         overflow: hidden;
         @media (max-width: 992px) {
-            max-width: 300px;
+            max-width: 280px;
         }
         .product-img {
             
@@ -88,10 +88,13 @@
                 overflow: hidden;
                 overflow-x: auto;
                 flex-wrap: nowrap;
-                scroll-snap-align: start;
+                scroll-snap-type: x mandatory;
                 padding-bottom: 5px;
+                margin-left: -20px;
+                margin-right: -20px;
                 & > .col {
                     width: auto;
+                    scroll-snap-align: start;
                 }
             }
         }

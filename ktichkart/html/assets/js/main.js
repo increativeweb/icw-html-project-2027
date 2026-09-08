@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
             $submenu.stop(true, true).slideToggle(300);
         });
         $(window).on('resize', function () {
-            if ($(window).width() >= 1200) {
+            if ($(window).width() >= 992) {
                 $('.main-header, .navbar-toggler, .bg-overlay').removeClass('is-visible');
                 $('body').removeClass('overflow-hidden');
             }
