@@ -71,7 +71,7 @@
             }
         }
         &:has(a) {
-            &:hover, &:focus {            
+            &:hover, &:focus, &:focus-within {            
                 .product-info {
                     transform: translateY(-32px);
                     .action {

@@ -230,21 +230,17 @@
 
 // Page Header
 .page-header {
-    padding: 100px 0;
-    background-image: linear-gradient(90deg, #fbf5fd, #fdf4f4);
+    padding: 50px 0;
     text-align: center;
-    @media (max-width: 992px) {
-        padding: 50px 0;
-    }
     .section-title {
         max-width: 650px;
         margin: 0 auto;
         .title {
-            font-size: clamp(32px, 5vw, 60px);
+            font-size: clamp(28px, 5vw, 34px);
+            margin-bottom: 40px;
         }
         .sort-info {
-            font-size: clamp(18px, 2vw, 22px);
-            color: rgb(64, 69, 79);
+            color: var(--gray);
         }
         .action {
             margin-top: 30px;

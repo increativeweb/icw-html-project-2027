@@ -6,17 +6,15 @@
         @include flex-direction(column);
         height: 100%;
         text-align: center;
-        .card-title {
-            font-size: clamp(24px, 3vw, 50px);
+        .count-number {
+            font-size: clamp(24px, 3vw, 42px);
             color: var(--primary);
         }
-        .card-info {
-            strong {
-                display: block;
-                font-size: clamp(18px, 2vw, 22px);
-                color: var(--black);
-                margin: 10px 0;
-            }
+        .card-title {
+            font-size: clamp(18px, 2vw, 22px);
+            font-weight: 600;
+            color: var(--black);
+            margin: 10px 0;
         }
     }
 }
