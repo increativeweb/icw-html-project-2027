@@ -9,7 +9,7 @@
         <link rel="preconnect" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
         <link href="//fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prata&display=swap" rel="stylesheet">
-        <title>About Us | KTICHKART</title>        
+        <title>Products | KTICHKART</title>        
         <meta name="description" content="At KTICHKART, we believe beautiful spaces are created through thoughtful details.">  
         <link rel="dns-prefetch" href="//challenges.cloudflare.com" />
         <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
@@ -32,7 +32,7 @@
                     <div class="collapse navbar-collapse">                        
                         <ul class="navbar-nav mainMenu">
                             <li><a href="index.html">Home</a></li>
-                            <li class="menu-item-has-children">
+                            <li class="menu-item-has-children current-menu-item">
                                 <a href="products.html">Products</a>
                                 <ul class="sub-menu">
                                     <li><a href="home-decor.html">Home Decor</a></li>
@@ -41,7 +41,7 @@
                                 </ul>
                             </li>
                             <li><a href="materials.html">Materials</a></li>
-                            <li class="current-menu-item"><a href="about-us.html">About Us</a></li>
+                            <li class=""><a href="about-us.html">About Us</a></li>
                             <li><a href="contacts.html">Contacts</a></li>
                         </ul>
                     </div>
@@ -80,150 +80,190 @@
         </header>
         <div class="bg-overlay"></div>
         <main class="main-content-wrapper">
-            <section class="page-header bg-light bg-line-vector">
+            <link rel="stylesheet" href="blocks/product-content/style.css" media="all" />
+            <section class="theme-section product-content-section bg-light">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="section-title text-center mb-0">
-                                <div class="highlight-words">A</div>
-                                <h1 class="title">About Us</h1>
-                                <div class="sort-info">Our curated collection of modern home decor combines style, comfort, and functionality to help you transform every corner of your home.</div>
+                    <div class="breadcrumb-block">
+                        <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Air-Tight Kitchen Storage Containers</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="product-content-block">
+                        <div class="row g-30">
+                            <div class="col-md-6">
+                                <div class="product-thumbnail-slider">
+                                    <div class="splide productMainSlider">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <div class="media-block ratio ratio-1x1">
+                                                        <img src="uploads/img-hero-slide-1.jpg" alt="Product">
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="media-block ratio ratio-1x1">
+                                                        <img src="uploads/img-hero-slide-2.jpg" alt="Product">
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="media-block ratio ratio-1x1">
+                                                        <img src="uploads/img-hero-slide-3.jpg" alt="Product">
+                                                    </div>
+                                                </li>                                                
+                                                <li class="splide__slide">
+                                                    <div class="media-block ratio ratio-1x1">
+                                                        <img src="uploads/img-hero-slide-sm-1.jpg" alt="Product">
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="media-block ratio ratio-1x1">
+                                                        <img src="uploads/img-hero-slide-sm-2.jpg" alt="Product">
+                                                    </div>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <div class="media-block ratio ratio-1x1">
+                                                        <img src="uploads/img-hero-slide-sm-3.jpg" alt="Product">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="splide productThumbnailSlider">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <img src="uploads/img-hero-slide-1.jpg" alt="Product">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="uploads/img-hero-slide-2.jpg" alt="Product">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="uploads/img-hero-slide-3.jpg" alt="Product">
+                                                </li>                                                
+                                                <li class="splide__slide">
+                                                    <img src="uploads/img-hero-slide-sm-1.jpg" alt="Product">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="uploads/img-hero-slide-sm-2.jpg" alt="Product">
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <img src="uploads/img-hero-slide-sm-3.jpg" alt="Product">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-info-block">
+                                    <h1 class="product-name">Air-Tight Kitchen Storage Containers</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <link rel="stylesheet" href="blocks/counter/style.css" media="all" />
-            <section class="theme-section counter-section section-title-mw-800">
+            <script src="blocks/product-content/script.js"></script>	
+            <link rel="stylesheet" href="blocks/product-card/style.css" media="all" />
+            <section class="theme-section product-section bg-gray section-title-mw-550">
                 <div class="container">
                     <div class="section-title text-center">
-                        <div class="highlight-words">O</div>
-                        <h2>Our Mission</h2>
-                        <div class="sort-info">
-                            <p>At KTICHKART, our mission is to make beautiful, thoughtfully designed home decor accessible to every home. We bring together modern style, everyday functionality, and timeless charm to help you create spaces that feel warm, comfortable, and uniquely yours.</p>
-                            <p>We carefully curate pieces that add character to every corner, from subtle accents to statement decor. With a focus on quality, style, and customer satisfaction, we aim to make decorating your home simple, inspiring, and enjoyable.</p>
-                        </div>
+                        <div class="highlight-words">P</div>
+                        <h2 class="title">Related Products</h2>
+                        <div class="sort-info">From timeless accents to stylish essentials, shop our best-selling products to add charm and character to your home.</div>
                     </div>
-                    <div class="counter-block row row-cols-1 row-cols-md-2 row-cols-lg-4 g-15">
-                        <div class="col">
-                            <div class="counter-card">
-                                <h3 class="counter count-number" data-countto="10" data-duration="2500"><span>0</span>+</h3>
-                                <div class="card-title">Years of Inspiration</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="counter-card">
-                                <h3 class="counter count-number" data-countto="50" data-duration="2500"><span>0</span>+</h3>
-                                <div class="card-title">Curated Collections</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="counter-card">
-                                <h3 class="counter count-number" data-countto="10" data-duration="2500"><span>0</span>K+</h3>
-                                <div class="card-title">Happy Customers</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="counter-card">
-                                <h3 class="counter count-number" data-countto="25" data-duration="2500"><span>0</span>+</h3>
-                                <div class="card-title">Cities Served</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <link rel="stylesheet" href="blocks/content-with-image/style.css" media="all" />
-            <section class="theme-section content-with-image-section  bg-light bg-line-vector">
-                <div class="container">
-                    <div class="row g-50">
-                        <div class="col-lg-6 is-bottom-img">
-                            <div class="section-title">
-                                <div class="highlight-words">K</div>
-                                <h2 class="title">In Our Store, You Will Be Able To Find All Types Of Home Decor To Make Your Home Beautiful.</h2>
-                            </div>
-                            <div class="media-block ratio ratio-6x9">
-                                <img src="uploads/img-hero-slide-2.jpg" alt="KTICHKART">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 is-top-img">
-                            <div class="section-title">
-                                <h3 class="title">Thoughtful Decor, Beautiful Spaces, Happier You.</h3>
-                                <div class="sort-info">
-                                    <p>From cozy accents to statement pieces, KTICHKART offers a wide range of home decor to make every corner of your home special.</p>
-                                    <p>We believe a beautiful home brings joy to everyday life. KTICHKART brings you carefully curated decor pieces that blend style, comfort, and quality - helping you create spaces that truly feel like home.</p>
-                                </div>
-                                <div class="action">
-                                    <a href="#" class="btn btn-primary">EXPLORE COLLECTION</a>
+                    <div class="products-card-block">
+                        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-15">
+                            <div class="col">
+                                <div class="product-card">
+                                    <a href="product-details.html">
+                                        <div class="product-img ratio ratio-1x1">
+                                            <img src="uploads/img-hero-slide-1.jpg" alt="Product">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <h3 class="title"><a href="product-details.html">Air-Tight Kitchen Storage Containers</a></h3>
+                                        <div class="amount">Form
+                                            <div class="sale-price"><span class="currency-symbol">₹</span>1,149</div>
+                                            <div class="regular-price"><span class="currency-symbol">₹</span>1,749</div>
+                                        </div>
+                                        <div class="action">
+                                            <a href="#" class="btn btn-link-arrow">Add to cart <span class="icon-arrow"></span></a>
+                                            <a href="#" class="btn btn-link view-cart">View Cart</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="media-block ratio ratio-16x9">
-                                <img src="uploads/img-hero-slide-3.jpg" alt="KTICHKART">
+                            <div class="col">
+                                <div class="product-card">
+                                    <a href="product-details.html">
+                                        <div class="product-img ratio ratio-1x1">
+                                            <img src="uploads/img-hero-slide-2.jpg" alt="Product">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <h3 class="title"><a href="product-details.html">Sprouts Maker Glass Jar | Hygienic Glass - 720ml</a></h3>
+                                        <div class="amount">Form
+                                            <div class="regular-price"><span class="currency-symbol">₹</span>1,149</div>
+                                        </div>
+                                        <div class="action">
+                                            <a href="#" class="btn btn-link-arrow">Add to cart <span class="icon-arrow"></span></a>
+                                            <a href="#" class="btn btn-link view-cart">View Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="product-card">                                    
+                                    <a href="product-details.html">
+                                        <div class="product-img ratio ratio-1x1">
+                                            <img src="uploads/img-hero-slide-3.jpg" alt="Product">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <h3 class="title"><a href="product-details.html">Premium Borosilicate Glass Spice Jar with Bamboo Lid - 270 ml</a></h3>
+                                        <div class="amount">Form
+                                            <div class="sale-price"><span class="currency-symbol">₹</span>1,149</div>
+                                            <div class="regular-price"><span class="currency-symbol">₹</span>1,749</div>
+                                        </div>
+                                        <div class="action">
+                                            <a href="#" class="btn btn-link-arrow">Add to cart <span class="icon-arrow"></span></a>
+                                            <a href="#" class="btn btn-link view-cart">View Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="product-card">
+                                    <a href="product-details.html">
+                                        <div class="product-img ratio ratio-1x1">
+                                            <img src="uploads/img-hero-slide-sm-1.jpg" alt="Product">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <h3 class="title"><a href="product-details.html">Food Grade Silicone Idli liners ( Eco-Friendly ) ☘️</a></h3>
+                                        <div class="amount">Form
+                                            <div class="sale-price"><span class="currency-symbol">₹</span>1,149</div>
+                                            <div class="regular-price"><span class="currency-symbol">₹</span>1,749</div>
+                                        </div>
+                                        <div class="action">
+                                            <a href="#" class="btn btn-link-arrow">Add to cart <span class="icon-arrow"></span></a>
+                                            <a href="#" class="btn btn-link view-cart">View Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-            <script src="blocks/counter/script.js"></script>
-            <link rel="stylesheet" href="blocks/testimonials/style.css" media="all" />
-            <section class="theme-section testimonials-section">
-                <div class="container">
-                    <div class="splide testimonials-splide">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <div class="testimonial-card">
-                                        <div class="testimonial-img ratio ratio-1x1"><img src="uploads/img-hero-slide-sm-1.jpg" alt="Testimonial"></div>
-                                        <div class="testimonial-info">
-                                            <div class="highlight-words">P</div>
-                                            <div class="sort-info">“I absolutely love the quality and design of the home decor! It feels so premium, and the packaging was beautiful. KTICHKART has truly exceeded my expectations.”</div>
-                                            <div class="user-info">
-                                                <div class="user-img"><img src="assets/images/no-user.jpg" alt="Priya Sharma"></div>
-                                                <div class="user-name">
-                                                    <div class="name">Priya Sharma</div>
-                                                    <div class="location">Mumbai, MH</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="testimonial-card">
-                                        <div class="testimonial-img ratio ratio-1x1"><img src="uploads/img-hero-slide-sm-2.jpg" alt="Testimonial"></div>
-                                        <div class="testimonial-info">
-                                            <div class="highlight-words">N</div>
-                                            <div class="sort-info">“I ordered a beautiful decor piece for my sister’s birthday and she absolutely loved it! The craftsmanship is beautiful and it arrived right on time. Highly recommended!”</div>
-                                            <div class="user-info">
-                                                <div class="user-img"><img src="assets/images/no-user.jpg" alt="Neha Verma"></div>
-                                                <div class="user-name">
-                                                    <div class="name">Neha Verma</div>
-                                                    <div class="location">Bengaluru, KA</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="testimonial-card">
-                                        <div class="testimonial-img ratio ratio-1x1"><img src="uploads/img-hero-slide-sm-3.jpg" alt="Testimonial"></div>
-                                        <div class="testimonial-info">
-                                            <div class="highlight-words">S</div>
-                                            <div class="sort-info">“The decor pieces I bought are even more stunning in person! Great quality, fast delivery, and the whole experience was seamless. I’ll definitely shop again!”</div>
-                                            <div class="user-info">
-                                                <div class="user-img"><img src="assets/images/no-user.jpg" alt="Sneha Kapoor"></div>
-                                                <div class="user-name">
-                                                    <div class="name">Sneha Kapoor</div>
-                                                    <div class="location">Pune, MH</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="action">
+                            <a href="#" class="btn btn-primary">View All</a>
                         </div>
                     </div>
                 </div>
             </section>
-            <script src="blocks/testimonials/script.js"></script>
         </main>
         <footer class="main-footer">
             <div class="container">

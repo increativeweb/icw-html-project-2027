@@ -676,6 +676,25 @@ h5,
     }
 }
 
+// Breadcrumb
+.breadcrumb-nav {
+    .breadcrumb {
+        @include justify-content(center);
+        .breadcrumb-item {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1;
+            a {
+                color: var(--darkblack);
+                text-decoration: none;
+                &:hover, &:focus {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+}
+
 // In Mobile Sticky Card 
 .is-mobile-stack-card {
     [class*="col-"], [class*="col"] {
@@ -717,10 +736,9 @@ h5,
     @include flex-wrap(wrap);
     @include justify-content(center);
     gap: 10px;
-    padding: 10px 50px;
-    border: 1px solid #E6E6E6;
     border-radius: 50px;
     max-width: max-content;
+    font-family: var(--font-prata);
     .prev, .next {
         color: var(--black);
         font-weight: 500;
@@ -759,11 +777,13 @@ h5,
         color: var(--black);
         @include transition(0.2s, ease-in-out);
         line-height: 1;
+        padding-top: 4px;
         &:hover:not(span), &:focus:not(span) {
             opacity: 0.5
         }
         &.current {
-            color: var(--primary);
+            color: var(--white);
+            background: var(--primary);
             opacity: 1;
             cursor: default;
         }

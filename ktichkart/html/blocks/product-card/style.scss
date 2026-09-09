@@ -1,6 +1,13 @@
 @import '../../assets/css/scss/mixins';
 
 .product-section {
+    .row {
+        &.g-15 {
+            @media (max-width: 992px) {
+                --bs-gutter-y: 30px;
+            }
+        }
+    }
     .product-card {
         @include flexbox;
         @include flex-direction(column);
@@ -8,9 +15,6 @@
         height: 100%;
         background: var(--white);
         overflow: hidden;
-        @media (max-width: 992px) {
-            max-width: 280px;
-        }
         .product-img {
             
         }
@@ -27,7 +31,7 @@
                 line-height: 1.5;
                 margin-bottom: 8px;
                 a {
-                    color: var(--white);
+                    color: var(--darkblack);
                     text-decoration: none;
                 }
             }
@@ -56,6 +60,7 @@
                 right: 0;
                 opacity: 0;
                 transition: opacity .3s cubic-bezier(0.17, 0.67, 0.35, 0.95);
+                z-index: 10;
                 .btn {
                     font-size: 11px;
                     &.btn-link-arrow {
@@ -74,6 +79,12 @@
             &:hover, &:focus, &:focus-within {            
                 .product-info {
                     transform: translateY(-32px);
+                    .title {
+                        color: var(--primary);
+                        a {
+                            color: var(--primary);
+                        }
+                    }
                     .action {
                         bottom: -12px;
                         opacity: 1;
@@ -96,6 +107,11 @@
                     width: auto;
                     scroll-snap-align: start;
                 }
+            }
+        }
+        .product-card {
+            @media (max-width: 992px) {
+                max-width: 280px;
             }
         }
         & > .action {
