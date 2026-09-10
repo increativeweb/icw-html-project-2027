@@ -1,16 +1,14 @@
-// Primary slider.
-var primarySlider = new Splide('.productMainSlider', {
+// Single Product Slider
+var primarySlider = new Splide('.product-gallery-slider', {
     type: 'fade',
     pagination: true,
     arrows: false,
     cover: true,
     classes: {
-        pagination: 'splide__pagination',
+        pagination: 'splide__pagination is-light',
     },
 });
-
-// Thumbnails slider.
-var thumbnailSlider = new Splide('.productThumbnailSlider', {
+var thumbnailSlider = new Splide('.product-gallery-thumbnail-slider', {
     type: 'loop',
     rewind: true,
     fixedWidth: 100,
@@ -28,6 +26,17 @@ var thumbnailSlider = new Splide('.productThumbnailSlider', {
         }
     }
 }).mount();
-
-// sync the thumbnails slider as a target of primary slider.
 primarySlider.sync(thumbnailSlider).mount();
+
+// Number Input
+jQuery('.variations_button button').on('click', function (e) {
+    e.preventDefault();
+
+    const $input = jQuery(this).parent().find('input[type="number"]');
+
+    if (jQuery(this).hasClass('qty-plus')) {
+        $input[0].stepUp();
+    } else {
+        $input[0].stepDown();
+    }
+});

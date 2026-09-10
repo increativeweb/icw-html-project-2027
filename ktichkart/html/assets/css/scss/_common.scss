@@ -518,14 +518,34 @@ h5,
             color: var(--darkgreen);
         }
     }
+    &.btn-secondary {
+        background: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--darkblack) !important;
+        &:hover, &:focus, &:active {
+            background: var(--darkgreen);
+            border-color: var(--darkgreen);
+            color: var(--white);
+        }
+    }
     &.btn-dark {
         background: var(--darkblack);
-        border-color: var(--primary);
-        color: var(--primary);
+        border-color: var(--darkblack);
+        color: var(--white);
         &:hover, &:focus, &:active {
-            background: var(--white);
+            background: var(--darkgreen);
             border-color: var(--darkgreen);
-            color: var(--darkgreen);
+            color: var(--white);
+        }
+    }
+    &.btn-darkgreen {
+        background: var(--darkgreen);
+        border-color: var(--darkgreen);
+        color: var(--white);
+        &:hover, &:focus, &:active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
         }
     }
     &.btn-link-arrow {
@@ -666,8 +686,7 @@ h5,
     &.is-light {
         li {
             .splide__pagination__page { 
-                background: transparent;
-                border-color: var(--white);
+                background: rgba(#ffffff, 0.4);
                 &.is-active {
                     background: var(--white);
                 }
