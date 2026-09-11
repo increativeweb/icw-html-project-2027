@@ -11,9 +11,9 @@
         .industries-card {
             .card-body {
                 .card-title {
-                    color: var(--white)
+                    color: var(--white);
                     a {
-                        color: var(--white)
+                        color: var(--white);
                     }
                 }
                 .card-info {
@@ -45,6 +45,9 @@
             @include border-radius(12px);
             overflow: hidden;
             @include transition(0.2s, ease-in-out);
+            img {
+                height: 100%;
+            }
         }
         .card-body {
             @include flexbox;
