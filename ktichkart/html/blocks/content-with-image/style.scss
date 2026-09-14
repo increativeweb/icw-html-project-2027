@@ -6,7 +6,8 @@
         @include flex-direction(column);
         gap: 60px;
         @media (max-width: 992px) {
-            gap: 40px;           
+            gap: 40px;  
+            @include flex-direction(column-reverse);         
         }
         .media-block {
             height: 100%;
@@ -18,7 +19,6 @@
         @include justify-content(flex-end);
         gap: 60px;
         @media (max-width: 992px) {
-            @include flex-direction(column); 
             gap: 40px;           
         }
     }

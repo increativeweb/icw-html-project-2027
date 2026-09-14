@@ -150,7 +150,7 @@
     }
     .highlight-words {
         margin-bottom: -80px;
-        font-size: clamp(50px, 5vw, 100px);
+        font-size: clamp(50px, 4vw, 100px);
         font-weight: 700;
         line-height: 1;
         font-family: var(--font-prata);
@@ -241,13 +241,22 @@
     .section-title {
         max-width: 650px;
         margin: 0 auto;
+        .highlight-words {
+            margin-bottom: -65px;
+            @media (max-width: 992px) {
+                margin-bottom: -50px;
+            }
+        }
         .title {
-            font-size: clamp(28px, 5vw, 40px);
+            font-size: clamp(28px, 4vw, 40px);
             margin-bottom: 20px;
         }
         .sort-info {
             color: var(--gray);
-            margin-top: 40px;
+            margin-top: 30px;
+            @media (max-width: 992px) {
+                margin-top: 0px;
+            }
         }
         .action {
             margin-top: 30px;

@@ -8,14 +8,14 @@
         .footer-logo {
             font-family: var(--font-prata);
             font-weight: 700;
-            font-size: 32px;
+            font-size: 28px;
             text-decoration: none;
             line-height: 1;
             margin-bottom: 15px; 
             color: var(--black);
             display: inline-block;
             @media (max-width: 767px) {
-                font-size: 28px;
+                font-size: 22px;
             }
         }
         .footer-info {

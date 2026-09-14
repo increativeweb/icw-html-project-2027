@@ -28,15 +28,18 @@
     }
     .navbar {
         padding: 16px 0;
+        @media (max-width: 767px) {
+            padding: 10px 0;
+        }
         .navbar-brand {
             font-family: var(--font-prata);
             font-weight: 700;
-            font-size: 32px;
+            font-size: 28px;
             text-decoration: none;
             line-height: 1;
             padding-bottom: 0; 
             @media (max-width: 767px) {
-                font-size: 28px;
+                font-size: 22px;
             }
         }
         .navbar-collapse {
@@ -439,6 +442,12 @@
                         @include transform(translateY(-7px) rotate(-135deg));
                     }
                 }
+            }
+        }
+        @media (max-width: 767px) {
+            .navbar-collapse {
+                height: calc(100dvh - 60px);
+                top: 60px;
             }
         }
     }

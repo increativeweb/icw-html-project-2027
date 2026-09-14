@@ -1,0 +1,39 @@
+@import '../../assets/css/scss/mixins';
+
+.image-content-section {
+    .image-content-block {
+        &:not(:last-child) {
+            padding-bottom: 100px;
+            @media (max-width: 992px) {
+                padding-bottom: 50px;
+            }
+        }
+        &.is-right-img {
+            .row {
+                @include flex-direction(row-reverse);
+            }
+        }
+        &.is-center-img {
+            .media-block {
+                &.ratio-1x1 {
+                    @media (max-width: 767px) {
+                        --bs-aspect-ratio: 56.25%;
+                    }
+                }
+            }
+            @media (max-width: 767px) {
+                .row {
+                    .col-img {
+                        order: 1;
+                    }
+                    & > * {
+                        order: 2;
+                    }
+                }
+            }
+        }
+        .section-title {
+            margin-bottom: 0;
+        }
+    }
+}
