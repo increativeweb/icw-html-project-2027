@@ -537,6 +537,53 @@
     }
 }
 
+// Info Card Section
+.info-card-section {
+    .row {
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 50px;
+    }
+    .info-card {
+        @include flexbox;
+        @include flex-direction(column);
+        height: 100%;
+        .card-img {
+            @include border-radius(16px);
+            margin-bottom: 16px;
+            position: relative;
+            img {
+                @include border-radius(16px);
+            }
+            .icon-agreement {
+                position: absolute;
+                top: -35px;
+                left: auto;
+                right: 5px;
+                max-width: 80px;
+                height: auto;
+                @media (max-width: 992px) {
+                    max-width: 70px;
+                }
+            }
+        }
+        .card-body {
+            @include flexbox;
+            @include flex-direction(column);
+            .card-title {
+                margin-bottom: 8px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                font-size: 18px;
+                color: var(--white);
+            }
+            .card-info {
+                font-weight: 300;
+                color: #F0F0F0;
+            }
+        }
+    }
+}
+
 // CTA Section
 .cta-section {
     .cta-block {
