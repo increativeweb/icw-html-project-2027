@@ -144,19 +144,19 @@ img {
 
 .g-30 {
     --bs-gutter-x: 60px;
-
     @media (max-width: 992px) {
         --bs-gutter-x: 30px;
     }
 }
 
-.g-50 {
+.g-60 {
+    --bs-gutter-y: 30px;
     @media (min-width: 992px) {
         --bs-gutter-x: 50px;
     }
 
     @media (min-width: 1400px) {
-        --bs-gutter-x: 100px;
+        --bs-gutter-x: 120px;
     }
 
     @media (max-width: 992px) {
@@ -235,7 +235,6 @@ img {
     left: 0;
     height: 100%;
     width: 100%;
-    background: var(--black);
     z-index: -1;
 
     img,
@@ -253,12 +252,10 @@ img {
 // Video Player CSS
 .media-block {
     max-width: 100%;
-    height: 100%;
-    @include border-radius(10px);
+    @include border-radius(16px);
     position: relative;
     overflow: hidden;
     line-height: 0.7;
-    background: var(--black);
 
     img, video, iframe {
         max-width: 100%;
@@ -266,6 +263,7 @@ img {
         height: 100%;
         object-fit: cover;
         object-position: center;
+        @include border-radius(16px);
     }
     &.is-video {
         height: 100%;
@@ -387,21 +385,19 @@ h1,
 h2,
 .h2 {
     font-size: clamp(28px, 3vw, 40px);
+    font-weight: 600;
 }
 
 h3,
 .h3 {
-    font-size: clamp(18px, 2vw, 24px);
+    font-size: clamp(18px, 2vw, 20px);
+    font-weight: 600;
 }
 
 h4,
 .h4 {
-    font-size: clamp(16px, 3vw, 20px);
-}
-
-h5,
-.h5 {
     font-size: clamp(16px, 3vw, 18px);
+    font-weight: 600;
 }
 
 // Text Color CSS
@@ -423,6 +419,20 @@ h5,
         color: var(--white) !important;
     }
 }
+.bg-primary {
+    background-color: var(--primary) !important;
+    & > * {
+        color: var(--white) !important;
+    }
+    .section-title {
+        .tagline, .title {
+            color: var(--white);
+        }
+        .sort-info {
+            color: #F0F0F0;
+        }
+    }
+}
 .bg-darkcream {
     background-color: var(--darkcream) !important;
 }
@@ -440,8 +450,8 @@ h5,
 // Button CSS
 .btn {
     height: 48px;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 16px;
     position: relative;
     border: none;
     overflow: hidden;
@@ -449,40 +459,31 @@ h5,
     @include inline-flex;
     @include align-items(center);
     @include justify-content(center);
-    @include border-radius(6px);
-    padding: 0 25px;
+    @include border-radius(50px);
+    padding: 0 16px;
     gap: 10px;
     white-space: nowrap;
     line-height: 1;
-    letter-spacing: -0.01em;
-    .icon {
-        width: 22px;
-        min-width: 22px;
-        height: 22px;
-        min-height: 22px;
+    .icon-arrow {
+        width: 24px;
+        height: 24px;
+        flex: none;
         display: inline-block;
+        background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C9.62663 0 7.30655 0.703788 5.33316 2.02236C3.35977 3.34094 1.8217 5.21508 0.913451 7.4078C0.00519941 9.60051 -0.232441 12.0133 0.230582 14.3411C0.693605 16.6689 1.83649 18.807 3.51472 20.4853C5.19295 22.1635 7.33115 23.3064 9.65892 23.7694C11.9867 24.2324 14.3995 23.9948 16.5922 23.0865C18.7849 22.1783 20.6591 20.6402 21.9776 18.6668C23.2962 16.6934 24 14.3734 24 12C23.9966 8.81843 22.7313 5.76814 20.4816 3.51843C18.2319 1.26872 15.1816 0.00335979 12 0ZM16.6154 13.8462C16.6154 14.091 16.5181 14.3258 16.345 14.4989C16.1719 14.672 15.9371 14.7692 15.6923 14.7692C15.4475 14.7692 15.2127 14.672 15.0396 14.4989C14.8665 14.3258 14.7692 14.091 14.7692 13.8462V10.5358L8.96077 16.3454C8.87501 16.4311 8.77319 16.4992 8.66114 16.5456C8.54908 16.592 8.42898 16.6159 8.3077 16.6159C8.18641 16.6159 8.06631 16.592 7.95425 16.5456C7.8422 16.4992 7.74038 16.4311 7.65462 16.3454C7.56886 16.2596 7.50082 16.1578 7.45441 16.0457C7.408 15.9337 7.38411 15.8136 7.38411 15.6923C7.38411 15.571 7.408 15.4509 7.45441 15.3389C7.50082 15.2268 7.56886 15.125 7.65462 15.0392L13.4642 9.23077H10.1538C9.90903 9.23077 9.67425 9.13351 9.50114 8.9604C9.32803 8.78729 9.23077 8.55251 9.23077 8.30769C9.23077 8.06288 9.32803 7.82809 9.50114 7.65498C9.67425 7.48187 9.90903 7.38461 10.1538 7.38461H15.6923C15.9371 7.38461 16.1719 7.48187 16.345 7.65498C16.5181 7.82809 16.6154 8.06288 16.6154 8.30769V13.8462Z" fill="white"/></svg>');
         background-size: contain;
-        @include transition(0.2s, ease-in-out);
-        &.icon-wp {
-            background: url('data:image/svg+xml,<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7953 3.19421C16.8127 1.22075 14.0738 0 11.0483 0C4.99789 0 0.0921304 4.88229 0.0921304 10.9054C0.0921304 12.9096 0.635331 14.787 1.58243 16.401L1.55442 16.3496L0 22L5.80716 20.4836C7.31884 21.3192 9.12238 21.8107 11.0416 21.8107H11.0461C17.0965 21.8085 22 16.9255 22 10.9032C22 7.89309 20.775 5.1684 18.7946 3.19494L18.7953 3.19421ZM11.0461 19.9686H11.0424C9.33318 19.9686 7.73306 19.4991 6.36732 18.6825L6.40859 18.7053L6.07618 18.5094L2.63051 19.4096L3.5496 16.065L3.33291 15.7224C2.45951 14.3563 1.94063 12.6917 1.94063 10.9061C1.94063 5.90129 6.01722 1.8436 11.0453 1.8436C16.0734 1.8436 20.15 5.90129 20.15 10.9061C20.15 15.9109 16.0749 19.9686 11.0461 19.9686ZM16.0403 13.1818C15.7668 13.0454 14.421 12.3873 14.1704 12.2956C13.9191 12.2046 13.7363 12.1599 13.5535 12.4328C13.3722 12.7049 12.8474 13.3183 12.6875 13.5002C12.5283 13.6829 12.3676 13.7049 12.0941 13.5692C11.2465 13.2273 10.5183 12.7717 9.88522 12.2105L9.89259 12.2171C9.3037 11.6742 8.79882 11.0528 8.39124 10.3676L8.3706 10.3295C8.2114 10.0573 8.35365 9.90983 8.49 9.77411C8.61309 9.65233 8.76418 9.45572 8.90053 9.29725C9.00814 9.16593 9.10027 9.01554 9.17029 8.85414L9.17471 8.84167C9.20641 8.77784 9.22483 8.70375 9.22483 8.62452C9.22483 8.52841 9.19756 8.43891 9.15039 8.36261L9.15187 8.36481C9.08258 8.22836 8.5357 6.88729 8.30795 6.34147C8.08536 5.81032 7.85909 5.88295 7.69178 5.87415C7.53258 5.86681 7.34979 5.86535 7.16701 5.86535C6.87588 5.87268 6.61717 6.00327 6.43881 6.20502L6.43807 6.20648C5.84696 6.76477 5.47992 7.55195 5.47992 8.42424C5.47992 8.44331 5.47992 8.46312 5.48065 8.48219V8.47926C5.57721 9.55549 5.98258 10.5217 6.60612 11.3089L6.59727 11.2979C7.77949 13.0432 9.35529 14.4392 11.2045 15.3798L11.2738 15.4113C11.6777 15.5932 12.1951 15.7876 12.7243 15.9542L12.8341 15.9843C13.1599 16.087 13.5351 16.1464 13.9242 16.1464C14.1475 16.1464 14.3672 16.1266 14.5795 16.0892L14.5566 16.0921C15.3445 15.9285 15.9983 15.4553 16.397 14.809L16.4036 14.7965C16.5252 14.528 16.596 14.2148 16.596 13.8854C16.596 13.7496 16.5842 13.6168 16.5614 13.4877L16.5636 13.5017C16.4958 13.388 16.313 13.3205 16.0388 13.1833L16.0403 13.1818Z" fill="rgb(69 211 84)"/></svg>') no-repeat center center;
+        @include transition(0.1s, ease-in-out);
+    }
+    &:hover, &:focus {
+        .icon-arrow {
+            @include transform(rotate(45deg));
         }
     }
-    &.btn-md {
-        height: 40px;
-        padding: 0 15px;
-    }
-    &.btn-primary {
+    &.btn-secondary {
         color: var(--white) !important;
-        background-color: var(--black) !important;
-        .icon {
-            filter: brightness(0) invert(1);
-        }
+        background-color: var(--secondary) !important;
         &:hover,
         &:focus {
-            background-color: rgba(0, 0, 0, 0.9) !important;
-            .icon {
-                filter: unset;
-            }
+            background-color: #ea9821 !important;
         }        
     }
     &.btn-white {

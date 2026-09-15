@@ -19,7 +19,6 @@
 
     &.is-light {
         color: var(--black);
-
         .section-title {
             color: var(--black);
         }
@@ -27,16 +26,13 @@
 
     &.is-dark {
         color: var(--white);
-
         a {
             color: var(--white) !important;
-
             &:hover,
             &:focus {
                 opacity: 0.8 !important;
             }
         }
-
         .section-title {
             color: var(--white);
         }
@@ -58,10 +54,63 @@
         }
     }
 
+    &.with-tl-vector {
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            background: url('../images/img-free-agreements.png') no-repeat center;
+            display: inline-block;
+            background-size: contain;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: -80px;
+            left: -115px;
+            z-index: -1;
+            @media (max-width: 992px) {
+                width: 300px;
+                height: 300px;
+            }
+            @media (max-width: 767px) {
+                width: 200px;
+                height: 200px;
+                top: -15px;
+                left: -50px;
+            }
+        }
+    }
+    &.with-tr-vector {
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            background: url('../images/img-free-agreements.png') no-repeat center;
+            display: inline-block;
+            background-size: contain;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: -108px;
+            right: 50px;
+            z-index: -1;
+            @media (max-width: 992px) {
+                width: 300px;
+                height: 300px;
+            }
+            @media (max-width: 767px) {
+                width: 200px;
+                height: 200px;
+                top: -15px;
+                right: 20px;
+            }
+        }
+    }
+
     &.section-title-flex {
         .section-title {
             @include flexbox;
-            @include align-items(flex-start);
+            @include align-items(flex-end);
             @include justify-content(space-between);
             gap: 50px;
             @media (max-width: 992px) {
@@ -77,9 +126,6 @@
             .left-block {
                 max-width: 500px;
                 min-width: 400px;
-                @media (max-width: 992px) {
-                    min-width: 280px;
-                }
             }
             .right-block {
                 max-width: 650px;
@@ -92,7 +138,6 @@
 // Section Title CSS
 .section-title {
     margin-bottom: 50px;
-
     @media (max-width: 992px) {
         margin-bottom: 30px;
     }
@@ -112,12 +157,22 @@
     }
 
     .tagline {
-        font-size: 16px;
+        @include inline-flex;
+        @include align-items(center);
+        gap: 8px;
         font-weight: 500;
-        line-height: 1;
-        display: inline-block;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        color: var(--black);
+        text-transform: uppercase;
         margin-bottom: 10px;
-        color: var(--secondary);
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--secondary);
+            border-radius: 50px;
+            display: inline-block;
+        }
     }
 
     h1,
@@ -125,57 +180,21 @@
     h3 {
         margin-bottom: 20px;
         color: var(--black);
-        letter-spacing: -0.02em;
-        em {
-            font-family: var(--font-heading);
-            font-style: italic;
+        span {            
             color: var(--secondary);
-            font-weight: 400;
-            letter-spacing: 0;
         }
     }
 
     .sort-info {
-        color: var(--black);
+        color: var(--darkblack);
         strong {
             font-weight: 500;
             font-size: clamp(16px, 1.5vw, 18px);
         }
-        h3 {
-            font-weight: 400;
-        }
-
-        h4 {
-            margin-bottom: 16px;
-        }
-
-        img {
-            margin-top: 30px;
-        }
-
-        a {
-            margin-bottom: 5px;
-            display: inline-block;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 20px;
-            li {
-                list-style-type: disc;
-                &:not(:last-child) {
-                    margin-bottom: 15px;
-                }
-                strong {
-                    font-weight: 600;
-                    font-size: 16px;
-                }
-            }
-        }
     }
 
     .action {
-        margin-top: 40px;
+        margin-top: 30px;
         @include flexbox;
         @include align-items(center);
         @include flex-wrap(wrap);
@@ -252,6 +271,318 @@
             top: 0;
             left: 0;
             background: rgba(#000000, 0.5);
+        }
+    }
+}
+
+// Hero Section
+.hero-section {
+    position: relative;
+    padding: 80px 0;
+    color: var(--white);
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    @media (max-width: 992px) {
+        padding: 50px 0;
+    }
+    .section-title {
+        margin-bottom: 0;
+        max-width: 600px;
+        .tagline {
+            color: var(--white);
+            margin-bottom: 24px;
+            @media (max-width: 992px) {
+                margin-bottom: 15px;
+            }
+        }
+        h1 {
+            color: var(--white);
+        }
+        hr {
+            width: 80px;
+            border: 2px solid #FF9700;
+            opacity: 1;
+            margin: 24px 0;
+            @media (max-width: 992px) {
+                margin: 15px 0;
+            }
+        }
+        .sort-info {
+            color: var(--white);
+            font-size: clamp(16px, 1.5vw, 18px);
+            ul {
+                margin-top: 30px;
+                list-style-type: none;
+                @media (max-width: 992px) {
+                    margin-top: 20px;
+                }
+                li {
+                    list-style-type: none;
+                    position: relative;
+                    padding-left: 25px;
+                    &:not(:last-child) {
+                        margin-bottom: 16px;
+                    }
+                    &::before {
+                        content: '';
+                        background: url('data:image/svg+xml,<svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.96 12.0012C1.64587 12.0002 1.33558 11.932 1.05 11.8012C0.740826 11.6649 0.477413 11.4425 0.291223 11.1606C0.105032 10.8786 0.00393306 10.549 0 10.2112V1.79117C0.00393306 1.45331 0.105032 1.12373 0.291223 0.841787C0.477413 0.559841 0.740826 0.337447 1.05 0.201168C1.40574 0.0331352 1.80153 -0.031584 2.19227 0.0143849C2.583 0.0603538 2.95297 0.215162 3.26 0.461168L8.36 4.67117C8.56 4.83038 8.72151 5.03265 8.83252 5.26292C8.94353 5.49319 9.00118 5.74554 9.00118 6.00117C9.00118 6.2568 8.94353 6.50914 8.83252 6.73941C8.72151 6.96968 8.56 7.17195 8.36 7.33117L3.26 11.5412C2.89238 11.8393 2.43331 12.0017 1.96 12.0012Z" fill="rgb(255 151 0)"/></svg>') no-repeat center center;
+                        background-size: 9px;
+                        width: 9px;
+                        height: 12px;
+                        display: inline-block;
+                        position: absolute;
+                        top: 6px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .media-block {
+        text-align: right;
+        @media (max-width: 767px) {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            max-width: 200px;
+            height: auto;
+        }
+        img {
+            max-width: 400px;
+            object-fit: contain;
+            @media (max-width: 767px) {
+                height: auto;
+            }
+        }
+    }
+}
+
+// Agreements Card Section
+.agreements-card-section {
+    .agreements-card-block {
+        display: grid;
+        grid-template-columns: repeat(6, calc(100% / 6));
+        margin: -15px -15px 0;
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(4, calc(100% / 4));
+        }
+        @media (max-width: 992px) {
+            margin: -10px -10px 0;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: repeat(3, calc(100% / 3));
+        }
+        @media (max-width: 575px) {
+            grid-template-columns: repeat(2, calc(100% / 2));
+        }
+        .agreement-card {
+            @include flexbox;
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            @include border-radius(16px);
+            text-align: center;
+            padding: 20px;
+            gap: 10px;
+            background: #FF9700;
+            border: 1px solid #FAD9AD;
+            margin: 15px;
+            @media (max-width: 992px) {
+                padding: 15px;
+                margin: 10px;
+            }
+            .card-icon {
+                img {
+                    max-height: 38px;
+                }
+            }
+            .card-title {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--black);
+                strong {
+                    font-size: 15px;
+                    font-weight: 600;
+                    display: block;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+// How It Work Section
+.how-it-work-section {
+    .row {
+        .col-lg-6 {
+            @include flexbox;
+            @include flex-direction(column);
+        }
+    }
+    .media-block {
+        position: relative;
+        overflow: unset;
+        @media (max-width: 992px) {
+            margin-bottom: 30px;
+        }
+        .icon-agreement {
+            position: absolute;
+            top: -55px;
+            right: -17px;
+            @media (max-width: 992px) {
+                top: -30px;
+                right: -10px;
+                img {
+                    max-width: 100px;
+                }
+            }
+        }
+    }
+    .how-works-block {
+        .work-step-list {
+            .work-step-item {
+                @include flexbox;
+                @include align-items(flex-start);
+                padding: 22px 20px;
+                gap: 16px;
+                background: #FFFDFB;
+                @include border-radius(16px);
+                margin-top: 24px;
+                &:nth-child(even) {
+                    .number {
+                        background: var(--primary)
+                    }
+                }
+                .number {
+                    @include flexbox;
+                    @include justify-content(center);
+                    @include align-items(center);
+                    padding: 10px;
+                    width: 36px;
+                    height: 36px;
+                    background: var(--secondary);
+                    border-radius: 500px;
+                    font-weight: 500;
+                    font-size: 14px;
+                    text-align: center;
+                    color: #FFFDFB;
+                }
+                .step-info {
+                    h4 {
+                        color: var(--black);
+                        font-family: 'Inter', sans-serif;
+                        margin-bottom: 10px;
+                    }
+                    .info {
+                        color: var(--darkblack);
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// About Section
+.about-section {
+    .media-block {
+        position: relative;
+        max-width: 500px;
+        margin-left: auto;
+        overflow: unset;
+        @include border-radius(50%);
+        @media (max-width: 992px) {
+            margin: 0 auto;
+        }
+        img {
+            @include border-radius(50%);
+        }
+        .icon-agreement {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @media (max-width: 992px) {
+                img {
+                    max-width: 100px;
+                }
+            }
+        }
+    }
+    .section-title {
+        hr {
+            width: 80px;
+            height: 0px;
+            border: 2px solid var(--secondary);
+            opacity: 1;
+            margin: 28px 0;
+            @media (max-width: 992px) {
+                margin: 20px 0;
+            }
+        }
+        .sort-info {
+            h3 {
+                font-size: clamp(20px, 1.5vw, 24px);
+                margin-bottom: 8px;
+            }
+            .designation {
+                font-size: clamp(18px, 1.5vw, 18px);
+                font-family: var(--font-heading);
+                font-weight: 500;
+                margin-bottom: 28px;
+                color: var(--black);
+                @media (max-width: 992px) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+// CTA Section
+.cta-section {
+    .cta-block {
+        background-image: var(--bg-img);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        padding: 230px 80px 70px;
+        @include border-radius(20px);
+        overflow: hidden;
+        @media (max-width: 992px) {
+            padding: 150px 50px 50px;
+        }
+        @media (max-width: 767px) {
+            padding: 150px 30px 30px;
+        }
+        &::before {
+            content: '';
+            background: linear-gradient(269.99deg, rgba(255, 255, 255, 0) 0.01%, #FFFFFF 129.4%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            @media (max-width: 767px) {
+                background: linear-gradient(269.99deg, rgba(255, 255, 255, 0) 0.01%, rgba(255, 255, 255, 0.7) 60%);
+            }
+        }
+        .section-title {
+            margin-bottom: 0;
+            .title {
+                margin-bottom: 8px;
+            }
+            .sort-info {
+                max-width: 375px;
+            }
+            .action {
+                .btn-google-play {
+                    padding: 0;
+                    height: auto;
+                }
+            }
         }
     }
 }
