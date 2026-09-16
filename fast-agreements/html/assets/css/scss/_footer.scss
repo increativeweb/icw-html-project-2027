@@ -158,10 +158,26 @@
                 color: rgba(255, 255, 255, 0.7);
             }
         }
-        .design-by {
+        .design-by-block {
+            @include flexbox;
+            @include align-items(center);
+            gap: 20px;
             font-weight: 400;
             font-size: 12px;
             color: rgba(255, 255, 255, 0.7);
+            @media (max-width: 767px) { 
+                width: 100%; 
+                @include justify-content(space-between);
+            }
+            .design-by {
+                a {
+                    color: rgba(255, 255, 255, 0.7);
+                    svg {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
         }
     }
 }

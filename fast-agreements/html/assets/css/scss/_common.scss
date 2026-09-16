@@ -68,9 +68,10 @@ body {
     pointer-events: none !important;
     --bs-tooltip-bg: #393636;
     --bs-tooltip-opacity: 1;
-    --bs-tooltip-max-width: 224px;
+    --bs-tooltip-max-width: 200px;
     --bs-tooltip-font-size: 12px;
     --bs-tooltip-border-radius: 2px;
+    text-align: center !important;
     .tooltip-inner {
         text-align: left;
         font-weight: 500;
@@ -518,7 +519,7 @@ h4,
         right: 10px;
     }
     @media(max-width: 767px) {
-        bottom: 20px;
+        bottom: 40px;
     }
     ul {
         @include flexbox;
