@@ -110,26 +110,29 @@
     &.section-title-flex {
         .section-title {
             @include flexbox;
-            @include align-items(flex-end);
+            @include flex-wrap(wrap);
+            @include align-items(flex-start);
             @include justify-content(space-between);
-            gap: 50px;
-            @media (max-width: 992px) {
-                gap: 30px;
-            }
-            @media (max-width: 767px) {
-                gap: 10px;
-                @include flex-wrap(wrap);
-            }
+            gap: 10px;
             .title {
                 margin-bottom: 5px;
             }
+            .tagline {
+                flex: 1 0 100%;
+                margin-bottom: 0;
+            }
             .left-block {
-                max-width: 500px;
-                min-width: 400px;
+                max-width: 42%;
+                @media (max-width: 767px) {
+                    max-width: 100%;
+                }
             }
             .right-block {
-                max-width: 650px;
-                margin-top: 5px;
+                max-width: 55%;
+                margin-top: 3px;
+                @media (max-width: 767px) {
+                    max-width: 100%;
+                }
             }
         }
     }
@@ -287,6 +290,8 @@
     .section-title {
         margin-bottom: 0;
         max-width: 600px;
+        z-index: 2;
+        position: relative;
         .tagline {
             color: var(--white);
             margin-bottom: 24px;
@@ -475,6 +480,7 @@
                     padding: 10px;
                     width: 36px;
                     height: 36px;
+                    flex: none;
                     background: var(--secondary);
                     border-radius: 500px;
                     font-weight: 500;
