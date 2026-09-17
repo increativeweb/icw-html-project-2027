@@ -152,6 +152,11 @@ const logoSplide = (direction = 'ltr') => ({
     autoScroll: {
         // speed: 1
     },
+    breakpoints: {
+        '992': {
+            gap: 20,
+        }
+    }
 });
 // Left slider
 if (document.querySelector('.logo-splide')) {
