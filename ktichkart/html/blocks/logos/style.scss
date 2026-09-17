@@ -1,0 +1,22 @@
+@import '../../assets/css/scss/mixins';
+.logo-section {
+    .section-title {
+        .title {
+            font-family: 'Lato', sans-serif;
+        }
+    }
+    .logo-slider-block {
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+        .logo-item {
+            margin: 10px 15px;
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(center);
+            height: 100%;
+            img {
+                max-height: 35px;
+            }
+        }
+    }
+}

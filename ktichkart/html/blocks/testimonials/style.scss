@@ -6,6 +6,15 @@
             bottom: 0;
         }
     }
+    &.bg-light {
+        .testimonial-card {
+            .testimonial-info {            
+                .highlight-words {
+                    color: var(--white);
+                }
+            }
+        } 
+    }
     .testimonial-card {
         height: 100%;
         display: grid;
@@ -34,14 +43,14 @@
             @include flexbox;
             @include flex-direction(column);
             .highlight-words {
-                margin-bottom: -90px;
-                font-size: clamp(70px, 5vw, 100px);
+                margin-bottom: -70px;
+                font-size: clamp(50px, 5vw, 100px);
                 font-weight: 700;
                 line-height: 1;
                 font-family: var(--font-prata);
                 color: var(--peachcream);
                 @media (max-width: 1200px) {
-                    margin-bottom: -50px;
+                    margin-bottom: -35px;
                 }
             }
             .sort-info {
