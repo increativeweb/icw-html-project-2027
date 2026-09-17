@@ -10,6 +10,15 @@
                 }
             }
         }
+        &.is-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 20px;
+            .media-block {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
         .media-block {
             display: block;
             width: 230px;
