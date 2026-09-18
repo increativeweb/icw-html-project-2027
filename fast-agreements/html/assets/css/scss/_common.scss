@@ -505,7 +505,7 @@ h4,
 
 .sticky-action {
     position: fixed;
-    bottom: 50%;
+    bottom: 20%;
     right: 20px;
     z-index: 1;
     @include transition(0.2s, ease-in-out);
@@ -527,15 +527,17 @@ h4,
         gap: 10px;
         li {
             a {
-                width: 32px;
-                height: 32px;
+                width: 36px;
+                height: 36px;
                 @include flexbox;
                 @include align-items(center);
                 @include justify-content(center);
                 @include transition(0.2s, ease-in-out);
+                @include border-radius(50%);
+                overflow: hidden;
                 svg {
-                    width: 32px;
-                    height: 32px;
+                    width: 100%;
+                    height: 100%;
                 }
                 &:hover, &:focus {
                     @include transform(scale(1.1));
