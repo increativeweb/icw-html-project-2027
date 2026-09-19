@@ -512,8 +512,11 @@
                 top: -15px;
                 animation: scooterMove 6s linear infinite;
                 @media (max-width: 575px) {
+                    animation-duration: 8s;
+                }
+                @media (max-width: 575px) {
                     left: -12px;
-                    top: -15px;
+                    top: 0;
                     img {
                         width: 36px;
                     }
@@ -618,11 +621,11 @@
         visibility: visible;
     }
     75% {
-        top: calc(100% - 55px);
+        top: calc(100% - 50px);
         visibility: visible;
     }
     90% {
-        top: calc(100% - 45px);
+        top: calc(100% - 50px);
         visibility: hidden;
     }
     100% {
@@ -630,7 +633,6 @@
         visibility: hidden;
     }
 }
-
 // About Section
 .about-section {
     .media-block {
