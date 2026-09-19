@@ -145,6 +145,7 @@ img {
 
 .g-30 {
     --bs-gutter-x: 60px;
+    --bs-gutter-y: 30px;
     @media (max-width: 992px) {
         --bs-gutter-x: 30px;
     }
@@ -408,6 +409,10 @@ h4,
 
 .text-black {
     color: var(--black) !important;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
 }
 
 // Background Color CSS
