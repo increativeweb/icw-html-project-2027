@@ -79,10 +79,27 @@
                     & > a:not(.btn) {
                         color: var(--primary);
                     }
+                    &.menu-item-has-children {
+                        & > a:not(.btn) {
+                            &::after {
+                                filter: unset;
+                                margin-top: 0;
+                                margin-bottom: 2px;
+                                animation: .3s menuArrowMoveIn ease-in-out forwards;
+                            }
+                        }
+                    }
                 }
                 &.current-menu-item { 
                     a {
                         color: var(--primary);
+                    }
+                    &.menu-item-has-children {
+                        a {
+                            &::after {
+                                filter: unset;
+                            }
+                        }
                     }
                 }
             }
