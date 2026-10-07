@@ -1,0 +1,27 @@
+.main-footer {
+    margin: 15px;
+    @include border-radius(50px);
+    background: rgba(234, 237, 228, 0.5);
+    backdrop-filter: blur(2px);
+    padding: 50px 0 20px;
+    .footer-main-block {
+        @include flexbox;
+        .footer-info-block {
+            .footer-logo {
+                img {
+                    height: 100px;
+                }
+            }
+            .footer-info {
+                max-width: 260px;
+                font-size: 14px;
+                color: var(--lightblack);
+                margin-top: 24px;
+                strong {                    
+                    font-weight: 600;
+                    color: var(--black);
+                }
+            }
+        }
+    }
+}
