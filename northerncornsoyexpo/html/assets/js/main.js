@@ -78,6 +78,42 @@ jQuery(document).ready(function ($) {
             return false;
         });
     }
+    if ($('.scroll-blur-text').length) {
+        $('.scroll-blur-text').each(function () {
+            const $text = $(this);
+            const words = $text.text().trim().split(/\s+/);
+            $text.html(
+                words.map(word => `<span>${word}</span>`).join(' ')
+            );
+        });        
+        $(window).on('scroll resize', revealWords);
+        revealWords();
+    }
+    function revealWords() {
+        const viewportHeight = $(window).height();
+        const revealPoint = viewportHeight * 0.7;
+        $('.scroll-blur-title-text').each(function () {
+            const $section = $(this);
+            const sectionTop = $section.offset().top;
+            const sectionHeight = $section.outerHeight();
+            const scrollTop = $(window).scrollTop();
+            const start = sectionTop - revealPoint;
+            const end = sectionTop + sectionHeight - revealPoint;
+            const progress = Math.max(0,Math.min(1, (scrollTop - start) / (end - start)));
+            const $words = $section.find('.scroll-blur-text span');
+            const totalWords = $words.length;
+            $words.each(function (index) {
+                const wordProgress = progress * totalWords - index;
+                const reveal = Math.max(0,Math.min(1, wordProgress));
+                const blur = 1 * (1 - reveal);
+                const opacity = 0.5 + (0.5 * reveal);
+                $(this).css({
+                    filter: `blur(${blur}px)`,
+                    opacity: opacity,
+                });
+            });
+        });
+    }
 });
 
 function playAnimReveal(section) {
