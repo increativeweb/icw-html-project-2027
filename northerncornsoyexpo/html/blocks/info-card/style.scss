@@ -1,0 +1,31 @@
+@import '../../assets/css/scss/mixins';
+
+.info-card {
+    @include flexbox;
+    @include flex-direction(column);
+    padding: 30px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 15px;
+    .card-img {
+        &:empty {
+            display: none;
+        }
+    }
+    .card-body {
+        .card-title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            color: var(--black);
+            margin-bottom: 10px;
+            a {
+                color: var(--black);
+            }
+        }
+        .card-info {
+            font-size: 14px;
+            color: var(--lightblack);
+        }
+    }
+}

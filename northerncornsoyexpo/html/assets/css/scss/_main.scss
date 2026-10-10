@@ -5,7 +5,8 @@
 .theme-section {
     padding: 100px 0;
     clear: both;
-    content-visibility: auto;
+    z-index: 1;
+    position: relative;
     @media (max-width: 992px) {
         padding: 50px 0;
     }
