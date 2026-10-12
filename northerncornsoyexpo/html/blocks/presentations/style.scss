@@ -1,0 +1,110 @@
+@import '../../assets/css/scss/mixins';
+
+.presentations-section {
+    &::before {
+        content: '';
+        background-image: var(--bg-img);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        bottom: -150px;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 590px;
+        max-height: 425px;
+        z-index: -1;
+    }
+}
+
+.presentation-card {
+    @include flexbox;
+    @include flex-direction(column);
+    height: 100%;
+    background: var(--white);
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid #E0E0E0;
+    .card-img {
+        overflow: hidden;
+        height: auto;
+        @include border-radius(15px 15px 0 0);
+        &:empty {
+            display: none;
+        }
+        img {
+            @include transition(0.2s, ease-in-out);
+        }
+        &.is-video {
+            height: auto;
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(center);
+            .play-icon {
+                width: 36px;
+                height: 36px;
+                flex: none;
+                top: calc(50% - 18px);
+                left: calc(50% - 18px);
+                @include transition(0.2s, ease-in-out);
+            }
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                img {
+                    @include opacity(0.8);
+                }
+                .play-icon {
+                    svg {
+                        @include transform(scale(1.2));
+                    }
+                }
+            }
+        }
+    }
+    .card-body {
+        @include flexbox;
+        @include flex-direction(column);        
+        @include border-radius(0 0 15px 15px);
+        padding: 30px;
+        @media (max-width: 992px) {
+            padding: 15px;
+        }
+        .card-title {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--black);
+            margin-bottom: 10px;
+            @include transition(0.2s, ease-in-out);
+            a {
+                color: var(--black);
+                @include transition(0.2s, ease-in-out);
+            }
+        }
+        .card-info {
+            font-size: 14px;
+            color: var(--lightblack);
+            flex: 1 1 auto;
+        }
+        .card-action {
+            margin-top: 12px;
+            &:empty {
+                display: none;
+            }
+        }
+    }
+    &:has(a) {
+        &:hover,
+        &:focus, &:focus-within {
+            .card-body {
+                .card-title {
+                    color: var(--primary);
+                    a {
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}

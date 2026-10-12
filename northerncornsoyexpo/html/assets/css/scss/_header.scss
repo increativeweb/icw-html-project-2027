@@ -5,7 +5,6 @@
     z-index: 10;
     padding: 30px 0;
     @media (max-width: 1200px) {
-        padding: 20px 0 0;
         &.is-visible  {
             .navbar {
                 backdrop-filter: unset;
@@ -17,12 +16,15 @@
             }
         }
     }
+    @media (max-width: 992px) {
+        padding: 10px 0 0;
+    }
     .navbar {
         padding: 12px 18px;
         position: unset;
         background: rgba(255, 255, 255, 1);
         backdrop-filter: blur(12px);
-        @include border-radius(25px);
+        @include border-radius(16px);
         & > .container {
             position: relative;
             height: 100%;
@@ -87,7 +89,7 @@
                             width: 9px;
                             height: 6px;
                             display: inline-block;
-                            background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="rgb(156 203 64)" stroke-width="2" stroke-linecap="round"/></svg>') no-repeat center center;
+                            background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="rgb(12 67 107)" stroke-width="2" stroke-linecap="round"/></svg>') no-repeat center center;
                             background-size: 9px;
                             margin-top: 3px;
                             filter: brightness(0) contrast(0.4);
@@ -320,8 +322,6 @@
             }
         }
         @media (max-width: 1200px) {
-            padding: 12px;
-            margin: 0 5px;
             @include border-radius(10px);
             & > .container { 
                 max-width: 100%;
@@ -377,7 +377,7 @@
                             vertical-align: middle;
                             width: 22px;
                             height: 22px;
-                            background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="rgb(156 203 64)" stroke-width="2" stroke-linecap="round"/></svg>') no-repeat center center;
+                            background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="rgb(12 67 107)" stroke-width="2" stroke-linecap="round"/></svg>') no-repeat center center;
                             background-size: 10px;
                             filter: brightness(0) contrast(0.4);
                             @include transition(0.05s, ease-in-out);

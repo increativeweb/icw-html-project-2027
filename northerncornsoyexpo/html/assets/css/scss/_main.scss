@@ -82,9 +82,9 @@
             }
         }
     }
-    &.section-title-mw-600 {
+    &.section-title-mw-650 {
         .section-title {
-            max-width: 600px;
+            max-width: 650px;
             @media (max-width: 767px) {
                 max-width: 100%;
             }
@@ -118,7 +118,7 @@
 .section-title {
     margin-bottom: 50px;
     @media (max-width: 992px) {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
     &.text-center {
         margin: 0 auto 50px;
@@ -145,7 +145,7 @@
         border: 1px solid rgba(156, 203, 64, 0.15);
         font-weight: 500;
         font-size: 12px;
-        color: var(--primary);
+        color: var(--secondary);
         margin-bottom: 5px;
     }
 
@@ -195,14 +195,46 @@
         @include align-items(center);
         @include justify-content(flex-start);
         @include flex-wrap(wrap);
-        gap: 10px 12px;
+        gap: 10px 20px;
         @media (max-width: 992px) {
-            gap: 10px;   
+            gap: 10px 20px;   
             margin-top: 20px;          
         }
     }
 
     & *:last-child {
         margin-bottom: 0px !important;
+    }
+}
+.contact-info {
+    margin-top: 20px;
+    .contact-item {
+        @include flexbox;
+        @include flex-direction(row);
+        @include align-items(flex-start);
+        gap: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--black);
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            flex: none;
+            display: inline-block;
+            background-size: contain !important;
+            &.icon-celender {
+                background: url('data:image/svg+xml,<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 7.31588C0 5.33061 -5.96046e-08 4.33903 0.586 3.72219C1.172 3.10535 2.114 3.10535 4 3.10535H16C17.886 3.10535 18.828 3.10535 19.414 3.72219C20 4.33903 20 5.33061 20 7.31588C20 7.81167 20 8.06009 19.854 8.21483C19.707 8.36851 19.47 8.36851 19 8.36851H1C0.529 8.36851 0.293 8.36851 0.146 8.21483C-8.9407e-08 8.06009 0 7.81061 0 7.31588ZM0 16.7896C0 18.7748 -5.96046e-08 19.7664 0.586 20.3833C1.172 21.0001 2.114 21.0001 4 21.0001H16C17.886 21.0001 18.828 21.0001 19.414 20.3833C20 19.7664 20 18.7748 20 16.7896V11.5264C20 11.0306 20 10.7822 19.854 10.6275C19.707 10.4738 19.47 10.4738 19 10.4738H1C0.529 10.4738 0.293 10.4738 0.146 10.6275C-8.9407e-08 10.7822 0 11.0317 0 11.5264V16.7896Z" fill="rgb(156 203 64)"/><path d="M5 1V4.1579M15 1V4.1579" stroke="rgb(156 203 64)" stroke-width="2" stroke-linecap="round"/></svg>') no-repeat center center;
+            }
+            &.icon-time {
+                background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM11 10V5H9V12H15V10H11Z" fill="rgb(156 203 64)"/></svg>') no-repeat center center;
+            }
+            &.icon-location {
+                background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4258 19.5506C13.4297 17.0363 18 10.9424 18 7.51946C18 3.36809 14.6406 0 10.5 0C6.35938 0 3 3.36809 3 7.51946C3 10.9424 7.57031 17.0363 9.57422 19.5506C10.0547 20.1498 10.9453 20.1498 11.4258 19.5506ZM10.5 5.01297C11.163 5.01297 11.7989 5.27705 12.2678 5.74711C12.7366 6.21716 13 6.8547 13 7.51946C13 8.18422 12.7366 8.82176 12.2678 9.29181C11.7989 9.76187 11.163 10.0259 10.5 10.0259C9.83696 10.0259 9.20107 9.76187 8.73223 9.29181C8.26339 8.82176 8 8.18422 8 7.51946C8 6.8547 8.26339 6.21716 8.73223 5.74711C9.20107 5.27705 9.83696 5.01297 10.5 5.01297Z" fill="rgb(156 203 64)"/></svg>') no-repeat center center;
+                margin-top: 2px;
+            }
+        }
     }
 }

@@ -145,13 +145,18 @@ img {
 .g-15 {
     --bs-gutter-y: 30px;
     --bs-gutter-x: 30px;
+    @media (max-width: 992px) {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
+    }
 }
 
 .g-30 {
     --bs-gutter-x: 60px;
     --bs-gutter-y: 30px;
     @media (max-width: 992px) {
-        --bs-gutter-x: 30px;
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 20px;
     }
 }
 
@@ -230,6 +235,19 @@ h5,
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+}
+.bg-rounded {
+    margin: 0 15px;
+    @include border-radius(50px);
+    @media (max-width: 992px) {
+        @include border-radius(10px);
+        margin: 0;
+    }  
+    &.line-anim-bg {
+        &::before {
+            bottom: 0;
+        }
+    }
 }
 .line-anim-bg {
     position: relative;
@@ -432,6 +450,7 @@ h5,
 	    @include border-radius(8px);
     }
     &:hover, &:focus {
+	    @include border-radius(12px);
         .icon-arrow {
             transform: rotateZ(-45deg);
         }
@@ -441,8 +460,8 @@ h5,
         border-color: var(--primary);
         color: var(--white);
         &:hover, &:focus, &:active {
-            background: #8fba3c;
-            border-color: #8fba3c;
+            background: #093859;
+            border-color: #093859;
         }
     }
     &.btn-secondary {
@@ -450,14 +469,14 @@ h5,
         border-color: var(--secondary);
         color: var(--white);
         &:hover, &:focus, &:active {
-            background: #093859;
-            border-color: #093859;
+            background: #8fba3c;
+            border-color: #8fba3c;
         }
     }
     &.btn-white {
         background: var(--white);
         border-color: var(--white);
-        color: var(--secondary);
+        color: var(--primary);
         .icon-arrow {
             background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(12 67 107)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
         }
@@ -467,7 +486,6 @@ h5,
         }
     }
     &.btn-link-arrow {
-        position: relative;
         padding: 0;
         min-height: auto;
         overflow: hidden;
@@ -477,17 +495,16 @@ h5,
         min-width: auto;
         color: var(--primary);        
         .icon-arrow {
-            background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(156 203 64)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
+            background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(12 67 107)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
         }
         &:hover, &:focus { 
             color: var(--secondary);       
             .icon-arrow {
-                background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(12 67 107)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
+                background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(156 203 64)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
             }
         }
     }
     &.btn-link {
-        position: relative;
         padding: 0;
         min-height: auto;
         overflow: hidden;
@@ -495,12 +512,12 @@ h5,
         @include border-radius(0);
         line-height: 1.5;
         min-width: auto;
-        color: var(--secondary);        
+        color: var(--primary);        
         .icon-arrow {
             display: none;
         }
         &:hover, &:focus { 
-            color: var(--primary);
+            color: var(--secondary);
             text-decoration: underline !important;  
         }
     }

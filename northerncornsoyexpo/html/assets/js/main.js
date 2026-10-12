@@ -78,6 +78,8 @@ jQuery(document).ready(function ($) {
             return false;
         });
     }
+
+    // On Scroll Text Blur Animation
     if ($('.scroll-blur-text').length) {
         $('.scroll-blur-text').each(function () {
             const $text = $(this);
@@ -92,30 +94,27 @@ jQuery(document).ready(function ($) {
     function revealWords() {
         const viewportHeight = $(window).height();
         const revealPoint = viewportHeight * 0.7;
+        const scrollTop = $(window).scrollTop();
         $('.scroll-blur-title-text').each(function () {
             const $section = $(this);
             const sectionTop = $section.offset().top;
-            const sectionHeight = $section.outerHeight();
-            const scrollTop = $(window).scrollTop();
             const start = sectionTop - revealPoint;
-            const end = sectionTop + sectionHeight - revealPoint;
-            const progress = Math.max(0,Math.min(1, (scrollTop - start) / (end - start)));
+            const progress = Math.max(0, Math.min(1, (scrollTop - start) / (viewportHeight * 0.5)));
             const $words = $section.find('.scroll-blur-text span');
             const totalWords = $words.length;
             $words.each(function (index) {
-                const wordProgress = progress * totalWords - index;
-                const reveal = Math.max(0,Math.min(1, wordProgress));
-                const blur = 1 * (1 - reveal);
-                const opacity = 0.5 + (0.5 * reveal);
+                const reveal = Math.max(0,Math.min(1, progress * totalWords - index));
                 $(this).css({
-                    filter: `blur(${blur}px)`,
-                    opacity: opacity,
+                    filter: `blur(${1 * (1 - reveal)}px)`,
+                    opacity: 0.5 + (0.5 * reveal)
                 });
             });
         });
     }
 });
 
+
+// Page Scroll Animation
 function playAnimReveal(section) {
     section.querySelectorAll('.icw-anim').forEach((el, i) => {
         el.classList.remove('animated');
@@ -131,3 +130,48 @@ const io = new IntersectionObserver((entries, observer) => {
     root: null,rootMargin: '0px 0px -32% 0px'
 });
 document.querySelectorAll('section').forEach(section => {io.observe(section);});
+
+// Play Iframe Video
+if ($('.play-iframe').length) {
+    $('.play-iframe').on('click', function (ev) {
+        ev.preventDefault();
+        const $currentBlock = $(this).closest('.media-block');
+        // Pause all other MP4 videos without removing them
+        $('.media-block video').each(function () {
+            if (!$.contains($currentBlock[0], this)) {
+                this.pause();
+            }
+        });
+        // Pause all other iframe videos without removing them
+        $('.media-block iframe').each(function () {
+            if (!$.contains($currentBlock[0], this)) {
+                const src = $(this).attr('src');
+                if (src && src.includes('youtube.com')) {
+                    this.contentWindow.postMessage(
+                        JSON.stringify({
+                            event: 'command',
+                            func: 'pauseVideo',
+                            args: ''
+                        }), '*'
+                    );
+                } else if (src && src.includes('vimeo.com')) {
+                    this.contentWindow.postMessage(
+                        JSON.stringify({method: 'pause'}),
+                        '*'
+                    );
+                }
+            }
+        });
+        const videourl = $(this).data('videosrc');
+        const ext = $(this).data('ext');
+        let video = '';
+        if (ext === 'mp4') {
+            video = `<div class="video-wrap"><video class="embed-responsive-item w-100" controls autoplay playsinline controlsList="nodownload" oncontextmenu="return false;"><source src="${videourl}" type="video/mp4"></video></div>`;
+        } else {
+            const separator = videourl.includes('?') ? '&' : '?';
+            video = `<div class="video-wrap"><iframe class="embed-responsive-item play-in_iframe" src="${videourl}${separator}api=1&autoplay=1&muted=1&rel=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
+        }
+
+        $currentBlock.html(video);
+    });
+}

@@ -96,6 +96,7 @@
                 &:hover,
                 &:focus {
                     color: var(--primary);
+                    text-decoration: underline;
                 }
             }
             ul {
@@ -115,6 +116,7 @@
                         &:hover,
                         &:focus {
                             color: var(--primary);
+                            text-decoration: underline;
                         }
                         @media (max-width: 1200px) {
                             font-size: 13px;
