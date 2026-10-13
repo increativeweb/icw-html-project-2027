@@ -206,6 +206,20 @@
         margin-bottom: 0px !important;
     }
 }
+
+// Page Header
+.page-header {
+    padding: 160px 0 100px;
+    .section-title {
+        .title {
+            font-size: clamp(40px, 5vw, 54px);
+        }
+        .sort-info {
+            max-width: 670px;
+        }
+    }
+}
+
 .contact-info {
     margin-top: 20px;
     .contact-item {

@@ -1,10 +1,27 @@
 .main-header {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 10;
     padding: 30px 0;
+    @include transition(0.3s, ease-in-out);
+    &.fixed-header {  
+        padding: 0;      
+        .navbar {
+            max-width: 80%;
+            @include border-radius(0 0 25px 25px);
+            @media (max-width: 1400px) {            
+                max-width: 95%;
+            }
+            @media (max-width: 992px) {
+                max-width: 100%;
+            }
+        }
+    }
     @media (max-width: 1200px) {
+        padding: 20px 0;
         &.is-visible  {
             .navbar {
                 backdrop-filter: unset;
@@ -16,19 +33,19 @@
             }
         }
     }
-    @media (max-width: 992px) {
-        padding: 10px 0 0;
+    @media (max-width: 767px) {
+        padding: 0;
     }
     .navbar {
-        padding: 12px 18px;
+        padding: 12px 0;
         position: unset;
-        background: rgba(255, 255, 255, 1);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(12px);
         @include border-radius(16px);
-        & > .container {
-            position: relative;
-            height: 100%;
-        }
+        @include box-shadow(rgba(0, 0, 0, 0.08) 0px 0px 40px 0px);
+        max-width: 1320px;
+        margin: 0 auto;
+        @include transition(0.3s, ease-in-out);
         .navbar-brand {
             padding: 0;
             img {
@@ -47,6 +64,7 @@
                     line-height: 1;
                     @include inline-flex;
                     @include align-items(center);
+                    @include border-radius(8px);
                     position: relative;
                     @include transition(0.1s, ease-in-out);
                     text-decoration: none;
@@ -132,7 +150,7 @@
                             .sub-menu-inner {
                                 .sub-menu-main {  
                                     display: grid;
-                                    grid-template-columns: auto 320px;
+                                    grid-template-columns: auto 420px;
                                 }
                                 .sub-menu-list-block {                                    
                                     padding: 30px 28px; 
@@ -197,6 +215,7 @@
                                     @include flex-direction(column);
                                     @include justify-content(center);    
                                     border-left: 1px solid #E0E0E0;
+                                    background: var(--gray);
                                     padding: 30px;
                                     gap: 30px;
                                     .menu-card {
@@ -231,6 +250,7 @@
                 &:hover, &:focus, &:focus-within {
                     & > a:not(.btn) {
                         color: var(--primary);
+                        background: var(--gray);
                     }
                     &.menu-item-has-children {
                         &::before {                                
@@ -256,6 +276,7 @@
                 &.current-menu-item { 
                     a {
                         color: var(--primary);
+                        background: var(--gray);
                     }
                     &.menu-item-has-children {
                         a {
@@ -280,6 +301,7 @@
             }
         }
         @media (max-width: 1400px) {
+            max-width: 1140px;
             .mainMenu {
                 & > li {
                     & > a:not(.btn) {
@@ -321,11 +343,9 @@
                 }
             }
         }
-        @media (max-width: 1200px) {
-            @include border-radius(10px);
-            & > .container { 
-                max-width: 100%;
-            }
+        @media (max-width: 1200px) {            
+            padding: 12px 0;
+            max-width: 960px;
             .navbar-collapse {
                 position: fixed;
                 top: 110px;
@@ -342,12 +362,9 @@
                 -webkit-overflow-scrolling: touch;
                 z-index: 15;
                 box-shadow: 0 50px 30px rgba(0, 0, 0, 0.059);
-                @include flexbox;
-                @include flex-direction(column);
-                @include border-radius(12px);
-                transition: max-height 0.4s ease, transform 0.4s ease;
-                transform: translateY(-15px);
-                transform-origin: top center;
+                display: block !important;
+                opacity: 0;
+                transition: max-height .24s ease, opacity .18s ease;
             }
             .mainMenu {
                 padding: 15px;
@@ -445,8 +462,8 @@
                     @include align-items(center);
                     @include justify-content(center);
                     @include flex-direction(column);
-                    @include border-radius(8px);
-                    background: var(--gray);
+                    @include border-radius(0);
+                    background: transparent;
                     border: none;
                     gap: 5px;
                     cursor: pointer;
@@ -455,13 +472,24 @@
                     width: 40px;
                     height: 40px;
                     line-height: 1;
+                    position: relative;
                     span {
-                        width: 18px;
+                        width: 32px;
                         height: 2px;
-                        background-color: var(--secondary);
-                        @include border-radius(2px);
+                        background-color: var(--black);
+                        @include border-radius(4px);
                         display: block;
-                        @include transition(0.1s, ease-in-out);
+                        @include transition(0.25s, cubic-bezier(.4,0,.2,1));
+                        left: 50%;
+                        position: absolute;
+                        top: 50%;
+                        transform-origin: 50%;
+                        &:first-child {
+                            transform: translate(-50%,calc(-50% - 4px))
+                        }
+                        &:last-child {
+                            transform: translate(-50%,calc(-50% + 4px))
+                        }
                     }
                     &:hover,
                     &:active,
@@ -470,27 +498,26 @@
                             background-color: var(--primary);
                         }
                     }
-                    &:focus {
-                        outline: 2px solid var(--primary);
-                    }
                     &.is-visible {
-                        span:nth-child(1) {
-                            @include transform(translateY(7px) rotate(135deg));
-                        }
-                        span:nth-child(2) {
-                            @include opacity(0);
-                            visibility: hidden;
-                            left: 0;
-                        }
-                        span:nth-child(3) {
-                            @include transform(translateY(-7px) rotate(-135deg));
+                        span {
+                            &:first-child {
+                                transform: translate(-50%,-50%) rotate(45deg)
+                            }
+                            &:last-child {
+                                transform: translate(-50%,-50%) rotate(-45deg)
+                            }
                         }
                     }
                 }
             }
         }
+        @media (max-width: 992px) {
+            max-width: calc(100% - 30px);
+        }
         @media (max-width: 767px) {
-            padding: 12px 10px;
+            padding: 15px 0;
+            max-width: 100%;
+            @include border-radius(0 0 25px 25px);
             .navbar-brand {
                 margin-right: 0;
                 img {
