@@ -495,11 +495,8 @@ h5,
             }
         }
         &.btn-white {
-            &:hover, &:focus, &:active { 
-                background-color: var(--white);   
-                .bg {
-                    background-color: var(--primary);
-                }
+            .bg {
+                background-color: var(--primary);
             }
         }
     }
@@ -513,19 +510,19 @@ h5,
         }
     }
     &.btn-secondary {
-        background: var(--secondary);
+        background-color: var(--secondary);
         border-color: var(--secondary);
         color: var(--white);
         .icon-arrow {
             background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(156 203 64)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
         }
         &:hover, &:focus, &:active {
-            background: var(--white);
+            background-color: var(--white);
             color: var(--secondary);
         }
     }
     &.btn-white {
-        background: var(--white);
+        background-color: var(--white);
         border-color: var(--white);
         color: var(--primary);
         .icon-arrow {
@@ -533,7 +530,7 @@ h5,
             filter: unset;
         }
         &:hover, &:focus, &:active {
-            background: var(--primary);
+            background-color: var(--primary); 
             color: var(--white);
             .icon-arrow {                
                 filter: brightness(0) invert(1);
