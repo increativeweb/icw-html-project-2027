@@ -5,36 +5,39 @@
     right: 0;
     width: 100%;
     z-index: 10;
-    padding: 30px 0;
+    margin: 30px 0;
     @include transition(0.3s, ease-in-out);
     &.fixed-header {  
-        padding: 0;      
+        margin: 0;      
         .navbar {
             max-width: 80%;
-            @include border-radius(0 0 25px 25px);
+            @include border-radius(0 0 16px 16px);
             @media (max-width: 1400px) {            
-                max-width: 95%;
+                max-width: 1120px;
             }
-            @media (max-width: 992px) {
+            @media (max-width: 1200px) {            
                 max-width: 100%;
             }
-        }
-    }
-    @media (max-width: 1200px) {
-        padding: 20px 0;
-        &.is-visible  {
-            .navbar {
-                backdrop-filter: unset;
-                background: rgba(255, 255, 255, 1);
-                .navbar-collapse {
-                    max-height: fit-content;
-                    transform: translateY(0);
+            .navbar-collapse {
+                max-width: 100%;
+                @media (min-width: 1200px) {
+                    top: 78px;
                 }
             }
         }
     }
-    @media (max-width: 767px) {
-        padding: 0;
+    @media (max-width: 1200px) {
+        margin: 0;
+        &.is-visible  {
+            .navbar {
+                backdrop-filter: unset;
+                background: rgba(255, 255, 255, 1);
+                @include border-radius(0);
+                .navbar-collapse {
+                    max-height: 75dvh !important;
+                }
+            }
+        }
     }
     .navbar {
         padding: 12px 0;
@@ -346,16 +349,16 @@
         @media (max-width: 1200px) {            
             padding: 12px 0;
             max-width: 960px;
+            @include border-radius(0 0 16px 16px);
             .navbar-collapse {
                 position: fixed;
-                top: 110px;
+                top: 78px;
                 left: 0;
                 right: 0;
-                bottom: 0;
-                margin: 0 auto 15px;
-                width: calc(100% - 30px);
-                max-width: 930px;
-                height: calc(100% - 130px);
+                margin: 0 auto;
+                width: 100%;
+                max-width: 960px;
+                height: fit-content;
                 max-height: 0;
                 background: #fff;
                 overflow-y: auto;
@@ -363,11 +366,11 @@
                 z-index: 15;
                 box-shadow: 0 50px 30px rgba(0, 0, 0, 0.059);
                 display: block !important;
-                opacity: 0;
-                transition: max-height .24s ease, opacity .18s ease;
+                transition: max-height .3s ease-in-out;
+                @include border-radius(0 0 16px 16px);
             }
             .mainMenu {
-                padding: 15px;
+                padding: 20px 15px;
                 gap: 15px;
                 margin-left: unset;
                 width: 100%;
@@ -377,7 +380,6 @@
                 & > li {
                     & > a:not(.btn) {
                         font-size: 15px;
-                        padding: 5px 0;
                     }
                     &.menu-item-has-children {
                         width: 100%;
@@ -414,7 +416,7 @@
                         .sub-menu {
                             display: none;
                             padding: 10px 0 0;
-                            padding-left: 15px;
+                            padding-left: 20px;
                             li {
                                 a {
                                     font-size: 14px;
@@ -443,7 +445,7 @@
                                         grid-template-columns: repeat(2, minmax(0, 1fr));
                                         border-left: none;
                                         border-top: 1px solid #E0E0E0;
-                                        padding: 20px 0 0;                                        
+                                        padding: 20px;                                        
                                     }
                                 }
                             }
@@ -512,11 +514,14 @@
             }
         }
         @media (max-width: 992px) {
-            max-width: calc(100% - 30px);
+            max-width: 100%;
+            .navbar-collapse {
+                margin: 0 auto;
+                max-width: 100%;
+            }
         }
         @media (max-width: 767px) {
             padding: 15px 0;
-            max-width: 100%;
             @include border-radius(0 0 25px 25px);
             .navbar-brand {
                 margin-right: 0;
@@ -526,8 +531,7 @@
                 }
             }
             .navbar-collapse {
-                top: 90px;
-                height: calc(100% - 105px);
+                top: 70px;
             }
             .mainMenu {                
                 & > li {                   
