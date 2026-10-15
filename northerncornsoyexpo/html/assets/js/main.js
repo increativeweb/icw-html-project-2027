@@ -123,6 +123,29 @@ jQuery(document).ready(function ($) {
             });
         });
     }
+
+    if ($('.btn-hover-effect').length) {
+    $('.btn-hover-effect').each(function () {
+        const btn = this;
+
+        // Add .bg if it doesn't exist
+        if (!btn.querySelector('.bg')) {
+            $(btn).append('<span class="bg"></span>');
+        }
+
+        const bg = btn.querySelector('.bg');
+
+        function handleOrigin(e) {
+            const rect = btn.getBoundingClientRect();
+
+            bg.style.left = `${e.clientX - rect.left}px`;
+            bg.style.top = `${e.clientY - rect.top}px`;
+        }
+
+        btn.addEventListener('mouseenter', handleOrigin);
+        btn.addEventListener('mouseleave', handleOrigin);
+    });
+}
 });
 
 

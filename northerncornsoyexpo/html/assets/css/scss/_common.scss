@@ -449,26 +449,14 @@ h5,
         @include transition(0.2s, ease-in-out);
         filter: brightness(0) invert(1);
     } 
-    span {
-        z-index: 2;
-        display: block;
+    & > span:not(.bg) {
         position: relative;
+        z-index: 1;
     }
     @media (max-width: 767px) {
 	    @include border-radius(8px);
     }
-    &::before {
-        top:0; 
-        bottom: 0; 
-        right: 0;
-        height: 100%;             
-        width: 100%;
-        position: absolute;
-        content: '';
-        @include transition(0.2s, ease-in-out);
-        z-index: 1;	
-    }
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
 	    @include border-radius(12px);
         @media (max-width: 767px) {
             @include border-radius(8px);
@@ -477,59 +465,81 @@ h5,
             transform: rotateZ(-45deg);
             filter: unset;
         }
-        &::before {
-            width: 0%;
+    }   
+    &.btn-hover-effect {      
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 225%;
+            min-height: 225%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: var(--white);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease-out;
+        }
+        &:hover, &:focus, &:active {            
+            .bg {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        &.btn-primary {
+            &:hover, &:focus, &:active {    
+                background-color: var(--primary); 
+            }
+        }
+        &.btn-secondary {
+            &:hover, &:focus, &:active {    
+                background-color: var(--secondary); 
+            }
+        }
+        &.btn-white {
+            &:hover, &:focus, &:active { 
+                background-color: var(--white);   
+                .bg {
+                    background-color: var(--primary);
+                }
+            }
         }
     }
     &.btn-primary {
-        background: var(--white);
+        background-color: var(--primary);
         border-color: var(--primary);
-        color: var(--white);
-        &::before {
-            background-color: var(--primary);
-        }
+        color: var(--white);        
         &:hover, &:focus, &:active {
-            // background: #093859;
-            // border-color: #093859;
             color: var(--primary);
+            background-color: var(--white);
         }
     }
     &.btn-secondary {
-        background: var(--white);
+        background: var(--secondary);
         border-color: var(--secondary);
         color: var(--white);
         .icon-arrow {
             background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(156 203 64)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
         }
-        &::before {
-            background-color: var(--secondary);
-        }
         &:hover, &:focus, &:active {
-            // background: #8fba3c;
-            // border-color: #8fba3c;
+            background: var(--white);
             color: var(--secondary);
         }
     }
     &.btn-white {
-        background: transparent;
+        background: var(--white);
         border-color: var(--white);
         color: var(--primary);
         .icon-arrow {
             background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(12 67 107)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
             filter: unset;
         }
-        &::before {
-            background-color: var(--white);
-        }
         &:hover, &:focus, &:active {
-            // background: var(--gray);
-            // border-color: var(--gray);
+            background: var(--primary);
             color: var(--white);
             .icon-arrow {                
                 filter: brightness(0) invert(1);
             }
         }
-    }
+    } 
     &.btn-link-arrow {
         padding: 0;
         min-height: auto;
