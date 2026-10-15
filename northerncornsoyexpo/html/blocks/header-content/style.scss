@@ -2,4 +2,29 @@
 
 .header-content-section {
     padding: 50px 0;
+    .note-alert {
+        @include flexbox;
+        @include flex-direction(row);
+        @include align-items(center);
+        padding: 20px;
+        gap: 10px;
+        background: #ECF5DA;
+        border: 1px solid #DCF6A9;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #9CCB40;
+        .icon {
+            display: inline-block; 
+            width: 20px;
+            height: 20px;
+            flex: none;
+            line-height: 1;
+            svg, img {
+                width: 20px;
+                height: 20px;
+                flex: none;
+            }
+        }
+    }
 }

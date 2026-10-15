@@ -50,6 +50,11 @@
             &:empty {
                 display: none;
             }
+            @media (max-width: 575px) {
+                .btn {
+                    width: 100%;
+                }
+            }
         }
     }
 }
