@@ -1,0 +1,43 @@
+@import '../../assets/css/scss/mixins';
+
+.partners-section {
+    .partners-content-block {
+        &:not(:last-child) {
+            margin-bottom: 50px
+        }
+        .title {
+            font-size: clamp(20px, 3vw, 24px);
+            color: var(--black);
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        &.is-logo {
+            .partners-lists {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 30px;
+                @media (max-width: 992px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 20px;
+                }
+                @media (max-width: 575px) {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+                .partners-item {
+                    @include flexbox;
+                    @include justify-content(center);
+                    @include align-items(center);
+                    padding: 30px;
+                    background: var(--white);
+                    border: 1px solid #E0E0E0;
+                    border-radius: 15px;
+                    min-height: 144px;
+                    height: 100%;
+                    img {
+                        max-height: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

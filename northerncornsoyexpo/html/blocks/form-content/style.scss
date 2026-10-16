@@ -1,0 +1,14 @@
+@import '../../assets/css/scss/mixins';
+
+.form-content-section {
+    .form-block {
+        padding: 30px;
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        @include border-radius(15px);
+        height: 100%;
+        h3 {
+            margin-bottom: 30px;
+        }
+    }
+}
