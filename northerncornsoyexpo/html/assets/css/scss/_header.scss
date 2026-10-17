@@ -122,6 +122,7 @@
                         display: none;                        
                     } 
                     .sub-menu {
+                        overflow: hidden;
                         & > li {
                             &:not(:last-child) {
                                 margin-bottom: 5px;
@@ -424,7 +425,7 @@
                         }
                         &.mega-menu {
                             .sub-menu {       
-                                padding: 10px 10px 0;            
+                                padding: 10px 10px 0;      
                                 .sub-menu-inner {
                                     .sub-menu-main {  
                                         grid-template-columns: 1fr;

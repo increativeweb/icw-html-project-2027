@@ -1,6 +1,6 @@
 @import '../../assets/css/scss/mixins';
 
-.presentations-section {
+.home .presentations-section {
     &::before {
         content: '';
         background-image: var(--bg-img);
@@ -15,6 +15,60 @@
         max-width: 590px;
         max-height: 425px;
         z-index: -1;
+    }
+}
+.presentations-section.line-anim-bg::before {
+    bottom: 0;
+}
+
+.single-presentation-card {
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: '';
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        border-radius: 30px;
+        width: calc(100% - 40px);
+        height: 100%;
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        display: block;
+        z-index: -1;
+        @media (max-width: 767px) {
+            left: 20px;
+            width: calc(100% - 20px);
+        }
+    }
+    .card-body {
+        padding: 90px 50px 0;
+        @media (max-width: 992px) {
+            padding: 30px 30px 0 70px;
+        }
+        @media (max-width: 767px) {
+            padding: 20px 20px 0 40px;
+        }
+        .card-title {
+            color: var(--black);
+            margin-bottom: 20px;
+            @media (max-width: 767px) {
+                margin-bottom: 10px;
+            }
+        } 
+        .card-info {
+            max-width: 475px;
+        }
+    }
+    .logo-block {
+        padding-left: 90px;
+        @media (max-width: 992px) {
+            padding-left: 70px;
+            padding-top: 30px;
+        }
+        @media (max-width: 767px) {
+            padding-left: 40px;
+        }
     }
 }
 

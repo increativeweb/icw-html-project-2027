@@ -125,29 +125,50 @@ jQuery(document).ready(function ($) {
     }
 
     if ($('.btn-hover-effect').length) {
-    $('.btn-hover-effect').each(function () {
-        const btn = this;
-
-        // Add .bg if it doesn't exist
-        if (!btn.querySelector('.bg')) {
-            $(btn).append('<span class="bg"></span>');
-        }
-
-        const bg = btn.querySelector('.bg');
-
-        function handleOrigin(e) {
-            const rect = btn.getBoundingClientRect();
-
-            bg.style.left = `${e.clientX - rect.left}px`;
-            bg.style.top = `${e.clientY - rect.top}px`;
-        }
-
-        btn.addEventListener('mouseenter', handleOrigin);
-        btn.addEventListener('mouseleave', handleOrigin);
-    });
-}
+        $('.btn-hover-effect').each(function () {
+            const btn = this;
+            // Add .bg if it doesn't exist
+            if (!btn.querySelector('.bg')) {
+                $(btn).append('<span class="bg"></span>');
+            }
+            const bg = btn.querySelector('.bg');
+            function handleOrigin(e) {
+                const rect = btn.getBoundingClientRect();
+                bg.style.left = `${e.clientX - rect.left}px`;
+                bg.style.top = `${e.clientY - rect.top}px`;
+            }
+            btn.addEventListener('mouseenter', handleOrigin);
+            btn.addEventListener('mouseleave', handleOrigin);
+        });
+    }
 });
 
+// Logo Splide
+const logoSplide = (direction = 'ltr') => ({
+    perPage: 5,
+    autoWidth: true,
+    pagination: false,
+    arrows: false,
+    gap: 80,
+    type: 'loop',
+    focus: 'center',
+    direction: direction,
+    autoScroll: {
+        // speed: 1
+    },
+    breakpoints: {
+        992: {            
+            gap: 50,
+        },
+        767: {
+            gap: 40,
+        },
+    }
+});
+// Left slider
+if (document.querySelector('.logo-splide')) {
+    new Splide('.logo-splide', logoSplide()).mount(window.splide.Extensions);
+}
 
 // Page Scroll Animation
 function playAnimReveal(section) {
