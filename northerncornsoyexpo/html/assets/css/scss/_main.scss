@@ -292,6 +292,9 @@
         & > :last-child:nth-child(odd) {
             grid-column: 1 / -1;
         }
+        @media (max-width: 575px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
         .contact-item {
             margin-bottom: 0;
         }

@@ -146,8 +146,8 @@ img {
     --bs-gutter-y: 30px;
     --bs-gutter-x: 30px;
     @media (max-width: 992px) {
-        --bs-gutter-x: 20px;
-        --bs-gutter-y: 20px;
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
     }
 }
 
@@ -155,8 +155,8 @@ img {
     --bs-gutter-x: 60px;
     --bs-gutter-y: 30px;
     @media (max-width: 992px) {
-        --bs-gutter-x: 20px;
-        --bs-gutter-y: 20px;
+        --bs-gutter-x: 30px;
+        --bs-gutter-y: 30px;
     }
 }
 
@@ -782,8 +782,10 @@ h5,
 }
 
 .is-sticky {
-    position: sticky;
-    top: 120px;
+    @media (min-width: 992px) {
+        position: sticky;
+        top: 120px;
+    }
 }
 
 // Image Animation
