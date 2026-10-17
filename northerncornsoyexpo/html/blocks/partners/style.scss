@@ -11,6 +11,36 @@
             font-weight: 500;
             margin-bottom: 30px;
         }
+        .partners-lists {
+            column-count: 3;
+            gap: 30px;
+            & > * {
+                margin-bottom: 30px;
+                break-inside: avoid;
+            }
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+            .partners-item {
+                position: relative;
+                padding-left: 34px;
+                font-weight: 400;
+                font-size: 16px;
+                color: #000000;
+                &::before {
+                    content: '';
+                    background: url('../../assets/images/icons/icon-circle-check.svg') no-repeat center;
+                    background-size: contain;
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    flex: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
         &.is-logo {
             .partners-lists {
                 display: grid;
@@ -33,6 +63,9 @@
                     border-radius: 15px;
                     min-height: 144px;
                     height: 100%;
+                    &::before {
+                        content: none;
+                    }
                     img {
                         max-height: 100px;
                     }
