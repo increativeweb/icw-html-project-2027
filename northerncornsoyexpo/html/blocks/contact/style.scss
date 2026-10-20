@@ -7,9 +7,12 @@
         border: 1px solid #E0E0E0;
         @include border-radius(15px);
         height: 100%;
-        h3 {
+        h2 {
             margin-bottom: 30px;
             color: var(--black);
+        }
+        @media (max-width: 575px) {
+            padding: 20px;
         }
     }
     .contact-details-block {
@@ -17,6 +20,9 @@
         color: var(--white);
         @include border-radius(15px);
         padding: 30px;
+        @media (max-width: 575px) {
+            padding: 20px;
+        }
         .title {
             margin-bottom: 20px;
         }
@@ -26,6 +32,12 @@
             grid-gap: 20px;
             & > :last-child:nth-child(odd) {
                 grid-column: 1 / -1;
+            }
+            @media (max-width: 992px) and (min-width: 768px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            @media (max-width: 575px) {
+                grid-template-columns: repeat(1, 1fr);
             }
             .contact-item {
                 .info-title {
@@ -52,6 +64,41 @@
                         &:hover, &:focus {
                             opacity: 0.7;
                         }
+                    }
+                }
+            }
+        }
+    }
+    .map-block {
+        @include flexbox;
+        @include flex-direction(column);
+        @include border-radius(15px);
+        margin-top: 30px;
+        overflow: hidden;
+        .map-iframe {
+            width: 100%;
+            height: 170px;
+        }
+        .address-info {
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 0px 0px 15px 15px;
+            padding: 30px;
+            font-size: 16px;
+            color: var(--black);
+            @media (max-width: 767px) {
+                padding: 20px;
+            }
+            .btn {
+                font-size: 16px;
+                color: var(--secondary);
+                .icon-arrow {
+                    background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(156 203 64)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
+                }
+                &:hover, &:focus {
+                    color: var(--primary);
+                    .icon-arrow {
+                        background: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M8.5 13L13 8L8.5 3" stroke="rgb(12 67 107)" stroke-width="1.5" stroke-linecap="round"/></svg>') no-repeat center center;
                     }
                 }
             }
