@@ -465,6 +465,12 @@ h5,
             transform: rotateZ(-45deg);
         }
     }   
+    &.btn-md {        
+	    min-height: 44px;
+    }
+    &.btn-sm {        
+	    min-height: 40px;
+    }
     &.btn-hover-effect {      
         .bg {
             position: absolute;
@@ -726,57 +732,6 @@ h5,
             &:nth-child(7) {
                 top: 220px;
             }
-        }
-    }
-}
-
-// Offcanvas
-.offcanvas.enquire-popup-model {
-    margin: 20px;
-    width: calc(100% - 10px);
-    max-width: 700px;
-    @include border-radius(0px);
-    overflow: hidden;
-    .btn-close {
-        position: absolute;
-        padding: 0;
-        right: 30px;
-        top: 30px;
-        opacity: 1;
-        @media (max-width: 767px) { 
-            right: 15px;
-            top: 15;
-        }
-        &:hover, &:focus {
-            opacity: 0.5;
-        }
-    }
-    .offcanvas-header {
-        padding: 30px;
-        @media (max-width: 767px) { 
-            padding: 15px;
-        }
-        h3 {
-            margin-bottom: 0;
-        }
-    }
-    .offcanvas-body {
-        padding: 0 30px 30px; 
-        @media (max-width: 767px) { 
-            padding: 0 15px 15px;
-        }   
-        &::-webkit-scrollbar {
-            background-color: transparent;
-            width: 5px;
-            height: 5px;
-            border-radius: 10px;
-        }
-        &::-webkit-scrollbar-thumb {
-            background-color: rgba(#233F61, 0.1);
-            border-radius: 10px;
-        }
-        &::-webkit-scrollbar-track {
-            background-color: #eeeeee;
         }
     }
 }
