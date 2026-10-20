@@ -814,9 +814,7 @@ h5,
     @include flex-wrap(wrap);
     @include justify-content(center);
     gap: 10px;
-    padding: 10px 50px;
-    border: 1px solid #E6E6E6;
-    border-radius: 50px;
+    padding: 0;
     max-width: max-content;
     .prev, .next {
         color: var(--black);
@@ -827,7 +825,7 @@ h5,
         @include justify-content(center);
         gap: 5px;
         line-height: 1;
-        padding: 0;
+        padding: 12px 15px;
         width: auto;
         span.icon {
             padding: 0;
@@ -835,7 +833,7 @@ h5,
             height: auto
         }
         &:hover:not(span), &:focus:not(span) {
-            opacity: 0.5;
+            background: var(--gray);
         }
         &:disabled, &.disabled {
             opacity: 0.5 !important;
@@ -847,21 +845,24 @@ h5,
         @include align-items(center);
         @include justify-content(center);
         gap: 10px;
-        width: 30px;
-        height: 30px;
+        width: 36px;
+        height: 36px;
         border: 1px solid transparent;
         text-decoration: none;
         font-weight: 500;
         font-size: 14px;
         color: var(--black);
+        border: 1px solid #E0E0E0;
         @include transition(0.2s, ease-in-out);
+        @include border-radius(10px);
         line-height: 1;
         &:hover:not(span), &:focus:not(span) {
-            opacity: 0.5
+            color: var(--secondary);
         }
         &.current {
-            color: var(--primary);
-            opacity: 1;
+            border-color: transparent;
+            color: var(--white);
+            background: var(--secondary);
             cursor: default;
         }
     }

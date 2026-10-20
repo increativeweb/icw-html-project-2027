@@ -145,6 +145,9 @@
             bottom: 12px;
             right: 12px;
             z-index: 2;
+            &:empty {
+                display: none;
+            }
         }
     }
     .card-body {
@@ -186,6 +189,61 @@
                     color: var(--primary);
                     a {
                         color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.posts-archive {
+    .posts-archive-categories {
+        margin: 0 auto 30px;
+        .nav-filter {
+            @include flexbox;
+            @include justify-content(flex-start);
+            @include align-items(center);
+            gap: 10px;
+            overflow: hidden;
+            overflow-x: auto;
+            width: 100%;
+            max-width: fit-content;
+            margin: 0 auto;
+            padding: 10px;
+            background: #FFFFFF;
+            border: 1px solid rgba(156, 203, 64, 0.15);
+            border-radius: 40px;
+            @media (max-width: 767px) {
+                gap: 5px;
+            }
+            li {
+                line-height: 1;
+                a {
+                    padding: 8px 15px;
+                    border-radius: 40px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: var(--lightblack);
+                    display: inline-block;
+                    line-height: 1;
+                    text-decoration: none;
+                    @include transition(0.2s, ease-in-out);
+                    white-space: nowrap;
+                    @media (max-width: 767px) {
+                        font-size: 14px;
+                        padding: 8px 10px;
+                    }
+                }
+                &:hover, &:focus {
+                    a {
+                        color: var(--secondary);
+                        background: var(--gray);
+                    }
+                }
+                &.active {
+                    a {
+                        background: var(--secondary);
+                        color: var(--white);
                     }
                 }
             }
